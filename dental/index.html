@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сайт и онлайн-запись для стоматологии за 7 дней — Tercia</title>
+<meta name="description" content="Делаем сайт стоматологии с ценами, врачами и онлайн-записью. Первая версия за 7 дней. Первым 10 клиникам — скидка 50%.">
+<meta name="theme-color" content="#07070B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сайт и онлайн-запись для стоматологии за 7 дней">
+<meta property="og:description" content="Пациенты выбирают клинику в телефоне. Делаем так, чтобы они сразу видели цены, врачей и записывались сами.">
+<meta property="og:site_name" content="Tercia">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Страница «Для стоматологий». Дизайн-язык — направление 08 DEPTH.
+   Цены «от» собраны в одном месте: ищите data-price в разметке. */
+:root{
+  --bg:#07070B; --bg-2:#0B0B11; --panel:#101017; --panel-2:#15151D; --sunk:#09090E;
+  --line:rgba(255,255,255,.07); --line-2:rgba(255,255,255,.045); --line-3:rgba(255,255,255,.14);
+  --fg:#F5F5F7; --muted:#A9A9B6; --muted-2:#77778A;
+  --acid:#D8FF4F; --acid-2:#B4E528; --ink:#07070B;
+  --violet:#7C3AED; --violet-2:#A97BFF; --cyan:#4FD8FF;
+  --warn:#FF8A6B; --ok:#54E08A;
+  --sans:'Manrope',system-ui,sans-serif; --disp:'Space Grotesk',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --r:20px; --maxw:1320px; --pad:clamp(20px,4.4vw,52px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+::selection{background:var(--acid);color:var(--ink)}
+:focus-visible{outline:2px solid var(--acid);outline-offset:3px;border-radius:6px}
+
+.grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);
+  background-size:80px 80px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 75%)}
+main,header,footer{position:relative;z-index:2}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:60;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);background:rgba(7,7,11,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:22px;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.02em}
+.mark{width:32px;height:32px;flex:none;fill:var(--acid)}
+.back{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--muted-2);text-transform:uppercase;padding-left:13px;border-left:1px solid var(--line-3);transition:.2s}
+.back:hover{color:var(--acid)}
+.nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--disp);font-weight:600;font-size:14.5px;padding:13px 22px;border-radius:99px;transition:.24s;border:1px solid transparent;white-space:nowrap;cursor:pointer}
+.btn-acid{background:var(--acid);color:var(--ink)}
+.btn-acid:hover{box-shadow:0 10px 40px -8px rgba(216,255,79,.55);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line-3);color:var(--fg);background:none}
+.btn-ghost:hover{background:var(--panel);border-color:var(--muted-2)}
+.btn-wa{background:#25D366;color:#06240F}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 10px 40px -8px rgba(37,211,102,.5)}
+.btn-tg{background:#2AABEE;color:#04212E}
+.btn-tg:hover{transform:translateY(-2px);box-shadow:0 10px 40px -8px rgba(42,171,238,.5)}
+.btn-lg{font-size:16px;padding:16px 28px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:clamp(48px,7vw,96px) 0 clamp(40px,5vw,72px)}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb-a{width:620px;height:620px;background:rgba(124,58,237,.26);top:-280px;left:-200px}
+.orb-b{width:520px;height:520px;background:rgba(216,255,79,.12);bottom:-280px;right:-160px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,60px);align-items:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(216,255,79,.34);background:rgba(216,255,79,.08);border-radius:99px;padding:7px 15px 7px 9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 4px rgba(216,255,79,.16);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(34px,5.6vw,70px);line-height:1;letter-spacing:-.035em;margin:22px 0 0;text-wrap:balance}
+h1 .acid{color:var(--acid)}
+.hero-sub{max-width:48ch;margin-top:20px;font-size:clamp(16px,1.5vw,18.5px);color:var(--muted)}
+.hero-act{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
+.hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
+.hero-note b{color:var(--fg);font-weight:500}
+
+/* phone mock */
+.phone{width:min(300px,78vw);margin:0 auto;aspect-ratio:9/18.5;border-radius:36px;border:1px solid var(--line-3);background:linear-gradient(170deg,#15151D,#09090E);padding:10px;box-shadow:0 60px 110px -60px #000,inset 0 1px 0 rgba(255,255,255,.06);position:relative}
+.phone::before{content:'';position:absolute;top:14px;left:50%;transform:translateX(-50%);width:76px;height:5px;border-radius:99px;background:#000;z-index:3}
+.screen{height:100%;border-radius:28px;overflow:hidden;background:#0B0B11;display:flex;flex-direction:column}
+.sc-top{padding:26px 16px 12px;background:linear-gradient(160deg,#17202B,#0B0B11)}
+.sc-brand{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:-.01em;display:flex;align-items:center;gap:6px}
+.sc-brand i{width:14px;height:14px;border-radius:4px;background:var(--cyan);display:block}
+.sc-h{font-family:var(--disp);font-size:16px;line-height:1.15;letter-spacing:-.02em;margin-top:12px}
+.sc-b{margin-top:10px;background:var(--acid);color:var(--ink);font-size:10.5px;font-weight:700;text-align:center;padding:8px;border-radius:9px}
+.sc-list{padding:12px 16px;display:grid;gap:7px}
+.sc-row{display:flex;justify-content:space-between;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:10.5px}
+.sc-row b{font-family:var(--disp);font-size:11px}
+.sc-row span{color:var(--muted-2);font-size:9.5px}
+.sc-docs{padding:4px 16px 12px;display:flex;gap:6px}
+.sc-doc{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:8px 6px;text-align:center}
+.sc-doc i{display:block;width:26px;height:26px;border-radius:50%;background:linear-gradient(140deg,#2B3A4A,#17202B);margin:0 auto 6px}
+.sc-doc span{font-size:8.5px;color:var(--muted-2);line-height:1.3;display:block}
+.sc-foot{margin-top:auto;padding:10px 16px 16px;display:flex;gap:6px}
+.sc-foot span{flex:1;text-align:center;font-size:9.5px;padding:8px;border-radius:9px;background:var(--panel);border:1px solid var(--line)}
+.sc-foot span.on{background:var(--cyan);color:#04212E;border-color:var(--cyan);font-weight:700}
+
+/* sections */
+.sec{padding:clamp(56px,7vw,108px) 0}
+.head{margin-bottom:clamp(28px,3.6vw,48px)}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--acid);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.kick::before{content:'';width:26px;height:1px;background:var(--acid)}
+.kick.v{color:var(--violet-2)}.kick.v::before{background:var(--violet-2)}
+h2{font-family:var(--disp);font-weight:700;font-size:clamp(27px,4vw,48px);line-height:1.03;letter-spacing:-.03em;text-wrap:balance}
+.lead{max-width:46ch;color:var(--muted);margin-top:14px}
+
+/* pain cards */
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pain{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);padding:26px;position:relative;overflow:hidden;transition:.3s}
+.pain:hover{border-color:rgba(255,138,107,.34);transform:translateY(-4px)}
+.pain .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--warn)}
+.pain .ic{width:44px;height:44px;border-radius:13px;border:1px solid var(--line-3);display:grid;place-items:center;margin:18px 0 20px;color:var(--warn)}
+.pain p{color:var(--muted);font-size:15.2px}
+.pain b{color:var(--fg);font-weight:700}
+
+/* includes */
+.incl{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,3.4vw,52px);align-items:start}
+.inc-list{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.inc{background:var(--panel);padding:20px 22px;display:grid;grid-template-columns:38px 1fr;gap:16px;align-items:start;transition:.25s}
+.inc:hover{background:var(--panel-2)}
+.inc .ic{width:38px;height:38px;border-radius:11px;background:rgba(216,255,79,.1);border:1px solid rgba(216,255,79,.22);display:grid;place-items:center;color:var(--acid)}
+.inc .t{font-family:var(--disp);font-weight:600;font-size:16.5px;letter-spacing:-.01em}
+.inc p{color:var(--muted);font-size:14.6px;margin-top:5px}
+.inc.opt .ic{background:rgba(124,58,237,.12);border-color:rgba(124,58,237,.3);color:var(--violet-2)}
+.inc .opt-tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet-2);border:1px solid rgba(124,58,237,.34);border-radius:99px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+
+/* demo */
+.demo{border:1px solid var(--line);border-radius:28px;background:linear-gradient(150deg,var(--panel-2),var(--sunk));padding:clamp(24px,3.4vw,44px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,3.4vw,48px);align-items:center;position:relative;overflow:hidden}
+.demo::before{content:'';position:absolute;width:460px;height:460px;border-radius:50%;background:rgba(79,216,255,.14);filter:blur(90px);top:-240px;right:-120px}
+.demo-txt{position:relative}
+.demo .phone{width:min(250px,70vw)}
+
+/* packages */
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}
+.pack{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;transition:.3s;position:relative}
+.pack:hover{transform:translateY(-5px);border-color:var(--line-3)}
+.pack.best{border-color:rgba(216,255,79,.4);background:linear-gradient(160deg,rgba(216,255,79,.07),var(--panel))}
+.pack .tagbest{position:absolute;top:-10px;left:24px;background:var(--acid);color:var(--ink);font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:99px}
+.pack .nm{font-family:var(--disp);font-size:21px;font-weight:600;letter-spacing:-.02em}
+.pack .pr{font-family:var(--disp);font-size:clamp(26px,2.8vw,34px);font-weight:700;letter-spacing:-.03em;margin:14px 0 4px}
+.pack .pr small{font-size:14px;font-weight:500;color:var(--muted-2);letter-spacing:0}
+.pack ul{list-style:none;display:grid;gap:10px;margin:20px 0 24px}
+.pack li{padding-left:24px;position:relative;color:var(--muted);font-size:14.8px}
+.pack li::before{content:'';position:absolute;left:0;top:7px;width:13px;height:8px;border-left:2px solid var(--acid);border-bottom:2px solid var(--acid);transform:rotate(-45deg)}
+.pack .btn{margin-top:auto;width:100%}
+.packs-note{margin-top:18px;padding:18px 22px;border:1px dashed var(--line-3);border-radius:14px;color:var(--muted);font-size:14.8px}
+.packs-note b{color:var(--acid)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.steps::before{content:'';position:absolute;top:8px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,var(--line-3),var(--line-3),transparent)}
+.step{position:relative}
+.s-dot{width:16px;height:16px;border-radius:50%;background:var(--bg);border:1px solid var(--acid);display:grid;place-items:center;margin-bottom:22px;position:relative;z-index:2;box-shadow:0 0 0 5px rgba(216,255,79,.08)}
+.s-dot i{width:6px;height:6px;border-radius:50%;background:var(--acid);display:block}
+.s-num{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--acid)}
+.s-t{font-family:var(--disp);font-size:19px;font-weight:600;letter-spacing:-.02em;margin:9px 0 7px}
+.step p{color:var(--muted);font-size:14.6px}
+.deal{margin-top:24px;padding:20px 24px;border:1px solid var(--line);background:var(--panel);border-radius:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:15px}
+.deal b{color:var(--fg)}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:980px}
+details{border:1px solid var(--line);background:var(--panel);border-radius:14px;overflow:hidden;transition:.25s}
+details[open]{border-color:var(--line-3);background:var(--panel-2)}
+summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:var(--disp);font-weight:600;font-size:clamp(16px,1.7vw,18.5px);letter-spacing:-.01em;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-family:var(--mono);font-size:20px;color:var(--acid);flex:none;transition:.25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 24px 22px;color:var(--muted);max-width:72ch}
+
+/* form */
+.formsec{border:1px solid var(--line);border-radius:28px;background:linear-gradient(150deg,var(--panel-2),var(--sunk));padding:clamp(26px,3.6vw,52px);position:relative;overflow:hidden}
+.formsec::before{content:'';position:absolute;width:560px;height:560px;border-radius:50%;background:rgba(216,255,79,.1);filter:blur(100px);top:-300px;left:50%;transform:translateX(-50%)}
+.form-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(24px,3.4vw,52px);position:relative;align-items:start}
+form{display:grid;gap:12px}
+.field label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:7px}
+.field input,.field textarea{width:100%;background:var(--sunk);border:1px solid var(--line-3);border-radius:12px;padding:14px 16px;color:var(--fg);font-family:var(--sans);font-size:15.5px;transition:.2s}
+.field input:focus,.field textarea:focus{border-color:var(--acid);outline:none}
+.field textarea{resize:vertical;min-height:84px}
+.consent{display:flex;gap:11px;align-items:flex-start;color:var(--muted-2);font-size:13.4px;line-height:1.5;margin-top:4px}
+.consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--acid)}
+.consent a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.consent a:hover{color:var(--acid)}
+.send-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.formnote{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);margin-top:10px}
+.status{display:none;margin-top:12px;padding:14px 16px;border-radius:12px;border:1px solid rgba(84,224,138,.3);background:rgba(84,224,138,.08);color:var(--ok);font-size:14.5px}
+.status.on{display:block}
+.contacts-side{display:grid;gap:12px;position:relative}
+.c-item{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid var(--line);background:var(--panel);border-radius:14px;transition:.25s}
+.c-item:hover{border-color:var(--line-3);transform:translateX(4px)}
+.c-item .ic{width:40px;height:40px;border-radius:12px;background:var(--sunk);display:grid;place-items:center;flex:none;color:var(--acid)}
+.c-item .t{font-family:var(--disp);font-weight:600;font-size:15.5px}
+.c-item .s{color:var(--muted-2);font-size:13px;margin-top:2px}
+
+/* footer */
+.ftr{border-top:1px solid var(--line);background:var(--sunk);padding:clamp(40px,5vw,70px) 0 26px;margin-top:clamp(40px,5vw,80px)}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:30px}
+.ftr p{color:var(--muted);font-size:14.6px;margin-top:14px;max-width:34ch}
+.f-h{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);margin-bottom:14px}
+.f-col a{display:block;color:var(--muted);font-size:14.6px;padding:5px 0;transition:.2s}
+.f-col a:hover{color:var(--acid)}
+.req{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted-2);font-size:13.4px;line-height:1.75}
+.req b{color:var(--muted);font-weight:600}
+.f-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;color:var(--muted-2);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+
+@media(max-width:1000px){
+  .hero-grid,.incl,.demo,.form-grid{grid-template-columns:1fr}
+  .pains,.packs{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .demo .phone,.hero .phone{margin-top:8px}
+}
+@media(max-width:640px){
+  .back{display:none}
+  .steps{grid-template-columns:1fr}
+  .send-row{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="spk"><path d="M12 0C12.35 10.2 13.5 11.55 21 12C13.5 12.45 12.35 13.8 12 24C11.65 13.8 10.5 12.45 3 12C10.5 11.55 11.65 10.2 12 0Z" transform="translate(19 22) scale(2.8)"/><path d="M12 0C12.35 10.2 13.5 11.55 21 12C13.5 12.45 12.35 13.8 12 24C11.65 13.8 10.5 12.45 3 12C10.5 11.55 11.65 10.2 12 0Z" transform="translate(60 12) scale(1.4)"/><path d="M12 0C12.35 10.2 13.5 11.55 21 12C13.5 12.45 12.35 13.8 12 24C11.65 13.8 10.5 12.45 3 12C10.5 11.55 11.65 10.2 12 0Z" transform="translate(16 73) scale(1.62)"/></g>
+</defs></svg>
+
+<header class="hdr"><div class="wrap nav">
+  <a class="logo" href="../"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#spk"/></svg><span>Tercia</span></a>
+  <a class="back" href="../">← на главную</a>
+  <div class="nav-cta"><a href="#zayavka" class="btn btn-acid">Получить разбор сайта</a></div>
+</div></header>
+
+<main>
+<!-- 1. Первый экран -->
+<section class="hero">
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><i class="dot"></i>Первым 10 клиникам — скидка 50%</span>
+      <h1>Сайт и онлайн-запись для стоматологии <span class="acid">за 7 дней</span></h1>
+      <p class="hero-sub">Пациенты выбирают клинику в телефоне. Делаем так, чтобы они сразу видели цены, врачей и записывались сами — даже ночью.</p>
+      <div class="hero-act">
+        <a href="#demo" class="btn btn-acid btn-lg">Посмотреть демо-сайт</a>
+        <a href="#zayavka" class="btn btn-ghost btn-lg">Получить бесплатный разбор сайта</a>
+      </div>
+      <div class="hero-note">
+        <span><b>7 дней</b> — первая версия</span>
+        <span><b>Договор</b>, предоплата 50%</span>
+        <span><b>Удалённо</b> по всей России</span>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div class="sc-top">
+          <div class="sc-brand"><i></i>Клиника «Дентал»</div>
+          <div class="sc-h">Лечение зубов без боли и очередей</div>
+          <div class="sc-b">Записаться онлайн</div>
+        </div>
+        <div class="sc-list">
+          <div class="sc-row"><div><b>Консультация</b><span>30 минут</span></div><b>0 ₽</b></div>
+          <div class="sc-row"><div><b>Лечение кариеса</b><span>от 1 визита</span></div><b>4 500 ₽</b></div>
+          <div class="sc-row"><div><b>Имплантация</b><span>под ключ</span></div><b>38 000 ₽</b></div>
+        </div>
+        <div class="sc-docs">
+          <div class="sc-doc"><i></i><span>Иванова А.<br>терапевт</span></div>
+          <div class="sc-doc"><i></i><span>Петров С.<br>хирург</span></div>
+          <div class="sc-doc"><i></i><span>Орлова М.<br>ортодонт</span></div>
+        </div>
+        <div class="sc-foot"><span>Цены</span><span>Врачи</span><span class="on">Запись</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Что теряет клиника -->
+<section class="sec wrap">
+  <div class="head">
+    <div class="kick">Проблема</div>
+    <h2>Что теряет клиника<br>без хорошего сайта</h2>
+  </div>
+  <div class="pains">
+    <article class="pain">
+      <div class="n">01</div>
+      <div class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <p><b>Сайт грузится дольше 3 секунд</b> — пациент не ждёт и уходит к соседней клинике прямо из поиска.</p>
+    </article>
+    <article class="pain">
+      <div class="n">02</div>
+      <div class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <p><b>Нет цен</b> — человек не звонит «просто узнать», а идёт туда, где цены видны сразу.</p>
+    </article>
+    <article class="pain">
+      <div class="n">03</div>
+      <div class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/><path d="m2 2 20 20" stroke-width="1.8"/></svg></div>
+      <p><b>Запись только по телефону</b> — вечером и в выходные заявки просто теряются.</p>
+    </article>
+  </div>
+</section>
+
+<!-- 3. Что входит -->
+<section class="sec wrap">
+  <div class="incl">
+    <div>
+      <div class="kick">Что входит</div>
+      <h2>Всё, что нужно клинике,<br>в одном проекте</h2>
+      <p class="lead">Делаем сайт под телефон — именно оттуда приходит большинство пациентов. Админка простая: прайс и врачей меняет ваш администратор, без звонка разработчику.</p>
+      <div class="hero-act"><a href="#packages" class="btn btn-ghost">Смотреть пакеты и цены</a></div>
+    </div>
+    <div class="inc-list">
+      <div class="inc">
+        <div class="ic"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <div><div class="t">Сайт под телефон</div><p>Услуги, цены, врачи, отзывы и карта. Открывается быстро, читается одной рукой.</p></div>
+      </div>
+      <div class="inc">
+        <div class="ic"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <div><div class="t">Онлайн-запись и быстрые кнопки</div><p>Пациент выбирает услугу и время сам. Рядом — кнопки WhatsApp и Telegram.</p></div>
+      </div>
+      <div class="inc">
+        <div class="ic"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <div><div class="t">Прайс, который вы меняете сами</div><p>Администратор правит цены и врачей через простую админку. Научим за 15 минут.</p></div>
+      </div>
+      <div class="inc">
+        <div class="ic"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="t">Яндекс Карты и Метрика</div><p>Клиника на карте с маршрутом, а вы видите, сколько человек дошло до записи.</p></div>
+      </div>
+      <div class="inc opt">
+        <div class="ic"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 5 3 11l6 2 2 6z"/></svg></div>
+        <div><div class="t">Telegram-бот записи <span class="opt-tag">по желанию</span></div><p>Записывает пациента и напоминает о визите за час — меньше неявок.</p></div>
+      </div>
+      <div class="inc opt">
+        <div class="ic"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17l-5.9 3 1.2-6.5L2.5 8.9 9.1 8z"/></svg></div>
+        <div><div class="t">Отзывы на картах <span class="opt-tag">по желанию</span></div><p>Ведём ваши отзывы на Яндекс Картах и 2ГИС — <a href="../reputation/" style="color:var(--violet-2);text-decoration:underline;text-underline-offset:3px">направление «Репутация»</a>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Демо -->
+<section class="sec wrap" id="demo">
+  <div class="demo">
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div class="sc-top">
+          <div class="sc-brand"><i></i>Клиника «Дентал»</div>
+          <div class="sc-h">Запись на приём</div>
+          <div class="sc-b">Выбрать время</div>
+        </div>
+        <div class="sc-list">
+          <div class="sc-row"><div><b>Сегодня, 18:30</b><span>Иванова А., терапевт</span></div><b>✓</b></div>
+          <div class="sc-row"><div><b>Завтра, 10:00</b><span>Петров С., хирург</span></div><b>✓</b></div>
+          <div class="sc-row"><div><b>Завтра, 15:20</b><span>Орлова М., ортодонт</span></div><b>✓</b></div>
+        </div>
+        <div class="sc-docs"><div class="sc-doc" style="flex:1"><span style="font-size:9.5px">Напомним о визите<br>в Telegram за час</span></div></div>
+        <div class="sc-foot"><span>Цены</span><span>Врачи</span><span class="on">Запись</span></div>
+      </div>
+    </div>
+    <div class="demo-txt">
+      <div class="kick v">Демо</div>
+      <h2>Посмотрите, как это<br>выглядит у пациента</h2>
+      <p class="lead">Мы собрали демо-сайт вымышленной клиники: услуги с ценами, врачи, онлайн-запись, отзывы и карта. Откройте с телефона — так его увидит ваш пациент.</p>
+      <div class="hero-act">
+        <a href="../portfolio/dental-demo/" class="btn btn-acid btn-lg">Открыть живое демо</a>
+        <a href="../portfolio/" class="btn btn-ghost btn-lg">Все работы</a>
+      </div>
+      <p class="formnote">Клиника вымышленная — демо показывает структуру и скорость, а не реального клиента</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Пакеты -->
+<section class="sec wrap" id="packages">
+  <div class="head"><div class="kick">Пакеты</div><h2>Сколько это стоит</h2>
+  <p class="lead">Цены — «от». Точная сумма зависит от числа услуг, врачей и нужной админки. Назовём её после бесплатного разбора.</p></div>
+  <div class="packs">
+    <article class="pack">
+      <div class="nm">Старт</div>
+      <div class="pr" data-price>от 19 000 ₽</div>
+      <ul>
+        <li>Одностраничный сайт клиники</li>
+        <li>Услуги с ценами</li>
+        <li>Кнопки записи, WhatsApp, Telegram</li>
+        <li>Яндекс Карты и Метрика</li>
+        <li>Запуск за 7 дней</li>
+      </ul>
+      <a href="#zayavka" class="btn btn-ghost">Обсудить</a>
+    </article>
+    <article class="pack best">
+      <span class="tagbest">Чаще всего берут</span>
+      <div class="nm">Клиника</div>
+      <div class="pr" data-price>от 34 000 ₽</div>
+      <ul>
+        <li>Многостраничный сайт</li>
+        <li>Услуги, врачи, прайс, отзывы</li>
+        <li>Онлайн-запись на сайте</li>
+        <li>Админка: цены и врачи меняете сами</li>
+        <li>Обучение администратора</li>
+      </ul>
+      <a href="#zayavka" class="btn btn-acid">Обсудить</a>
+    </article>
+    <article class="pack">
+      <div class="nm">Клиника + бот</div>
+      <div class="pr" data-price>от 48 000 ₽</div>
+      <ul>
+        <li>Всё из пакета «Клиника»</li>
+        <li>Telegram-бот записи</li>
+        <li>Напоминание о визите за час</li>
+        <li>Перенос и отмена записи в боте</li>
+        <li>Уведомления администратору</li>
+      </ul>
+      <a href="#zayavka" class="btn btn-ghost">Обсудить</a>
+    </article>
+  </div>
+  <div class="packs-note"><b>Первым 10 клиникам — скидка 50%</b> в обмен на отзыв. Поддержка и хостинг — <span data-price>от 3 000 ₽ в месяц</span>.</div>
+</section>
+
+<!-- 6. Как работаем -->
+<section class="sec wrap">
+  <div class="head"><div class="kick">Как работаем</div><h2>Четыре шага до запуска</h2></div>
+  <div class="steps">
+    <div class="step"><div class="s-dot"><i></i></div><div class="s-num">01 / БРИФ</div><div class="s-t">Разбор задачи</div><p>Смотрим текущий сайт, услуги и цены. Фиксируем результат и сроки.</p></div>
+    <div class="step"><div class="s-dot"><i></i></div><div class="s-num">02 / ДИЗАЙН</div><div class="s-t">Прототип и визуал</div><p>Показываем макет на телефоне. Согласуем до первой строчки кода.</p></div>
+    <div class="step"><div class="s-dot"><i></i></div><div class="s-num">03 / СБОРКА</div><div class="s-t">Разработка</div><p>Вёрстка, админка, запись, карты и Метрика. Тестируем на телефонах.</p></div>
+    <div class="step"><div class="s-dot"><i></i></div><div class="s-num">04 / ЗАПУСК</div><div class="s-t">Релиз и обучение</div><p>Публикуем, учим администратора и остаёмся на поддержке.</p></div>
+  </div>
+  <div class="deal">
+    <svg width="20" viewBox="0 0 24 24" fill="none" stroke="var(--acid)" stroke-width="1.7" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
+    <span><b>Договор, предоплата 50%</b>, остальное — после запуска.</span>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section class="sec wrap">
+  <div class="head"><div class="kick">Вопросы</div><h2>Частые вопросы</h2></div>
+  <div class="faq">
+    <details open><summary>А если у нас уже есть сайт?</summary><p>Сделаем бесплатный разбор и покажем, что можно улучшить без переделки. Часто хватает ускорить загрузку, добавить цены и онлайн-запись — это дешевле нового сайта.</p></details>
+    <details><summary>Кто будет менять цены и врачей?</summary><p>Ваш администратор, через простую админку. Научим за 15 минут и оставим короткую инструкцию. Звонить разработчику из-за новой цены не придётся.</p></details>
+    <details><summary>Сколько делается?</summary><p>Первая версия — за 7 дней. Дальше дорабатываем по вашим правкам: обычно это ещё несколько дней.</p></details>
+    <details><summary>Как платить?</summary><p>По договору с ИП, счёт на клинику. Предоплата 50%, остальное после запуска.</p></details>
+    <details><summary>Вы работаете с нашим городом?</summary><p>Да, работаем удалённо по всей России. Созвоны, демо и правки — онлайн.</p></details>
+  </div>
+</section>
+
+<!-- 8. Форма -->
+<section class="sec wrap" id="zayavka">
+  <div class="formsec">
+    <div class="form-grid">
+      <div>
+        <div class="kick">Бесплатный разбор</div>
+        <h2>Оставьте адрес сайта<br>и телефон</h2>
+        <p class="lead">Посмотрим сайт вашей клиники и пришлём разбор за 24 часа: что тормозит, чего не хватает и что исправить в первую очередь. Бесплатно и ни к чему не обязывает.</p>
+        <div class="contacts-side" style="margin-top:26px">
+          <a class="c-item" href="https://t.me/tercia_it" target="_blank" rel="noopener">
+            <span class="ic"><svg width="19" viewBox="0 0 24 24" fill="currentColor"><path d="M9.8 18.7l.3-4.2 7.7-7c.3-.3-.1-.4-.5-.2L7.7 13.3l-4-1.3c-.9-.3-.9-.9.2-1.3l16-6.2c.7-.3 1.4.2 1.1 1.3l-2.7 12.8c-.2.9-.7 1.1-1.5.7l-4.2-3.1-2 1.9c-.2.3-.4.4-.8.4z"/></svg></span>
+            <span><span class="t">Telegram</span><span class="s">@tercia_it — отвечаем быстрее всего</span></span>
+          </a>
+          <a class="c-item" href="https://wa.me/79882716669" target="_blank" rel="noopener">
+            <span class="ic"><svg width="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 5 5.1-1.3A10 10 0 1 0 12 2zm5.5 12.4c-.3.8-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.6-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.1.1.3 0 .5l-.3.5-.4.5c-.2.1-.3.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 .9c.2.1.4.2.5.3.1.2.1.6-.1 1.4z"/></svg></span>
+            <span><span class="t">WhatsApp</span><span class="s">+7 988 271 66 69</span></span>
+          </a>
+          <a class="c-item" href="mailto:terciaagency@gmail.com">
+            <span class="ic"><svg width="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+            <span><span class="t">Почта</span><span class="s">terciaagency@gmail.com</span></span>
+          </a>
+        </div>
+      </div>
+
+      <form id="lead" novalidate>
+        <div class="field"><label for="f-name">Как к вам обращаться</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Имя" required></div>
+        <div class="field"><label for="f-phone">Телефон или адрес сайта</label><input id="f-phone" name="phone" type="text" autocomplete="tel" placeholder="+7 ___ ___ __ __ или site.ru" required></div>
+        <div class="field"><label for="f-task">Что нужно</label><textarea id="f-task" name="task" placeholder="Например: сайт клиники с ценами и онлайн-записью"></textarea></div>
+        <label class="consent"><input type="checkbox" id="f-ok" required>
+          <span>Согласен на обработку персональных данных в соответствии с <a href="../privacy/">политикой конфиденциальности</a>.</span></label>
+        <div class="send-row">
+          <button type="submit" class="btn btn-wa" data-ch="wa">Отправить в WhatsApp</button>
+          <button type="button" class="btn btn-tg" data-ch="tg">Отправить в Telegram</button>
+        </div>
+        <p class="formnote">Заявка уйдёт в мессенджер с уже готовым текстом — останется нажать «отправить»</p>
+        <div class="status" id="f-status" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr"><div class="wrap">
+  <div class="f-grid">
+    <div>
+      <a class="logo" href="../"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#spk"/></svg><span>Tercia</span></a>
+      <p>Агентство цифровых продуктов. Сайты, Telegram-боты, автоматизация и репутация на картах.</p>
+    </div>
+    <div class="f-col"><div class="f-h">Клиникам</div><a href="#packages">Пакеты и цены</a><a href="#demo">Демо-сайт</a><a href="#zayavka">Бесплатный разбор</a></div>
+    <div class="f-col"><div class="f-h">Агентство</div><a href="../">Главная</a><a href="../portfolio/">Портфолио</a><a href="../reputation/">Репутация</a><a href="../privacy/">Политика конфиденциальности</a></div>
+    <div class="f-col"><div class="f-h">Связь</div><a href="https://t.me/tercia_it">@tercia_it</a><a href="https://wa.me/79882716669">+7 988 271 66 69</a><a href="mailto:terciaagency@gmail.com">terciaagency@gmail.com</a></div>
+  </div>
+  <div class="req">
+    <b>ИП Абдурахманов Амир Алаудинович</b><br>
+    ОГРНИП 326050000124876 · ИНН 057205659737<br>
+    Работаем по договору, предоплата 50%. Удалённо по всей России.
+  </div>
+  <div class="f-bot"><span>© 2026 Tercia</span><span>tercia.dev</span></div>
+</div></footer>
+
+<script>
+/* Форма → мессенджер. Бэкенда нет (GitHub Pages — статика),
+   поэтому собираем текст заявки и открываем WhatsApp или Telegram.
+   Для Telegram текст кладём в буфер обмена: t.me не умеет подставлять текст в личный чат. */
+(function () {
+  var form = document.getElementById('lead');
+  if (!form) return;
+  var WA = '79882716669', TG = 'tercia_it';
+  var status = document.getElementById('f-status');
+
+  function val(id) { return (document.getElementById(id).value || '').trim(); }
+
+  function compose() {
+    var t = 'Заявка с сайта tercia.dev/dental\n';
+    t += 'Имя: ' + val('f-name') + '\n';
+    t += 'Контакт: ' + val('f-phone') + '\n';
+    var task = val('f-task');
+    if (task) t += 'Задача: ' + task + '\n';
+    return t;
+  }
+
+  function valid() {
+    if (!val('f-name')) { say('Напишите, как к вам обращаться.', false); return false; }
+    if (!val('f-phone')) { say('Оставьте телефон или адрес сайта — без них не сможем ответить.', false); return false; }
+    if (!document.getElementById('f-ok').checked) { say('Отметьте согласие на обработку данных.', false); return false; }
+    return true;
+  }
+
+  function say(msg, ok) {
+    status.textContent = msg;
+    status.classList.add('on');
+    status.style.borderColor = ok ? 'rgba(84,224,138,.3)' : 'rgba(255,138,107,.35)';
+    status.style.background = ok ? 'rgba(84,224,138,.08)' : 'rgba(255,138,107,.08)';
+    status.style.color = ok ? 'var(--ok)' : 'var(--warn)';
+  }
+
+  function send(channel) {
+    if (!valid()) return;
+    var text = compose();
+    if (channel === 'wa') {
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      say('Открыли WhatsApp — текст заявки уже подставлен, нажмите «отправить».', true);
+    } else {
+      var done = function () {
+        window.open('https://t.me/' + TG, '_blank', 'noopener');
+        say('Текст заявки скопирован. Открыли Telegram — вставьте его в чат и отправьте.', true);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, done);
+      } else { done(); }
+    }
+  }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); send('wa'); });
+  Array.prototype.forEach.call(form.querySelectorAll('[data-ch]'), function (b) {
+    if (b.getAttribute('data-ch') === 'tg') b.addEventListener('click', function () { send('tg'); });
+  });
+})();
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tercia — цифровые продукты под ключ</title>
-<meta name="description" content="Сайты, Telegram-боты, mini-app и автоматизация на n8n. Одна команда ведёт продукт от первой гипотезы до стабильной выручки.">
+<meta name="description" content="Сайты, Telegram-боты, mini-app, автоматизация на n8n и работа с отзывами на картах. Цены «от», первая версия за 7 дней. Работаем по договору.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -46,6 +46,80 @@ a{color:inherit;text-decoration:none}
 .noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 main,header,footer{position:relative;z-index:2}
+
+
+/* ---------- нишевые решения ---------- */
+.niches{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.niche{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:clamp(24px,2.8vw,34px);display:flex;flex-direction:column;transition:.3s;min-height:270px}
+.niche:hover{transform:translateY(-5px);border-color:color-mix(in srgb, var(--nh) 40%, transparent)}
+.niche::after{content:'';position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb, var(--nh) 22%, transparent),transparent);top:-200px;right:-110px;opacity:.55;transition:.35s}
+.niche:hover::after{opacity:1}
+.n-d{--nh:var(--acid)}
+.n-r{--nh:var(--violet-2)}
+.niche .lbl{position:relative;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--nh);display:flex;align-items:center;gap:9px}
+.niche .lbl::before{content:'';width:20px;height:1px;background:var(--nh)}
+.niche h3{position:relative;font-family:var(--disp);font-size:clamp(21px,2.4vw,28px);font-weight:600;letter-spacing:-.025em;margin:16px 0 10px;line-height:1.1}
+.niche p{position:relative;color:var(--muted);font-size:15px;max-width:42ch}
+.n-meta{position:relative;display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
+.n-meta b{color:var(--fg);font-weight:500}
+.niche .go{position:relative;margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:600;font-size:15px;color:var(--nh)}
+.niche:hover .go{gap:14px}
+
+/* ---------- о нас ---------- */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,3.4vw,54px);align-items:start}
+.about-card{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);padding:clamp(22px,2.6vw,30px)}
+.ab-top{display:flex;gap:16px;align-items:center}
+.ab-ava{width:62px;height:62px;border-radius:18px;background:linear-gradient(140deg,var(--acid),var(--acid-2));display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:21px;color:var(--ink);flex:none;letter-spacing:-.02em}
+.ab-n{font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.02em}
+.ab-r{color:var(--muted-2);font-size:13.4px;margin-top:3px}
+.ab-list{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:18px}
+.ab-i{background:var(--panel);padding:15px 18px;display:flex;gap:13px;align-items:flex-start;font-size:14.6px;color:var(--muted)}
+.ab-i svg{flex:none;margin-top:3px;color:var(--acid)}
+.ab-i b{color:var(--fg);font-weight:600}
+.about .vals{display:grid;gap:12px;margin-top:22px}
+.val{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:20px 22px}
+.val .t{font-family:var(--disp);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin-bottom:6px}
+.val p{color:var(--muted);font-size:14.6px}
+
+/* ---------- форма заявки ---------- */
+.lead-sec{position:relative;overflow:hidden;border-top:1px solid var(--line);padding:clamp(56px,7vw,110px) 0}
+.lead-sec::before{content:'';position:absolute;width:900px;height:560px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb, var(--acid) 14%, transparent),transparent);left:50%;top:-180px;transform:translateX(-50%);filter:blur(40px);pointer-events:none}
+.lead-g{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3.6vw,56px);align-items:start}
+.lead-g h2{font-size:clamp(28px,4.4vw,54px)}
+.lead-g .lead{max-width:44ch;margin-top:16px}
+form.lead-f{display:grid;gap:12px;border:1px solid var(--line);background:linear-gradient(160deg,var(--panel-2),var(--sunk));border-radius:24px;padding:clamp(22px,2.6vw,32px)}
+.fld label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);margin-bottom:7px}
+.fld input,.fld textarea{width:100%;background:var(--sunk);border:1px solid var(--line-3);border-radius:12px;padding:14px 16px;color:var(--fg);font-family:var(--sans);font-size:15.5px;transition:.2s}
+.fld input:focus,.fld textarea:focus{border-color:var(--acid);outline:none}
+.fld textarea{resize:vertical;min-height:82px}
+.consent{display:flex;gap:11px;align-items:flex-start;color:var(--muted-2);font-size:13.2px;line-height:1.5}
+.consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--acid)}
+.consent a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.consent a:hover{color:var(--acid)}
+.send-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn-wa{background:#25D366;color:#06240F}
+.btn-tg{background:#2AABEE;color:#04212E}
+.btn-wa:hover,.btn-tg:hover{transform:translateY(-2px)}
+.f-note{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+.f-status{display:none;padding:13px 16px;border-radius:12px;font-size:14.4px}
+.f-status.on{display:block}
+.ways{display:grid;gap:11px;margin-top:26px}
+.way{display:flex;gap:14px;align-items:center;padding:15px 18px;border:1px solid var(--line);background:var(--panel);border-radius:14px;transition:.25s}
+.way:hover{border-color:var(--line-3);transform:translateX(4px)}
+.way .ic{width:40px;height:40px;border-radius:12px;background:var(--sunk);display:grid;place-items:center;flex:none;color:var(--acid)}
+.way .t{font-family:var(--disp);font-weight:600;font-size:15.4px}
+.way .s{color:var(--muted-2);font-size:13px;margin-top:2px}
+
+/* ---------- реквизиты в подвале ---------- */
+.req{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted-2);font-size:13.4px;line-height:1.75}
+.req b{color:var(--muted);font-weight:600}
+
+@media(max-width:1000px){
+  .niches,.about,.lead-g{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .send-row{grid-template-columns:1fr}
+}
 
 /* ---------- header ---------- */
 .hdr{position:sticky;top:0;z-index:60;backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);background:rgba(7,7,11,.72);border-bottom:1px solid var(--line)}
@@ -141,6 +215,10 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
 .card::after{content:'';position:absolute;inset:0;background:radial-gradient(400px 200px at 80% 0%,color-mix(in srgb, var(--h) 12%, transparent),transparent 70%);opacity:0;transition:.3s}
 .card:hover::after{opacity:1}
 .c-feature{grid-column:span 3;min-height:290px}
+.c-price{font-family:var(--disp);font-size:15px;font-weight:600;letter-spacing:-.01em;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);color:var(--acid)}
+.c-price span{font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--muted-2);letter-spacing:0}
+.c-acid .c-price{color:var(--ink);border-top-color:rgba(7,7,11,.18)}
+.c-acid .c-price span{color:rgba(7,7,11,.6)}
 .c-half{grid-column:span 3}
 .c-third{grid-column:span 2}
 .c-acid{background:linear-gradient(150deg,var(--acid),var(--acid-2));border-color:var(--acid);color:var(--ink)}
@@ -274,9 +352,9 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
   <a class="logo" href="#top"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#spk"/></svg><span>Tercia</span></a>
   <span class="logo-tag">Агентство<br>цифровых продуктов</span>
   <nav class="nav-links">
-    <a href="#services">Услуги</a><a href="#cases">Кейсы</a><a href="#process">Процесс</a><a href="#stats">Цифры</a><a href="portfolio/">Портфолио</a><a href="#contacts">Контакты</a>
+    <a href="#services">Услуги</a><a href="dental/">Стоматологиям</a><a href="reputation/">Репутация</a><a href="#cases">Кейсы</a><a href="portfolio/">Портфолио</a><a href="#zayavka">Контакты</a>
   </nav>
-  <a href="#cta" class="btn btn-acid">Обсудить проект</a>
+  <a href="#zayavka" class="btn btn-acid">Обсудить проект</a>
   <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
 </div></header>
 
@@ -286,10 +364,10 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
   <div class="wrap hero-grid">
     <div>
       <h1>Цифровые<br>продукты <span class="acid">под ключ</span></h1>
-      <p class="hero-sub">Сайты, Telegram-боты, mini-app, AI-автоматизация и контент. Одна команда ведёт продукт от первой гипотезы до стабильной выручки.</p>
+      <p class="hero-sub">Сайты, Telegram-боты, mini-app, AI-автоматизация, контент и работа с отзывами на картах. Одна команда ведёт продукт от первой гипотезы до стабильной выручки.</p>
       <div class="hero-act">
-        <a href="#cta" class="btn btn-acid">Обсудить проект →</a>
-        <a href="#cases" class="btn btn-ghost">Смотреть кейсы</a>
+        <a href="#zayavka" class="btn btn-acid">Обсудить проект →</a>
+        <a href="#niches" class="btn btn-ghost">Готовые решения</a>
       </div>
     </div>
 
@@ -355,7 +433,7 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
 <section class="sec wrap" id="services">
   <div class="head">
     <div><div class="kick">Услуги</div><h2>Всё для бизнеса<br>в диджитал</h2></div>
-    <p class="lead">Четыре направления и одна команда, которая доводит проект от гипотезы до измеримого результата.</p>
+    <p class="lead">Пять направлений и одна команда, которая доводит проект от гипотезы до измеримого результата. Цены — «от»: точную назовём после короткого разбора задачи.</p>
   </div>
   <div class="bento">
     <article class="card c-feature">
@@ -365,28 +443,62 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
         <div class="c-t">Сайты и лендинги</div>
         <p>Продающие сайты от прототипа до запуска. Скорость, чистая аналитика и логика, которую вы понимаете без разработчика.</p>
         <div class="c-tags"><span class="tag">Figma</span><span class="tag">Next.js</span><span class="tag">WordPress</span><span class="tag">A/B</span></div>
+        <div class="c-price">от 19 000 ₽ <span>· первая версия за 7 дней</span></div>
       </div>
     </article>
     <article class="card c-half h-v">
       <div class="c-num">02</div>
       <div class="c-ico"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 5 3 11l6 2 2 6z"/></svg></div>
-      <div><div class="c-t">Telegram-боты и mini-app</div><p>Воронки, оплаты, личные кабинеты. Продажи и поддержка 24/7 без менеджера.</p></div>
+      <div><div class="c-t">Telegram-боты и mini-app</div><p>Воронки, оплаты, личные кабинеты. Продажи и поддержка 24/7 без менеджера.</p>
+      <div class="c-price">от 15 000 ₽</div></div>
     </article>
-    <article class="card c-half">
+    <article class="card c-third">
       <div class="c-num">03</div>
       <div class="c-ico"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h5a4 4 0 0 1 4 4v5"/></svg></div>
-      <div><div class="c-t">AI-автоматизация</div><p>n8n, CRM и чаты в одном контуре.</p></div>
+      <div><div class="c-t">AI-автоматизация</div><p>n8n, CRM и чаты в одном контуре.</p>
+      <div class="c-price">от 12 000 ₽</div></div>
     </article>
-    <article class="card c-half c-acid">
+    <article class="card c-third">
       <div class="c-num">04</div>
-      <div class="c-ico"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#07070B" stroke-width="1.6"><path d="m10 8 6 4-6 4z"/><rect x="2" y="4" width="20" height="16" rx="3"/></svg></div>
-      <div><div class="c-t">Контент и рилсы</div><p>Сценарий, съёмка, монтаж — пачками.</p></div>
+      <div class="c-ico"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4z"/><rect x="2" y="4" width="20" height="16" rx="3"/></svg></div>
+      <div><div class="c-t">Контент и рилсы</div><p>Сценарий, съёмка, монтаж — пачками.</p>
+      <div class="c-price">от 9 000 ₽</div></div>
+    </article>
+    <article class="card c-third c-acid">
+      <div class="c-num">05 · новое</div>
+      <div class="c-ico"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#07070B" stroke-width="1.6"><path d="m12 2 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17l-5.9 3 1.2-6.5L2.5 8.9 9.1 8z"/></svg></div>
+      <div><div class="c-t">Репутация на картах</div><p>Отвечаем на отзывы, оформляем карточки, поднимаем рейтинг на Яндекс Картах и 2ГИС.</p>
+      <div class="c-price">от 12 000 ₽ <span>· в месяц</span></div></div>
     </article>
   </div>
 </section>
 
+
+<section class="sec wrap" id="niches">
+  <div class="head">
+    <div><div class="kick">Готовые решения</div><h2>Собрано под конкретный<br>бизнес</h2></div>
+    <p class="lead">Два направления, где у нас готовы и продукт, и цены. Открывайте — там всё по делу: что входит, сколько стоит и живое демо.</p>
+  </div>
+  <div class="niches">
+    <a class="niche n-d" href="dental/">
+      <span class="lbl">Стоматологиям</span>
+      <h3>Сайт и онлайн-запись<br>для клиники за 7 дней</h3>
+      <p>Пациенты сразу видят цены и врачей и записываются сами — даже ночью. По желанию Telegram-бот с напоминанием о визите.</p>
+      <div class="n-meta"><span><b>от 19 000 ₽</b></span><span>живое демо клиники</span><span><b>−50%</b> первым 10</span></div>
+      <span class="go">Смотреть решение →</span>
+    </a>
+    <a class="niche n-r" href="reputation/">
+      <span class="lbl">Репутация · новое</span>
+      <h3>Отзывы и рейтинг<br>на Картах и 2ГИС</h3>
+      <p>Отвечаем на каждый отзыв в течение суток, оформляем карточки и собираем отзывы у реальных клиентов. Без накруток.</p>
+      <div class="n-meta"><span><b>от 12 000 ₽</b>/мес</span><span>аудит бесплатно</span><span><b>24 часа</b> на аудит</span></div>
+      <span class="go">Смотреть решение →</span>
+    </a>
+  </div>
+</section>
+
 <section class="band" id="stats"><div class="wrap band-g">
-  <div><div class="b-num a">4</div><div class="b-lab">направления — одна команда</div></div>
+  <div><div class="b-num a">5</div><div class="b-lab">направлений — одна команда</div></div>
   <div><div class="b-num v">7 дн.</div><div class="b-lab">до запуска первой версии</div></div>
   <div><div class="b-num c">24/7</div><div class="b-lab">боты и поддержка</div></div>
   <div><div class="b-num a">20</div><div class="b-lab">работ в портфолио</div></div>
@@ -423,12 +535,64 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
 </section>
 
 
-<section class="cta" id="cta"><div class="wrap">
-  <div class="kick" style="justify-content:center">Свободны 3 слота</div>
-  <h2>Запустим ваш<br>продукт</h2>
-  <p>Бесплатная консультация и план запуска за 24 часа.</p>
-  <a href="https://t.me/tercia_it" class="btn btn-acid">Написать в Telegram →</a>
+
+<section class="sec wrap" id="about">
+  <div class="head"><div><div class="kick">О нас</div><h2>Кто будет делать<br>вашу задачу</h2></div>
+  <p class="lead">Небольшая команда без прослоек: вы говорите напрямую с тем, кто отвечает за результат.</p></div>
+  <div class="about">
+    <div class="about-card">
+      <div class="ab-top">
+        <div class="ab-ava">АА</div>
+        <div><div class="ab-n">Амир Абдурахманов</div><div class="ab-r">Основатель Tercia · разработка и продукт</div></div>
+      </div>
+      <div class="ab-list">
+        <div class="ab-i"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span><b>Работаем по договору</b>, предоплата 50%, остальное после запуска.</span></div>
+        <div class="ab-i"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span><b>ИП с 2026 года</b> — счёт, закрывающие документы, безналичный расчёт.</span></div>
+        <div class="ab-i"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span><b>Удалённо по всей России.</b> Созвоны, демо и правки — онлайн.</span></div>
+        <div class="ab-i"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span><b>20 работ в портфолио</b> — собственные проекты и концепты, честно помечены.</span></div>
+      </div>
+    </div>
+    <div class="vals">
+      <div class="val"><div class="t">Скорость важнее идеала</div><p>Рабочая версия в проде за неделю полезнее идеального макета через три месяца. Улучшаем на живых данных.</p></div>
+      <div class="val"><div class="t">Цифры вместо слов</div><p>Не «поработали над визуалом», а «заявок стало больше на столько-то». Каждую неделю — демо и понятный отчёт.</p></div>
+      <div class="val"><div class="t">Ничего не выдумываем</div><p>Работы в портфолио, где клиента ещё не было, помечены как концепт. Чужие кейсы своими не называем.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lead-sec" id="zayavka"><div class="wrap lead-g">
+  <div>
+    <div class="kick">Свободны 3 слота</div>
+    <h2>Расскажите<br>про задачу</h2>
+    <p class="lead">Ответим в течение часа в рабочее время. Если у вас уже есть сайт — бесплатно разберём его и пришлём список того, что стоит исправить.</p>
+    <div class="ways">
+      <a class="way" href="https://t.me/tercia_it" target="_blank" rel="noopener">
+        <span class="ic"><svg width="19" viewBox="0 0 24 24" fill="currentColor"><path d="M9.8 18.7l.3-4.2 7.7-7c.3-.3-.1-.4-.5-.2L7.7 13.3l-4-1.3c-.9-.3-.9-.9.2-1.3l16-6.2c.7-.3 1.4.2 1.1 1.3l-2.7 12.8c-.2.9-.7 1.1-1.5.7l-4.2-3.1-2 1.9c-.2.3-.4.4-.8.4z"/></svg></span>
+        <span><span class="t">Telegram</span><span class="s">@tercia_it — отвечаем быстрее всего</span></span></a>
+      <a class="way" href="https://wa.me/79882716669" target="_blank" rel="noopener">
+        <span class="ic"><svg width="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 5 5.1-1.3A10 10 0 1 0 12 2zm5.5 12.4c-.3.8-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.6-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.1.1.3 0 .5l-.3.5-.4.5c-.2.1-.3.3-.1.6.1.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 .9c.2.1.4.2.5.3.1.2.1.6-.1 1.4z"/></svg></span>
+        <span><span class="t">WhatsApp</span><span class="s">+7 988 271 66 69</span></span></a>
+      <a class="way" href="mailto:terciaagency@gmail.com">
+        <span class="ic"><svg width="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+        <span><span class="t">Почта</span><span class="s">terciaagency@gmail.com</span></span></a>
+    </div>
+  </div>
+
+  <form class="lead-f" id="lead" novalidate>
+    <div class="fld"><label for="f-name">Как к вам обращаться</label><input id="f-name" type="text" autocomplete="name" placeholder="Имя или название компании" required></div>
+    <div class="fld"><label for="f-phone">Телефон или адрес сайта</label><input id="f-phone" type="text" autocomplete="tel" placeholder="+7 ___ ___ __ __ или site.ru" required></div>
+    <div class="fld"><label for="f-task">Что нужно</label><textarea id="f-task" placeholder="Например: сайт с онлайн-записью и бот с напоминаниями"></textarea></div>
+    <label class="consent"><input type="checkbox" id="f-ok" required>
+      <span>Согласен на обработку персональных данных в соответствии с <a href="privacy/">политикой конфиденциальности</a>.</span></label>
+    <div class="send-row">
+      <button type="submit" class="btn btn-wa">Отправить в WhatsApp</button>
+      <button type="button" class="btn btn-tg" data-tg>Отправить в Telegram</button>
+    </div>
+    <p class="f-note">Заявка уйдёт в мессенджер с уже готовым текстом — останется нажать «отправить»</p>
+    <div class="f-status" id="f-status" role="status"></div>
+  </form>
 </div></section>
+
 </main>
 
 <footer class="ftr" id="contacts"><div class="wrap">
@@ -437,9 +601,14 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
       <a class="logo" href="#top"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#spk"/></svg><span>Tercia</span></a>
       <p>Агентство цифровых продуктов полного цикла. Идея, продукт, рост — три такта одной команды.</p>
     </div>
-    <div class="f-col"><div class="f-h">Услуги</div><a href="#services">Сайты</a><a href="#services">Боты и mini-app</a><a href="#services">Автоматизация</a></div>
-    <div class="f-col"><div class="f-h">Агентство</div><a href="#cases">Кейсы</a><a href="portfolio/">Портфолио</a><a href="#process">Процесс</a><a href="#stats">Цифры</a><a href="#cta">Контакты</a></div>
+    <div class="f-col"><div class="f-h">Услуги</div><a href="#services">Сайты</a><a href="#services">Боты и mini-app</a><a href="#services">Автоматизация</a><a href="reputation/">Репутация на картах</a><a href="dental/">Стоматологиям</a></div>
+    <div class="f-col"><div class="f-h">Агентство</div><a href="#about">О нас</a><a href="#cases">Кейсы</a><a href="portfolio/">Портфолио</a><a href="#process">Процесс</a><a href="#zayavka">Контакты</a><a href="privacy/">Политика конфиденциальности</a></div>
     <div class="f-col"><div class="f-h">Связь</div><a href="https://t.me/tercia_it">@tercia_it</a><a href="https://wa.me/79882716669">+7 988 271 66 69</a><a href="mailto:terciaagency@gmail.com">terciaagency@gmail.com</a></div>
+  </div>
+  <div class="req">
+    <b>ИП Абдурахманов Амир Алаудинович</b><br>
+    ОГРНИП 326050000124876 · ИНН 057205659737<br>
+    Работаем по договору, предоплата 50%. Удалённо по всей России.
   </div>
   <div class="f-bot"><span>© 2026 Tercia. Все права защищены.</span><span>tercia.dev</span></div>
 </div></footer>
@@ -452,7 +621,8 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
 
   var groups = [['.head', 0], ['.bento > .card', 70], ['.band-g > div', 70],
                 ['.steps > .step', 80], ['.cases > .case', 70], ['.quote', 0],
-                ['#cta .wrap > *', 80], ['.f-grid > div', 60]];
+                ['.niches > .niche', 80], ['.about > *', 80], ['.vals > .val', 70],
+                ['#zayavka .lead-g > *', 80], ['.f-grid > div', 60]];
   var items = [];
   groups.forEach(function (g) {
     Array.prototype.forEach.call(document.querySelectorAll(g[0]), function (el, i) {
@@ -886,5 +1056,64 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,58px);line
   }
 })();
 </script>
+
+<script>
+/* Форма заявки → мессенджер. Бэкенда нет (GitHub Pages — статика):
+   собираем текст и открываем WhatsApp с подстановкой или Telegram с копией в буфер. */
+(function () {
+  var form = document.getElementById('lead'); if (!form) return;
+  var WA = '79882716669', TG = 'tercia_it', box = document.getElementById('f-status');
+  function val(id){ var el = document.getElementById(id); return el ? (el.value || '').trim() : ''; }
+  function say(m, ok){
+    box.textContent = m; box.classList.add('on');
+    box.style.border = '1px solid ' + (ok ? 'rgba(84,224,138,.3)' : 'rgba(255,138,107,.35)');
+    box.style.background = ok ? 'rgba(84,224,138,.08)' : 'rgba(255,138,107,.08)';
+    box.style.color = ok ? '#54E08A' : '#FF8A6B';
+  }
+  function valid(){
+    if (!val('f-name')) { say('Напишите, как к вам обращаться.', false); return false; }
+    if (!val('f-phone')) { say('Оставьте телефон или адрес сайта — иначе не сможем ответить.', false); return false; }
+    if (!document.getElementById('f-ok').checked) { say('Отметьте согласие на обработку данных.', false); return false; }
+    return true;
+  }
+  function compose(){
+    var t = 'Заявка с сайта tercia.dev\n';
+    t += 'Имя: ' + val('f-name') + '\nКонтакт: ' + val('f-phone') + '\n';
+    if (val('f-task')) t += 'Задача: ' + val('f-task') + '\n';
+    return t;
+  }
+  function send(ch){
+    if (!valid()) return;
+    var text = compose();
+    if (ch === 'wa') {
+      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      say('Открыли WhatsApp — текст заявки уже подставлен, нажмите «отправить».', true);
+    } else {
+      var go = function(){
+        window.open('https://t.me/' + TG, '_blank', 'noopener');
+        say('Текст заявки скопирован. Открыли Telegram — вставьте его в чат и отправьте.', true);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(go, go);
+      else go();
+    }
+  }
+  form.addEventListener('submit', function(e){ e.preventDefault(); send('wa'); });
+  var tg = form.querySelector('[data-tg]');
+  if (tg) tg.addEventListener('click', function(){ send('tg'); });
+})();
+</script>
+
+<!-- Яндекс Метрика.
+     Чтобы включить: заведите счётчик на metrika.yandex.ru, скопируйте его номер
+     и замените ВСТАВЬТЕ_НОМЕР_СЧЁТЧИКА на него (два места), затем снимите комментарий.
+<script>
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+   ym(ВСТАВЬТЕ_НОМЕР_СЧЁТЧИКА,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/ВСТАВЬТЕ_НОМЕР_СЧЁТЧИКА" style="position:absolute;left:-9999px" alt=""></div></noscript>
+-->
 </body>
 </html>
