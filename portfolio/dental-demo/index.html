@@ -488,6 +488,67 @@ html[data-theme="evening"] .ftr{background:#071A1E}
 .sell p{font-size:14.6px;opacity:.82;margin-bottom:14px}
 .sell .btn{background:var(--deep);color:var(--enamel);width:100%}
 
+
+/* --- иллюстрации вместо фотографий --- */
+.scene-svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-art{padding:0}
+.hero-art .ph{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;font-size:11.5px;background:color-mix(in srgb,var(--enamel) 86%,transparent);color:var(--body);padding:6px 14px;border-radius:99px;white-space:nowrap;max-width:calc(100% - 28px);overflow:hidden;text-overflow:ellipsis}
+.doc .ph{padding:0;overflow:hidden}
+.doc .ph .cap{position:absolute;right:14px;bottom:16px;font-size:11px;opacity:.65;z-index:2;text-align:right}
+.svc-art{padding:0;overflow:hidden}
+.svc-art .cap{position:absolute;left:0;right:0;bottom:12px;font-size:11.5px;color:var(--soft);z-index:2}
+
+/* --- 3D-имплант --- */
+.d3{margin-top:14px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden}
+.d3-poster{position:relative;aspect-ratio:4/3;display:grid;place-items:center;background:var(--sand);cursor:pointer;
+  border:0;width:100%;padding:0}
+.d3-poster .go{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:var(--deep);color:var(--enamel);
+  border-radius:99px;padding:11px 20px;font-size:14.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px;
+  white-space:nowrap}
+.d3-stage{display:none}
+.d3.on .d3-poster{display:none}
+.d3.on .d3-stage{display:block}
+.d3-canvas{display:block;width:100%;aspect-ratio:4/3;background:
+  radial-gradient(120% 90% at 50% 18%,color-mix(in srgb,var(--glass) 55%,transparent),var(--sand));
+  touch-action:none;cursor:grab}
+.d3-canvas:active{cursor:grabbing}
+.d3-ui{padding:14px 16px 16px;border-top:1px solid var(--line-2)}
+.d3-ui .lbl{display:flex;justify-content:space-between;font-size:13px;color:var(--soft);margin-bottom:8px}
+.d3-ui input[type=range]{width:100%;accent-color:var(--brand);height:28px}
+.d3-parts{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.d3-parts span{font-size:12.5px;font-weight:600;border-radius:99px;padding:6px 12px;display:inline-flex;align-items:center;gap:6px}
+.d3-parts i{width:9px;height:9px;border-radius:50%;display:block}
+.d3-parts .p1{background:#E6E8EA;color:#3C4348}.d3-parts .p1 i{background:#9AA4AB}
+.d3-parts .p2{background:#EDE6DA;color:#5B5043}.d3-parts .p2 i{background:#B9A88E}
+.d3-parts .p3{background:#F3F6F4;color:#3A4A46}.d3-parts .p3 i{background:#FFFFFF;border:1px solid #CBD6D2}
+html[data-theme="evening"] .d3-parts span{filter:brightness(.85)}
+
+/* --- модалка видеовизитки --- */
+.modal{position:fixed;inset:0;z-index:90;background:rgba(7,25,28,.72);display:none;align-items:center;
+  justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.modal.on{display:flex}
+.modal-in{background:var(--card);border-radius:var(--r-lg);width:min(380px,100%);overflow:hidden;position:relative;
+  max-height:92vh;display:flex;flex-direction:column}
+.modal-x{position:absolute;top:10px;right:10px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;
+  background:rgba(14,59,58,.6);color:#fff;font-size:17px;cursor:pointer}
+.vid{aspect-ratio:9/16;position:relative;background:#0E3B3A;display:grid;place-items:center;overflow:hidden}
+.vid .poster{position:absolute;inset:0}
+.vid .play{position:relative;z-index:2;width:68px;height:68px;border-radius:50%;border:0;background:var(--accent);
+  color:var(--accent-ink);font-size:22px;cursor:pointer;display:grid;place-items:center;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}
+.vid .subs{position:absolute;left:14px;right:14px;bottom:52px;z-index:2;color:#fff;font-size:17px;font-weight:600;
+  line-height:1.35;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.6);opacity:0}
+.vid.playing .play{display:none}
+.vid.playing .subs{animation:subs 15s linear forwards}
+.vid .bar{position:absolute;left:0;bottom:0;height:3px;background:var(--accent);width:0;z-index:3}
+.vid.playing .bar{animation:barGo 15s linear forwards}
+@keyframes barGo{to{width:100%}}
+@keyframes subs{0%,4%{opacity:0}8%,92%{opacity:1}100%{opacity:0}}
+.vid .who{position:absolute;left:14px;top:14px;z-index:2;color:#fff}
+.vid .who b{display:block;font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:-.02em}
+.vid .who span{font-size:12.5px;opacity:.82}
+.modal-note{padding:14px 16px;font-size:12.6px;color:var(--soft);border-top:1px solid var(--line-2)}
+
 /* --- появление блоков при прокрутке --- */
 .rv{opacity:0;transform:translateY(14px)}
 .rv.in{opacity:1;transform:none;transition:opacity .55s var(--ease),transform .55s var(--ease)}
@@ -594,11 +655,8 @@ html[data-theme="evening"] .ftr{background:#071A1E}
     </div>
   </div>
   <div class="hero-art">
-    <svg class="mts" viewBox="0 0 600 180" fill="none" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0 150 L120 70 L190 120 L280 40 L360 110 L450 60 L520 115 L600 80 L600 180 L0 180Z" fill="currentColor" opacity=".45"/>
-      <path d="M0 165 L90 125 L170 155 L260 110 L350 150 L440 120 L530 155 L600 130 L600 180 L0 180Z" fill="currentColor" opacity=".7"/>
-    </svg>
-    <p class="ph">[Фото: врач и пациент в кресле, тёплый вечерний свет, вид на море в окне]</p>
+    <div class="scene-svg" id="hero-scene" aria-hidden="true"></div>
+    <p class="ph">Иллюстрация. На сайте клиники — фотография кабинета</p>
     <a class="quote-card" href="#calc">
       <span class="k">Смета за 30 секунд</span>
       <b>от 38 000 ₽</b>
@@ -669,7 +727,7 @@ html[data-theme="evening"] .ftr{background:#071A1E}
     <button role="tab" aria-selected="false" data-svc="kids">Детям</button>
   </div>
   <div class="svc-body rv">
-    <div class="svc-art" id="svc-art"><span id="svc-art-t">[Фото: лечение под микроскопом, спокойный кабинет]</span></div>
+    <div class="svc-art" id="svc-art"><div class="scene-svg" id="svc-scene" aria-hidden="true"></div><span class="cap" id="svc-art-t">Иллюстрация</span></div>
     <div id="svc-panes"></div>
   </div>
 </div></section>
@@ -759,7 +817,7 @@ html[data-theme="evening"] .ftr{background:#071A1E}
   <p class="sub">Каждый ведёт пациента от первого приёма до контрольного осмотра. Никаких передач «по смене».</p></div>
   <div class="docs rv">
     <article class="doc adultsonly">
-      <div class="ph a">[Портрет: тёплый свет, нейтральный фон]
+      <div class="ph a" data-portrait="0"><span class="cap">Иллюстрация</span>
         <button class="play" data-video="Анна Иванова">▶ Видеовизитка 15 с</button></div>
       <div class="b"><div class="n">Анна Иванова</div><div class="sp">Терапевт, эндодонтист · стаж 12 лет</div>
         <p class="q">«Лечу каналы под микроскопом. Не бойтесь — я всё объясню до того, как возьму инструмент.»</p>
@@ -767,7 +825,7 @@ html[data-theme="evening"] .ftr{background:#071A1E}
         <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="ivanova">Записаться к этому врачу</button></div>
     </article>
     <article class="doc adultsonly">
-      <div class="ph b">[Портрет: тёплый свет, нейтральный фон]
+      <div class="ph b" data-portrait="1"><span class="cap">Иллюстрация</span>
         <button class="play" data-video="Сергей Петров">▶ Видеовизитка 15 с</button></div>
       <div class="b"><div class="n">Сергей Петров</div><div class="sp">Хирург-имплантолог · стаж 15 лет</div>
         <p class="q">«Поставил более двух тысяч имплантов. Операция занимает меньше часа, вечером вы уже работаете.»</p>
@@ -775,7 +833,7 @@ html[data-theme="evening"] .ftr{background:#071A1E}
         <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="petrov">Записаться к этому врачу</button></div>
     </article>
     <article class="doc adultsonly">
-      <div class="ph c">[Портрет: тёплый свет, нейтральный фон]
+      <div class="ph c" data-portrait="2"><span class="cap">Иллюстрация</span>
         <button class="play" data-video="Мария Орлова">▶ Видеовизитка 15 с</button></div>
       <div class="b"><div class="n">Мария Орлова</div><div class="sp">Ортодонт · стаж 9 лет</div>
         <p class="q">«Покажу 3D-план: как будет выглядеть улыбка в конце — ещё до того, как вы согласитесь.»</p>
@@ -783,7 +841,7 @@ html[data-theme="evening"] .ftr{background:#071A1E}
         <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="orlova">Записаться к этому врачу</button></div>
     </article>
     <article class="doc">
-      <div class="ph d">[Портрет: тёплый свет, нейтральный фон]
+      <div class="ph d" data-portrait="3"><span class="cap">Иллюстрация</span>
         <button class="play" data-video="Дмитрий Ковалёв">▶ Видеовизитка 15 с</button></div>
       <div class="b"><div class="n">Дмитрий Ковалёв</div><div class="sp">Детский стоматолог · стаж 7 лет</div>
         <p class="q">«Сначала знакомимся, потом считаем зубы, и только потом лечим. Без слёз и уговоров.»</p>
@@ -1111,6 +1169,376 @@ var QUIZ = {
              svc:'kids', doc:'kovalev', res:'Запишем к детскому стоматологу — первый приём знакомство, без лечения.' }
 };
 
+
+/* ============================================================
+   Иллюстрации. Фотографий в демо нет: вся графика — SVG,
+   поэтому страница не весит ничего и не врёт «фото клиники».
+   ============================================================ */
+function svg(vb, body) {
+  return '<svg class="scene-svg" viewBox="' + vb + '" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + body + '</svg>';
+}
+
+/* кабинет с видом на море */
+var HERO = svg('0 0 420 460',
+  '<rect width="420" height="460" fill="#EFE6D6"/>' +
+  '<rect x="34" y="30" width="352" height="236" rx="20" fill="#CFE3DC"/>' +
+  '<path d="M34 182h352v64a20 20 0 0 1-20 20H54a20 20 0 0 1-20-20z" fill="#8FC2B6"/>' +
+  '<circle cx="306" cy="110" r="34" fill="#FFD9A8"/>' +
+  '<path d="M34 182q60-16 118 0t118-8 116 8v10H34z" fill="#A8D8CC"/>' +
+  '<rect x="202" y="30" width="10" height="236" fill="#EFE6D6" opacity=".85"/>' +
+  '<rect x="34" y="140" width="352" height="9" fill="#EFE6D6" opacity=".85"/>' +
+  // кресло
+  '<path d="M96 430v-52a26 26 0 0 1 26-26h132a26 26 0 0 1 26 26v52z" fill="#1F7A70"/>' +
+  '<path d="M118 352v-62a22 22 0 0 1 22-22h44a22 22 0 0 1 22 22v62z" fill="#0E3B3A"/>' +
+  '<rect x="236" y="300" width="74" height="26" rx="13" fill="#0E3B3A"/>' +
+  '<rect x="150" y="404" width="120" height="56" rx="10" fill="#0E3B3A" opacity=".18"/>' +
+  // лампа
+  '<path d="M330 300v-54a18 18 0 0 0-18-18h-26" stroke="#0E3B3A" stroke-width="7" fill="none" stroke-linecap="round"/>' +
+  '<ellipse cx="338" cy="310" rx="30" ry="16" fill="#0E3B3A"/>' +
+  '<ellipse cx="338" cy="306" rx="22" ry="10" fill="#FFE9BE"/>' +
+  // растение
+  '<path d="M52 460v-40" stroke="#1F7A70" stroke-width="6" stroke-linecap="round"/>' +
+  '<path d="M52 430c-18-6-24-24-18-38 16 2 24 18 18 38zM52 420c16-8 20-26 12-38-14 4-20 20-12 38z" fill="#1F7A70"/>');
+
+/* портреты врачей */
+function portrait(bg1, bg2, hair, coat, hairPath) {
+  return svg('0 0 300 330',
+    '<defs><linearGradient id="g' + hair.slice(1) + '" x1="0" y1="0" x2="0" y2="1">' +
+    '<stop offset="0" stop-color="' + bg1 + '"/><stop offset="1" stop-color="' + bg2 + '"/></linearGradient></defs>' +
+    '<rect width="300" height="330" fill="url(#g' + hair.slice(1) + ')"/>' +
+    '<circle cx="150" cy="118" r="92" fill="#FFFFFF" opacity=".17"/>' +
+    '<path d="M46 330v-24c0-44 36-66 104-66s104 22 104 66v24z" fill="' + coat + '"/>' +
+    '<path d="M150 240l-30 90h60z" fill="#FFFFFF" opacity=".55"/>' +
+    '<rect x="186" y="268" width="26" height="8" rx="4" fill="#1F7A70" opacity=".8"/>' +
+    hairPath.replace(/HAIR/g, hair) +
+    '<ellipse cx="150" cy="150" rx="46" ry="54" fill="#E8C4A6"/>' +
+    '<path d="M104 146c0-34 20-54 46-54s46 20 46 54c0-44-20-62-46-62s-46 18-46 62z" fill="' + hair + '"/>' +
+    '<circle cx="134" cy="150" r="3.4" fill="#3B2A21"/><circle cx="166" cy="150" r="3.4" fill="#3B2A21"/>' +
+    '<path d="M140 174q10 8 20 0" stroke="#3B2A21" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+    '<rect x="128" y="196" width="44" height="30" fill="#E8C4A6"/>');
+}
+var PORTRAITS = [
+  portrait('#D7E7E2', '#AFCCC5', '#4A3327', '#FFFFFF',
+    '<path d="M98 150c-6-48 14-74 52-74s58 26 52 74c6-56-16-82-52-82s-58 26-52 82z" fill="HAIR"/>' +
+    '<path d="M96 140q-14 44 4 74 6-40 2-74z" fill="HAIR"/><path d="M204 140q14 44-4 74-6-40-2-74z" fill="HAIR"/>'),
+  portrait('#E9DECB', '#CDB89A', '#2E2621', '#F4F6F5',
+    '<path d="M100 148c-4-44 16-68 50-68s54 24 50 68c4-52-14-76-50-76s-54 24-50 76z" fill="HAIR"/>'),
+  portrait('#D4E3EC', '#A8C3D4', '#5A3B2E', '#FFFFFF',
+    '<path d="M98 152c-8-52 16-78 52-78s60 26 52 78c8-58-16-86-52-86s-60 28-52 86z" fill="HAIR"/>' +
+    '<path d="M92 146q-16 56 6 92 8-50 2-92z" fill="HAIR"/><path d="M208 146q16 56-6 92-8-50-2-92z" fill="HAIR"/>'),
+  portrait('#EADFE9', '#C3AFC6', '#38302B', '#FFFFFF',
+    '<path d="M102 146c-4-42 16-66 48-66s52 24 48 66c4-50-12-74-48-74s-52 24-48 74z" fill="HAIR"/>')
+];
+
+/* сцены услуг */
+var SCENES = {
+  caries: svg('0 0 420 300',
+    '<rect width="420" height="300" fill="#E8DCC8"/>' +
+    '<circle cx="300" cy="90" r="64" fill="#A8D8CC" opacity=".55"/>' +
+    '<path d="M120 236V124a16 16 0 0 1 16-16h26" stroke="#0E3B3A" stroke-width="10" fill="none" stroke-linecap="round"/>' +
+    '<rect x="92" y="236" width="80" height="18" rx="9" fill="#0E3B3A"/>' +
+    '<path d="M162 108h54l-16 44h-54z" fill="#1F7A70"/>' +
+    '<circle cx="186" cy="92" r="20" fill="#0E3B3A"/>' +
+    '<path d="M258 196c20 0 26 9 38 9s18-9 38-9c12 0 19 8 19 23 0 26-12 60-26 60-10 0-11-20-27-20s-17 20-27 20c-14 0-26-34-26-60 0-15 7-23 19-23z" fill="#FFFFFF"/>' +
+    '<circle cx="312" cy="232" r="11" fill="#FF6A4D"/>'),
+  implant: svg('0 0 420 300',
+    '<rect width="420" height="300" fill="#E8DCC8"/>' +
+    '<rect x="42" y="38" width="200" height="224" rx="14" fill="#0E3B3A"/>' +
+    '<path d="M74 210c0-46 22-78 68-78s68 32 68 78" stroke="#A8D8CC" stroke-width="6" fill="none"/>' +
+    '<circle cx="142" cy="128" r="30" fill="#1F7A70" opacity=".6"/>' +
+    '<rect x="300" y="86" width="22" height="92" rx="11" fill="#9AA4AB"/>' +
+    '<path d="M300 100h22M300 116h22M300 132h22M300 148h22M300 164h22" stroke="#E8DCC8" stroke-width="4"/>' +
+    '<path d="M302 86h18l-4-26h-10z" fill="#B9A88E"/>' +
+    '<path d="M288 60c10 0 13 5 19 5s9-5 19-5c6 0 10 4 10 12 0 13-6 30-13 30-5 0-6-10-14-10s-8 10-13 10c-7 0-13-17-13-30 0-8 4-12 10-12z" fill="#FFFFFF"/>'),
+  white: svg('0 0 420 300',
+    '<rect width="420" height="300" fill="#E8DCC8"/>' +
+    '<circle cx="210" cy="150" r="104" fill="#FFFFFF" opacity=".45"/>' +
+    '<path d="M118 150q92-62 184 0-92 86-184 0z" fill="#8E4A46"/>' +
+    '<path d="M134 150q76-48 152 0-76 70-152 0z" fill="#3B1C1C"/>' +
+    '<rect x="146" y="124" width="26" height="36" rx="6" fill="#FFF"/><rect x="176" y="120" width="28" height="40" rx="6" fill="#FFF"/>' +
+    '<rect x="208" y="120" width="28" height="40" rx="6" fill="#FFF"/><rect x="240" y="124" width="26" height="36" rx="6" fill="#FFF"/>' +
+    '<path d="M330 66l7 17 17 7-17 7-7 17-7-17-17-7 17-7z" fill="#FF6A4D"/>' +
+    '<path d="M92 196l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#1F7A70"/>'),
+  braces: svg('0 0 420 300',
+    '<rect width="420" height="300" fill="#E8DCC8"/>' +
+    '<circle cx="110" cy="92" r="58" fill="#A8D8CC" opacity=".5"/>' +
+    '<rect x="96" y="128" width="228" height="48" rx="24" fill="#FFFFFF"/>' +
+    '<path d="M96 152h228" stroke="#9AA4AB" stroke-width="5"/>' +
+    '<g fill="#1F7A70"><rect x="118" y="140" width="18" height="24" rx="5"/><rect x="158" y="140" width="18" height="24" rx="5"/>' +
+    '<rect x="198" y="140" width="18" height="24" rx="5"/><rect x="238" y="140" width="18" height="24" rx="5"/>' +
+    '<rect x="278" y="140" width="18" height="24" rx="5"/></g>' +
+    '<rect x="150" y="206" width="120" height="58" rx="12" fill="#0E3B3A"/>' +
+    '<path d="M166 246q44-26 88 0" stroke="#A8D8CC" stroke-width="6" fill="none"/>'),
+  crown: svg('0 0 420 300',
+    '<rect width="420" height="300" fill="#E8DCC8"/>' +
+    '<rect x="48" y="176" width="324" height="20" rx="10" fill="#B9A88E"/>' +
+    '<path d="M126 176c0-28 14-46 38-46s38 18 38 46z" fill="#FFFFFF"/>' +
+    '<path d="M216 176c0-34 16-56 44-56s44 22 44 56z" fill="#FFFFFF"/>' +
+    '<rect x="150" y="196" width="28" height="44" rx="8" fill="#9AA4AB"/>' +
+    '<rect x="246" y="196" width="28" height="44" rx="8" fill="#9AA4AB"/>' +
+    '<circle cx="332" cy="92" r="40" fill="#A8D8CC" opacity=".55"/>' +
+    '<path d="M86 108h64v44H86z" fill="#1F7A70" opacity=".65"/>'),
+  kids: svg('0 0 420 300',
+    '<rect width="420" height="300" fill="#FFEFD2"/>' +
+    '<circle cx="312" cy="86" r="52" fill="#7FD1F0" opacity=".6"/>' +
+    '<path d="M150 246c0-54 24-86 62-86s62 32 62 86z" fill="#FFFFFF"/>' +
+    '<circle cx="212" cy="140" r="54" fill="#FFD9A8"/>' +
+    '<path d="M158 138c0-38 24-60 54-60s54 22 54 60c0-48-24-68-54-68s-54 20-54 68z" fill="#5A3B2E"/>' +
+    '<circle cx="194" cy="140" r="4" fill="#3B2A21"/><circle cx="230" cy="140" r="4" fill="#3B2A21"/>' +
+    '<path d="M196 166q16 14 32 0" stroke="#3B2A21" stroke-width="4" fill="none" stroke-linecap="round"/>' +
+    '<path d="M96 222l8 19 19 8-19 8-8 19-8-19-19-8 19-8z" fill="#FFB547"/>')
+};
+SCENES.consult = SCENES.caries; SCENES.hygiene = SCENES.white;
+
+/* вставляем иллюстрации */
+$('#hero-scene').innerHTML = HERO;
+$$('[data-portrait]').forEach(function (el) {
+  el.insertAdjacentHTML('afterbegin', PORTRAITS[+el.dataset.portrait]);
+});
+function setScene(id) {
+  $('#svc-scene').innerHTML = SCENES[id] || SCENES.caries;
+  var g = $('#svc-scene svg');
+  if (g) g.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  $('#svc-art-t').textContent = 'Иллюстрация · ' + svcById[id].t.toLowerCase();
+}
+setScene('caries');
+
+
+/* ============================================================
+   3D-имплант. Тело вращения рисуется на обычном canvas 2D:
+   профиль → сетка → сортировка граней по глубине → плоская заливка.
+   Ни WebGL, ни библиотек, ни готовой модели — около 3 КБ кода.
+   Грузится только после нажатия «Покрутить в 3D».
+   ============================================================ */
+var D3_HTML =
+  '<div class="d3" id="d3">' +
+    '<button type="button" class="d3-poster" id="d3-go" aria-label="Открыть трёхмерную модель импланта">' +
+      '<svg viewBox="0 0 420 320" class="scene-svg" aria-hidden="true">' +
+        '<rect width="420" height="320" fill="#E8DCC8"/>' +
+        '<ellipse cx="210" cy="286" rx="96" ry="16" fill="#0E3B3A" opacity=".12"/>' +
+        '<rect x="196" y="150" width="28" height="118" rx="14" fill="#9AA4AB"/>' +
+        '<path d="M196 168h28M196 186h28M196 204h28M196 222h28M196 240h28" stroke="#E8DCC8" stroke-width="5"/>' +
+        '<path d="M198 150h24l-5-30h-14z" fill="#B9A88E"/>' +
+        '<path d="M182 116c13 0 17 6 24 6s11-6 24-6c8 0 13 5 13 15 0 17-8 39-17 39-6 0-7-13-18-13s-10 13-17 13c-9 0-17-22-17-39 0-10 5-15 8-15z" fill="#FFFFFF"/>' +
+      '</svg>' +
+      '<span class="go">Покрутить в 3D →</span>' +
+    '</button>' +
+    '<div class="d3-stage">' +
+      '<canvas class="d3-canvas" id="d3-canvas" width="720" height="540" ' +
+        'role="img" aria-label="Трёхмерная модель импланта: винт, абатмент и коронка"></canvas>' +
+      '<div class="d3-ui">' +
+        '<div class="lbl"><span>Разобрать на части</span><span id="d3-val">собрано</span></div>' +
+        '<input type="range" id="d3-exp" min="0" max="100" value="0" aria-label="Разобрать модель на части">' +
+        '<div class="d3-parts"><span class="p3"><i></i>Коронка</span><span class="p2"><i></i>Абатмент</span><span class="p1"><i></i>Имплант</span></div>' +
+        '<p class="note">Потяните модель пальцем, чтобы повернуть. Схема конструкции — не медицинское изображение.</p>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+function initImplant3D() {
+  var box = $('#d3'), cv = $('#d3-canvas');
+  if (!box || !cv || box.dataset.ready) return;
+  box.dataset.ready = '1';
+  box.classList.add('on');
+  var ctx = cv.getContext('2d'), W = cv.width, H = cv.height;
+  var SEG = 28, yaw = 0.6, pitch = -0.22, drag = null, auto = true, explode = 0, raf = 0;
+
+  /* профили: [y, радиус] снизу вверх */
+  function screw() {
+    var p = [], y;
+    for (y = -56; y <= -12; y += 4) {
+      var k = (y + 56) / 44;
+      var base = 3.4 + 4.2 * Math.min(1, k * 2.2);
+      p.push([y, base + Math.sin(y * 0.9) * 0.85]);
+    }
+    p.push([-10, 7.2]); p.push([-9, 6.4]);
+    return p;
+  }
+  function abut() {
+    return [[-9, 6.4], [-6, 7.1], [-4, 6.6], [0, 5.4], [3, 4.8], [5, 4.4]];
+  }
+  function crown() {
+    return [[5, 5.0], [8, 8.8], [12, 12.4], [16, 14.2], [21, 15.0], [26, 14.8],
+            [31, 13.6], [36, 11.6], [40, 9.0], [43, 6.0], [44.6, 3.0], [45.2, 0]];
+  }
+  var PARTS = [
+    { prof: screw(), col: [154, 164, 171], shift: -0.5 },
+    { prof: abut(),  col: [185, 168, 142], shift: 0.25 },
+    { prof: crown(), col: [246, 245, 240], shift: 1 }
+  ];
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    var L = [-0.34, 0.46, 0.82], ln = Math.hypot(L[0], L[1], L[2]);
+    L = [L[0] / ln, L[1] / ln, L[2] / ln];
+    var faces = [], scale = H / 190, cx = W / 2, cz = H / 2 + 20;
+
+    PARTS.forEach(function (part) {
+      var off = part.shift * explode * 26;
+      var prof = part.prof, i, j;
+      for (i = 0; i < prof.length - 1; i++) {
+        for (j = 0; j < SEG; j++) {
+          var a0 = j / SEG * Math.PI * 2, a1 = (j + 1) / SEG * Math.PI * 2;
+          var quad = [
+            [Math.cos(a0) * prof[i][1],     prof[i][0] + off,     Math.sin(a0) * prof[i][1]],
+            [Math.cos(a1) * prof[i][1],     prof[i][0] + off,     Math.sin(a1) * prof[i][1]],
+            [Math.cos(a1) * prof[i + 1][1], prof[i + 1][0] + off, Math.sin(a1) * prof[i + 1][1]],
+            [Math.cos(a0) * prof[i + 1][1], prof[i + 1][0] + off, Math.sin(a0) * prof[i + 1][1]]
+          ];
+          var pts = [], zs = 0, k;
+          for (k = 0; k < 4; k++) {
+            var x = quad[k][0], y = quad[k][1], z = quad[k][2];
+            var rx = x * cy - z * sy, rz = x * sy + z * cy;
+            var ry = y * cp - rz * sp, fz = y * sp + rz * cp;
+            pts.push([cx + rx * scale, cz - ry * scale]); zs += fz;
+          }
+          /* нормаль по двум рёбрам исходного четырёхугольника */
+          var ux = quad[1][0] - quad[0][0], uy = quad[1][1] - quad[0][1], uz = quad[1][2] - quad[0][2];
+          var vx = quad[3][0] - quad[0][0], vy = quad[3][1] - quad[0][1], vz = quad[3][2] - quad[0][2];
+          var nx = uy * vz - uz * vy, ny = uz * vx - ux * vz, nz = ux * vy - uy * vx;
+          var nl = Math.hypot(nx, ny, nz) || 1;
+          nx /= nl; ny /= nl; nz /= nl;
+          var rnx = nx * cy - nz * sy, rnz = nx * sy + nz * cy;
+          var rny = ny * cp - rnz * sp, rnzz = ny * sp + rnz * cp;
+          if (rnzz > 0.04) continue;                     /* отбрасываем задние грани */
+          var lit = Math.max(0, rnx * L[0] + rny * L[1] - rnzz * L[2]);
+          var sh = Math.min(1, 0.46 + 0.62 * lit);
+          faces.push({ z: zs / 4, p: pts, c: part.col, s: sh });
+        }
+      }
+    });
+
+    /* мягкая тень, чтобы модель не висела в пустоте */
+    ctx.save();
+    ctx.globalAlpha = 0.13; ctx.fillStyle = '#0E3B3A';
+    ctx.beginPath();
+    ctx.ellipse(cx, cz + 56 * scale, 52 * scale, 11 * scale, 0, 0, Math.PI * 2);
+    ctx.fill(); ctx.restore();
+
+    faces.sort(function (a, b) { return a.z - b.z; });
+    faces.forEach(function (f) {
+      ctx.fillStyle = 'rgb(' + Math.round(f.c[0] * f.s) + ',' + Math.round(f.c[1] * f.s) + ',' + Math.round(f.c[2] * f.s) + ')';
+      ctx.beginPath();
+      ctx.moveTo(f.p[0][0], f.p[0][1]);
+      ctx.lineTo(f.p[1][0], f.p[1][1]);
+      ctx.lineTo(f.p[2][0], f.p[2][1]);
+      ctx.lineTo(f.p[3][0], f.p[3][1]);
+      ctx.closePath(); ctx.fill();
+    });
+  }
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function loop() {
+    if (auto && !reduce) yaw += 0.006;
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+  function stop() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+  function start() { if (!raf) loop(); }
+
+  function pos(e) { return (e.touches ? e.touches[0] : e).clientX; }
+  cv.addEventListener('pointerdown', function (e) { drag = pos(e); auto = false; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove', function (e) {
+    if (drag === null) return;
+    yaw += (pos(e) - drag) * 0.012; drag = pos(e); if (reduce) draw();
+  });
+  addEventListener('pointerup', function () { drag = null; });
+  cv.setAttribute('tabindex', '0');
+  cv.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { auto = false; yaw -= 0.25; draw(); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { auto = false; yaw += 0.25; draw(); e.preventDefault(); }
+  });
+  $('#d3-exp').addEventListener('input', function () {
+    explode = this.value / 100;
+    $('#d3-val').textContent = explode < 0.05 ? 'собрано' : (explode > 0.9 ? 'разобрано' : 'разбираем…');
+    if (reduce) draw();
+  });
+
+  /* модель крутится только когда её видно */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.isIntersecting ? start() : stop(); });
+    }, { threshold: 0.05 }).observe(cv);
+  } else { start(); }
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  draw(); start();
+}
+
+
+/* ============================================================
+   Видеовизитка. Механика полностью рабочая: постер → нажатие →
+   пятнадцать секунд с репликами врача и полосой прогресса.
+   Самого ролика в демо нет (его надо снять), поэтому вместо него
+   титры и честная подпись под окном.
+   ============================================================ */
+var VIDEO = {
+  'Анна Иванова': { i: 0, s: 'терапевт, эндодонтист', lines: [
+    'Здравствуйте, я Анна.', 'Лечу каналы под микроскопом.',
+    'Не бойтесь — я всё объясню до того, как возьму инструмент.'] },
+  'Сергей Петров': { i: 1, s: 'хирург-имплантолог', lines: [
+    'Здравствуйте, я Сергей.', 'Поставил больше двух тысяч имплантов.',
+    'Операция занимает меньше часа — вечером вы уже работаете.'] },
+  'Мария Орлова': { i: 2, s: 'ортодонт', lines: [
+    'Здравствуйте, я Мария.', 'Покажу 3D-план вашей улыбки.',
+    'Вы увидите результат до того, как согласитесь на лечение.'] },
+  'Дмитрий Ковалёв': { i: 3, s: 'детский стоматолог', lines: [
+    'Привет, я Дмитрий.', 'Сначала знакомимся, потом считаем зубы.',
+    'И только потом лечим — без слёз и уговоров.'] }
+};
+
+var modal = document.createElement('div');
+modal.className = 'modal';
+modal.innerHTML =
+  '<div class="modal-in" role="dialog" aria-modal="true" aria-label="Видеовизитка врача">' +
+    '<button class="modal-x" aria-label="Закрыть">✕</button>' +
+    '<div class="vid" id="vid">' +
+      '<div class="poster" id="vid-poster"></div>' +
+      '<div class="who"><b id="vid-n"></b><span id="vid-s"></span></div>' +
+      '<button class="play" id="vid-play" aria-label="Запустить видеовизитку">▶</button>' +
+      '<div class="subs" id="vid-subs"></div>' +
+      '<div class="bar"></div>' +
+    '</div>' +
+    '<p class="modal-note" id="vid-note"></p>' +
+  '</div>';
+document.body.appendChild(modal);
+
+var vidTimer = null;
+function closeVideo() {
+  modal.classList.remove('on');
+  $('#vid').classList.remove('playing');
+  if (vidTimer) { clearInterval(vidTimer); vidTimer = null; }
+}
+modal.addEventListener('click', function (e) {
+  if (e.target === modal || e.target.closest('.modal-x')) closeVideo();
+});
+addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideo(); });
+
+function openVideo(name) {
+  var v = VIDEO[name]; if (!v) return;
+  $('#vid-poster').innerHTML = PORTRAITS[v.i];
+  $('#vid-poster').firstChild.style.filter = 'saturate(.85) brightness(.82)';
+  $('#vid-n').textContent = name;
+  $('#vid-s').textContent = v.s;
+  $('#vid-subs').textContent = v.lines[0];
+  $('#vid-note').textContent = 'В демо ролик не записан — показана его механика: титры и полоса на 15 секунд. ' +
+    'На сайте клиники здесь вертикальное видео до 1,5 МБ, оно грузится только после нажатия.';
+  $('#vid').classList.remove('playing');
+  modal.classList.add('on');
+  $('#vid-play').focus();
+}
+$('#vid-play').addEventListener('click', function () {
+  var name = $('#vid-n').textContent, v = VIDEO[name], k = 0;
+  $('#vid').classList.add('playing');
+  $('#vid-subs').textContent = v.lines[0];
+  if (vidTimer) clearInterval(vidTimer);
+  vidTimer = setInterval(function () {
+    k++;
+    if (k < v.lines.length) { $('#vid-subs').textContent = v.lines[k]; }
+    else { clearInterval(vidTimer); vidTimer = null; }
+  }, 4600);
+});
+
 /* ---------- плашка демо ---------- */
 try {
   if (localStorage.getItem('kaspiy-demobar') === 'off') $('#demobar').classList.add('off');
@@ -1217,13 +1645,15 @@ $('#svc-panes').innerHTML = TAB_SVC.map(function (id, i) {
       '<div><b>' + d.n.split(' ')[0] + ' ' + d.n.split(' ')[1] + '</b><span>' + d.s + '</span></div>' +
     '</div>' +
     '<button class="btn btn-c" data-goto-book data-svc="' + id + '" data-doc="' + s.doc + '">Записаться · ' + d.free + '</button>' +
+    (id === 'implant' ? D3_HTML : '') +
     '</div>';
 }).join('');
+$('#d3-go').addEventListener('click', initImplant3D);
 $$('.tabs [role=tab]').forEach(function (t) {
   t.addEventListener('click', function () {
     $$('.tabs [role=tab]').forEach(function (x) { x.setAttribute('aria-selected', String(x === t)); });
     $$('.svc-pane').forEach(function (p) { p.classList.toggle('on', p.dataset.pane === t.dataset.svc); });
-    $('#svc-art-t').textContent = svcById[t.dataset.svc].art;
+    setScene(t.dataset.svc);
   });
 });
 
@@ -1499,15 +1929,20 @@ document.addEventListener('click', function (e) {
 
 /* ---------- карта и видео грузятся по нажатию ---------- */
 $('#map-load').addEventListener('click', function () {
-  var m = $('#map');
-  m.innerHTML = '<iframe title="Карта: Махачкала, улица Примерная, 12" loading="lazy" style="border:0;width:100%;height:100%" ' +
-    'src="https://yandex.ru/map-widget/v1/?ll=47.5047%2C42.9764&z=15&text=%D0%9C%D0%B0%D1%85%D0%B0%D1%87%D0%BA%D0%B0%D0%BB%D0%B0"></iframe>';
+  /* кладём карту поверх схемы: если виджет не откроется, схема останется видна */
+  var m = $('#map'), f = document.createElement('iframe');
+  f.title = 'Карта: Махачкала, улица Примерная, 12';
+  f.loading = 'lazy';
+  f.style.cssText = 'position:absolute;inset:0;border:0;width:100%;height:100%;z-index:4;opacity:0;transition:opacity .4s';
+  f.src = 'https://yandex.ru/map-widget/v1/?ll=47.5047%2C42.9764&z=15&text=%D0%9C%D0%B0%D1%85%D0%B0%D1%87%D0%BA%D0%B0%D0%BB%D0%B0';
+  f.addEventListener('load', function () { f.style.opacity = '1'; });
+  this.remove();
+  m.appendChild(f);
 });
 $$('[data-video]').forEach(function (b) {
   b.addEventListener('click', function (e) {
     e.preventDefault(); e.stopPropagation();
-    alert('В демо видеовизитка не записана.\n\nНа сайте клиники здесь откроется вертикальное видео на 15 секунд: ' +
-      b.dataset.video + ' рассказывает, как проходит приём. Весит до 1,5 МБ и грузится только по нажатию.');
+    openVideo(b.dataset.video);
   });
 });
 })();
