@@ -23,7 +23,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
 .grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 90% 55% at 50% 0%,#000 20%,transparent 75%)}
@@ -118,6 +118,28 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4vw,48px);line-h
 @media(max-width:960px){.works{grid-template-columns:1fr}.works>.work:last-child:nth-child(odd){display:flex;flex-direction:column}.works>.work:last-child:nth-child(odd) .cover{aspect-ratio:16/10;min-height:0}.more{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.cover.has-chat{aspect-ratio:auto;height:384px}.nav-links{display:none}.nav{gap:14px}.nav .btn{margin-left:auto;padding:11px 16px;font-size:13.5px}.more{grid-template-columns:1fr}.msg{font-size:12.5px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.js .rv{opacity:1!important;transform:none!important}}
+
+/* ---------- мобильное меню ---------- */
+.burger{display:none;width:42px;height:42px;flex:none;margin-left:auto;border:1px solid var(--line-3);border-radius:12px;background:none;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.burger:hover{border-color:var(--muted-2)}
+.burger span{width:16px;height:1.5px;background:var(--fg);display:block;transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .18s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.mmenu{position:absolute;top:100%;left:0;right:0;display:none;padding:6px var(--pad) 20px;background:var(--bg,#07070B);border-bottom:1px solid var(--line);max-height:min(78dvh,620px);overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s,transform .3s cubic-bezier(.22,1,.36,1),visibility .3s}
+.mmenu.open{opacity:1;visibility:visible;transform:none}
+.mm-links{display:flex;flex-direction:column}
+.mm-links a{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:-.01em;color:var(--fg);padding:15px 2px;border-bottom:1px solid var(--line);transition:color .2s}
+.mm-links a:active{color:var(--acid)}
+.mm-links a[aria-current]{color:var(--acid)}
+.mm-cta{width:100%;justify-content:center;margin-top:18px}
+html.mm-lock{overflow:hidden}
+@media(max-width:720px){
+  .nav-links,.nav>.btn,.nav-cta{display:none!important}
+  .burger{display:flex}
+  .mmenu{display:block}
+}
+@media(min-width:721px){.mmenu{display:none!important}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -134,7 +156,21 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4vw,48px);line-h
     <a href="../">Главная</a><a href="../#services">Услуги</a><a href="../#process">Процесс</a><a href="./" aria-current="page">Портфолио</a>
   </nav>
   <a href="https://t.me/tercia_it" class="btn btn-acid">Обсудить проект</a>
-</div></header>
+
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+</div>
+<div class="mmenu" id="mmenu">
+  <nav class="mm-links">
+    <a href="../">Главная</a>
+    <a href="../#services">Услуги</a>
+    <a href="../dental/">Стоматологиям</a>
+    <a href="../reputation/">Репутация</a>
+    <a href="./" aria-current="page">Портфолио</a>
+    <a href="../#zayavka">Контакты</a>
+  </nav>
+  <a href="https://t.me/tercia_it" class="btn btn-acid mm-cta">Обсудить проект</a>
+</div>
+</header>
 
 <main class="wrap">
   <section class="top">
@@ -328,6 +364,25 @@ h2{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4vw,48px);line-h
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
   els.forEach(function (e, i) { e.style.transitionDelay = (i % 3) * 70 + 'ms'; io.observe(e); });
   if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.classList.add('in'); }
+})();
+</script>
+
+<script>
+/* мобильное меню */
+(function(){
+  var b=document.querySelector('.burger'), m=document.getElementById('mmenu');
+  if(!b||!m) return;
+  function set(open){
+    b.setAttribute('aria-expanded', open?'true':'false');
+    m.classList.toggle('open', open);
+    document.documentElement.classList.toggle('mm-lock', open);
+    if(open){ document.body.scrollLeft=0; }
+  }
+  b.addEventListener('click', function(){ set(b.getAttribute('aria-expanded')!=='true'); });
+  m.addEventListener('click', function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'||e.key==='Esc') set(false); });
+  var mq=window.matchMedia('(min-width:721px)');
+  (mq.addEventListener?mq.addEventListener.bind(mq,'change'):mq.addListener.bind(mq))(function(e){ if(e.matches) set(false); });
 })();
 </script>
 </body>

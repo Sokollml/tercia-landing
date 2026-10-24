@@ -32,7 +32,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
 .mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
@@ -222,6 +222,28 @@ form{display:grid;gap:12px}
   .f-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- мобильное меню ---------- */
+.burger{display:none;width:42px;height:42px;flex:none;margin-left:auto;border:1px solid var(--line-3);border-radius:12px;background:none;cursor:pointer;flex-direction:column;gap:4px;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;transition:border-color .2s}
+.burger:hover{border-color:var(--muted-2)}
+.burger span{width:16px;height:1.5px;background:var(--fg);display:block;transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .18s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.mmenu{position:absolute;top:100%;left:0;right:0;display:none;padding:6px var(--pad) 20px;background:var(--bg,#07070B);border-bottom:1px solid var(--line);max-height:min(78dvh,620px);overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s,transform .3s cubic-bezier(.22,1,.36,1),visibility .3s}
+.mmenu.open{opacity:1;visibility:visible;transform:none}
+.mm-links{display:flex;flex-direction:column}
+.mm-links a{font-family:var(--disp);font-weight:600;font-size:17px;letter-spacing:-.01em;color:var(--fg);padding:15px 2px;border-bottom:1px solid var(--line);transition:color .2s}
+.mm-links a:active{color:var(--acid)}
+.mm-links a[aria-current]{color:var(--acid)}
+.mm-cta{width:100%;justify-content:center;margin-top:18px}
+html.mm-lock{overflow:hidden}
+@media(max-width:720px){
+  .nav-links,.nav>.btn,.nav-cta{display:none!important}
+  .burger{display:flex}
+  .mmenu{display:block}
+}
+@media(min-width:721px){.mmenu{display:none!important}}
 </style>
 </head>
 <body>
@@ -235,7 +257,21 @@ form{display:grid;gap:12px}
   <a class="logo" href="../"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#spk"/></svg><span>Tercia</span></a>
   <a class="back" href="../">← на главную</a>
   <div class="nav-cta"><a href="#zayavka" class="btn btn-acid">Получить разбор сайта</a></div>
-</div></header>
+
+  <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+</div>
+<div class="mmenu" id="mmenu">
+  <nav class="mm-links">
+    <a href="../">Главная</a>
+    <a href="./" aria-current="page">Стоматологиям</a>
+    <a href="../reputation/">Репутация</a>
+    <a href="../portfolio/">Портфолио</a>
+    <a href="../portfolio/dental-demo/">Демо-сайт клиники</a>
+    <a href="#zayavka">Контакты</a>
+  </nav>
+  <a href="#zayavka" class="btn btn-acid mm-cta">Получить разбор сайта</a>
+</div>
+</header>
 
 <main>
 <!-- 1. Первый экран -->
@@ -564,6 +600,25 @@ form{display:grid;gap:12px}
   Array.prototype.forEach.call(form.querySelectorAll('[data-ch]'), function (b) {
     if (b.getAttribute('data-ch') === 'tg') b.addEventListener('click', function () { send('tg'); });
   });
+})();
+</script>
+
+<script>
+/* мобильное меню */
+(function(){
+  var b=document.querySelector('.burger'), m=document.getElementById('mmenu');
+  if(!b||!m) return;
+  function set(open){
+    b.setAttribute('aria-expanded', open?'true':'false');
+    m.classList.toggle('open', open);
+    document.documentElement.classList.toggle('mm-lock', open);
+    if(open){ document.body.scrollLeft=0; }
+  }
+  b.addEventListener('click', function(){ set(b.getAttribute('aria-expanded')!=='true'); });
+  m.addEventListener('click', function(e){ if(e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'||e.key==='Esc') set(false); });
+  var mq=window.matchMedia('(min-width:721px)');
+  (mq.addEventListener?mq.addEventListener.bind(mq,'change'):mq.addListener.bind(mq))(function(e){ if(e.matches) set(false); });
 })();
 </script>
 </body>
