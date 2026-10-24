@@ -3,214 +3,210 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Каспий — стоматология-студия в Москве, Медведково</title>
-<meta name="description" content="Демонстрационный сайт стоматологии: расчёт сметы со сравнением цен по Москве, план лечения по КТ, запись к врачу. Клиника вымышленная — пример работы агентства Tercia.">
+<title>Каспий — стоматология-студия в Москве</title>
+<meta name="description" content="Премиальная стоматология в Москве: план лечения по снимку до визита, цена, зафиксированная в договоре, и врач, который ведёт вас от первого приёма до гарантии.">
 <meta name="robots" content="noindex,nofollow">
-<meta property="og:title" content="Каспий — стоматология-студия в Москве">
-<meta property="og:description" content="Демо-сайт агентства Tercia: смета за минуту, план по КТ, запись к врачу.">
+<meta name="theme-color" content="#1B2B24">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#241913">
-<link rel="preload" href="../../assets/fonts/cormorant-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/fonts/manrope-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:title" content="Каспий — стоматология-студия в Москве">
+<meta property="og:description" content="План лечения по снимку до визита. Цена в договоре. Гарантия 3 года.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B2B24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23C9AE7C' text-anchor='middle'%3E%D0%9A%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fonts/prata-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/intertight-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Dentist","name":"Стоматология-студия «Каспий» (демонстрационная)","telephone":"+7 (495) 000-00-00","address":{"@type":"PostalAddress","streetAddress":"ул. Полярная, 24к1","addressLocality":"Москва","addressCountry":"RU"}}
-</script>
 </head>
 <body>
-<div class="demobar"><div class="wrap">
-  <span>Это демо-сайт агентства Tercia. Клиника вымышлена.</span>
+
+<div class="agency"><div class="wrap">
+  <span>Демонстрационный сайт агентства Tercia · клиника вымышлена</span>
   <a href="../../dental/">Сделать такой же для вашей клиники →</a>
 </div></div>
-<div class="topbar"><div class="wrap"><span class="l">Стоматология-студия · Москва, Медведково</span><a data-phone data-goal="click_phone" href="#"></a></div></div>
-<header class="top"><div class="wrap">
-  <a class="logo" href="#top"><b>КАСПИЙ</b><small>стоматология-студия</small></a>
-  <nav aria-label="Разделы"><a href="#calc">Смета</a><a href="#plan">План по КТ</a><a href="#offers">Условия</a><a href="#doctors">Врачи</a><a href="#faq">Вопросы</a></nav>
-  <a class="tel" data-phone data-goal="click_phone" href="#"></a>
+
+<div class="topline"><div class="wrap">
+  <span data-city></span>
+  <a data-phone href="#"></a>
+</div></div>
+
+<header class="hdr"><div class="wrap">
+  <a class="mark" href="#top"><b data-name></b><small>стоматология-студия</small></a>
+  <nav class="nav" aria-label="Разделы">
+    <a href="#services">Лечение</a>
+    <a href="#calc">Смета</a>
+    <a href="#plan">План по снимку</a>
+    <a href="#doctors">Врачи</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn line" href="#request">Записаться</a>
+  <button class="burger" id="burger" aria-label="Меню"><i></i><i></i><i></i></button>
 </div></header>
 
 <main id="top">
-<section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Москва · Медведково</span>
-      <h1>Лечим зубы<br>без <em>страха</em> и переплат</h1>
-      <p class="lead">Стоматология-студия «Каспий»: план лечения по вашему снимку ещё до визита, цена, зафиксированная в договоре, и врач, который ведёт вас от первого приёма до гарантии.</p>
-      <div class="cta-row">
-        <a class="btn gold" href="#calc" data-goal="cta_hero_calc">Рассчитать стоимость лечения</a>
-        <a class="btn line" href="#request" data-goal="cta_hero_plan">Получить план по снимку</a>
-      </div>
-    </div>
-    <aside class="glass rv" aria-label="Как это работает">
-      <div class="big">3 шага</div>
-      <div class="row"><span>1 · Заявка и снимок</span><b>онлайн</b></div>
-      <div class="row"><span>2 · План и смета</span><b>до визита</b></div>
-      <div class="row"><span>3 · Лечение</span><b>цена в договоре</b></div>
-      <p class="note">Окончательный диагноз и план лечения определяет врач после очного осмотра.</p>
-    </aside>
+
+<!-- первый экран -->
+<section class="hero" style="padding:0"><div class="wrap">
+  <span class="eyebrow" data-city-short></span>
+  <h1>Лечение, в котором<br>нет <em>неизвестности</em></h1>
+  <p class="lead">План по вашему снимку — до первого визита. Смета, зафиксированная в договоре. Один врач, который ведёт вас от осмотра до гарантии.</p>
+  <div class="hero-act">
+    <a class="btn brass" href="#request">Записаться на приём</a>
+    <a class="btn line" href="#calc">Рассчитать стоимость</a>
   </div>
-  <div class="scroll" aria-hidden="true"></div>
-</section>
+  <div class="hero-facts" id="heroFacts"></div>
+</div></section>
 
-<div class="marquee" aria-label="Достижения клиники"><div class="track" id="marquee"></div></div>
+<!-- цифры -->
+<section class="tight"><div class="wrap">
+  <div class="figures rv" id="figures"></div>
+</div></section>
 
-<section class="stats"><div class="wrap"><div class="stat-grid" id="stats"></div></div></section>
+<!-- лечение -->
+<section id="services"><div class="wrap">
+  <div class="head rv">
+    <span class="eyebrow">Лечение</span>
+    <h2>Что мы делаем<br>и сколько это стоит</h2>
+    <p class="lead">Цены указаны «от». Точную сумму врач называет после осмотра и снимка — и она фиксируется в договоре до начала лечения.</p>
+  </div>
+  <div class="index rv" id="serviceIndex"></div>
+</div></section>
 
+<!-- заявление -->
+<section class="on-dark claim"><div class="wrap">
+  <span class="eyebrow">Принцип</span>
+  <blockquote>Пациент должен знать стоимость до того, как сядет в кресло</blockquote>
+  <div class="by">Смета фиксируется в договоре · доплат по ходу лечения не бывает</div>
+</div></section>
+
+<!-- смета -->
 <section id="calc"><div class="wrap">
-  <span class="eyebrow rv">Калькулятор</span>
-  <h2 class="rv">Посчитайте ориентировочную<br>стоимость лечения</h2>
-  <p class="lead rv">Отметьте нужные услуги — покажем сумму в клинике рядом со средней ценой по Москве.</p>
-  <div class="calc">
-    <div class="card rv">
-      <div class="demo" id="demoBanner" hidden>Показаны демонстрационные цены. Утверждённый прайс будет добавлен перед запуском.</div>
-      <div id="services"></div>
+  <div class="head rv">
+    <span class="eyebrow">Смета</span>
+    <h2>Посчитайте<br>ориентировочную сумму</h2>
+    <p class="lead">Отметьте, что нужно. Покажем сумму в клинике рядом со средней ценой по Москве.</p>
+  </div>
+  <div class="calc rv">
+    <div>
+      <p class="demo-note" id="demoNote" hidden>Цены демонстрационные: на сайте клиники здесь утверждённый прайс, и одна правка в админке меняет его и в калькуляторе.</p>
+      <div class="srv" id="srv"></div>
     </div>
-    <aside class="card sum rv" aria-live="polite">
+    <aside class="sum" aria-live="polite">
       <h3>Ваш расчёт</h3>
-      <div class="line"><span>В Москве (ориентир.)</span><b id="sMsk">0 ₽</b></div>
-      <div class="line"><span>В «Каспии»</span><b id="sDyn">0 ₽</b></div>
-      <div class="save"><span class="note">Разница</span><b id="sSave">0 ₽</b><span id="sPct" class="note"></span></div>
-      <p class="note" id="sNote">Выберите хотя бы одну услугу.</p>
-      <a class="btn gold" id="calcCta" href="#request" data-goal="cta_calc_personal">Получить персональный расчёт</a>
-      <p class="note" style="margin-top:14px">Расчёт ориентировочный и не является публичной офертой. Стоимость зависит от клинической ситуации и определяется врачом после обследования.</p>
+      <div class="row"><span>Средняя цена по Москве</span><b id="sMsk">—</b></div>
+      <div class="row"><span>В нашей клинике</span><b id="sOur">—</b></div>
+      <div class="total"><span>Разница</span><b id="sSave">—</b></div>
+      <button class="btn brass" id="calcSend" type="button">Отправить смету в WhatsApp</button>
+      <p class="note">Расчёт ориентировочный и не является публичной офертой. Окончательная стоимость определяется врачом после обследования.</p>
     </aside>
   </div>
 </div></section>
 
-<section id="plan" class="plan"><div class="wrap">
-  <span class="eyebrow rv">Планирование по КТ</span>
-  <h2 class="rv">Узнайте план лечения<br>ещё <em>до</em> визита</h2>
-  <p class="lead rv">Разбор снимка онлайн помогает заранее понять варианты лечения, его этапы и расходы — до того, как вы сядете в кресло.</p>
-  <div class="steps">
-    <div class="step rv" data-n="01"><h3>Заявка</h3><p>Оставьте заявку и укажите направление лечения.</p></div>
-    <div class="step rv" data-n="02"><h3>Снимок</h3><p>Передайте КТ или панорамный снимок — при наличии. Нет снимка — сделаем бесплатно.</p></div>
-    <div class="step rv" data-n="03"><h3>Звонок администратора</h3><p>Уточнит запрос, ответит на вопросы и подберёт врача.</p></div>
-    <div class="step rv" data-n="04"><h3>Разбор врачами</h3><p>Хирург и ортопед изучают случай вместе, если он комплексный.</p></div>
-    <div class="step rv" data-n="05"><h3>План и смета</h3><p>Варианты лечения, этапы, число визитов и вилка по стоимости.</p></div>
-    <div class="step rv" data-n="06"><h3>Запись на приём</h3><p>Выбираете удобный день, администратор подтверждает за 15 минут.</p></div>
+<!-- план по снимку -->
+<section class="on-dark" id="plan"><div class="wrap">
+  <div class="head rv">
+    <span class="eyebrow">До визита</span>
+    <h2>План лечения<br>по вашему снимку</h2>
+    <p class="lead">Пришлите КТ или панорамный снимок — врачи разберут случай и ответят планом с этапами, числом визитов и вилкой по стоимости. Бесплатно и ни к чему не обязывает.</p>
   </div>
-  <p class="disclaimer rv">Предварительный план — это ориентир. Окончательный диагноз, план лечения, сроки и стоимость определяются врачом после необходимого обследования и очной оценки клинической ситуации.</p>
+  <div class="steps rv">
+    <div><div class="n">01</div><h3>Заявка</h3><p>Оставляете контакты и коротко описываете, что беспокоит.</p></div>
+    <div><div class="n">02</div><h3>Снимок</h3><p>Присылаете КТ любым удобным способом. Нет снимка — сделаем бесплатно на первом приёме.</p></div>
+    <div><div class="n">03</div><h3>Разбор</h3><p>Хирург и ортопед смотрят случай вместе, если он комплексный.</p></div>
+    <div><div class="n">04</div><h3>План и смета</h3><p>Получаете этапы, сроки и вилку по стоимости. Решаете, приходить ли.</p></div>
+  </div>
 </div></section>
 
+<!-- врачи -->
+<section id="doctors"><div class="wrap">
+  <div class="head rv">
+    <span class="eyebrow">Команда</span>
+    <h2>Врачи, которые<br>ведут ваш случай</h2>
+    <p class="lead">Каждый ведёт пациента от первого приёма до контрольного осмотра. Над сложными случаями хирург и ортопед работают вместе.</p>
+  </div>
+  <div class="docs rv" id="docs"></div>
+  <p class="note rv" style="margin-top:26px">В демонстрационной версии вместо фотографий — монограммы. На сайте клиники здесь портреты врачей.</p>
+</div></section>
+
+<!-- отзывы -->
+<section class="on-stone"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Отзывы</span><h2>Что говорят пациенты</h2></div>
+  <div class="revs rv" id="revs"></div>
+  <div class="figures rv" id="ratings" style="border-top:0;margin-top:0"></div>
+</div></section>
+
+<!-- условия -->
 <section id="offers"><div class="wrap">
-  <span class="eyebrow rv">Условия</span>
-  <h2 class="rv">Что включено<br>и при какой сумме</h2>
-  <div class="offers" id="offersList"></div>
-  <p class="note rv" id="offersNote" style="margin-top:20px"></p>
-</div></section>
-
-<section id="doctors" class="dark"><div class="wrap">
-  <span class="eyebrow rv">Команда клиники</span>
-  <h2 class="rv">Врачи, которые поведут<br>ваш случай</h2>
-  <p class="lead rv">Каждый ведёт пациента от первого приёма до контрольного осмотра. Над сложными случаями хирург и ортопед работают вместе.</p>
-</div>
-<div class="docs" id="docs" tabindex="0" aria-label="Врачи клиники"></div>
-<div class="wrap"><p class="docs-note">Портреты — иллюстрации. На сайте реальной клиники здесь фотографии врачей.</p></div>
-</section>
-
-<section id="trust"><div class="wrap">
-  <span class="eyebrow rv">Доверие</span>
-  <h2 class="rv">Клиника, куда<br>не страшно идти</h2>
-  <p class="lead rv">Спокойный свет, тишина вместо звука бормашины в коридоре и врач, который объясняеткаждый  шаг до того, как возьмёт инструмент.</p>
-  <div class="clinics" id="clinics"></div>
-  <div class="ratings" id="ratings"></div>
-  <div class="revs" id="reviews"></div>
-</div></section>
-
-<section id="faq" style="padding-top:0"><div class="wrap" style="max-width:900px">
-  <span class="eyebrow rv">Вопросы</span>
-  <h2 class="rv">Частые вопросы</h2>
-  <div id="faqList"></div>
-</div></section>
-
-<section id="request" class="cta dark"><div class="wrap">
-  <div>
-    <span class="eyebrow">Первый шаг</span>
-    <h2>Планируете лечение?<br>Начните с <em>бесплатного разбора</em></h2>
-    <p class="lead">Разберём ваш случай, назовём вилку по стоимости и подберём врача. Это бесплатно и ни к чему не обязывает.</p>
+  <div class="head rv">
+    <span class="eyebrow">Условия</span>
+    <h2>Что включено<br>и при какой сумме</h2>
   </div>
-  <form class="quiz" id="quiz" novalidate>
-    <div class="progress"><i id="bar"></i></div>
-    <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="offers rv" id="offersList"></div>
+  <p class="note rv" id="offersNote" style="margin-top:24px"></p>
+</div></section>
 
-    <div class="q active" data-step="0">
-      <h3>Какое лечение вас интересует?</h3>
-      <div class="opts">
-        <label class="opt"><input type="radio" name="treatment" value="Имплантация"><span>Имплантация</span></label>
-        <label class="opt"><input type="radio" name="treatment" value="Лечение кариеса и каналов"><span>Кариес и каналы</span></label>
-        <label class="opt"><input type="radio" name="treatment" value="Протезирование"><span>Протезирование</span></label>
-        <label class="opt"><input type="radio" name="treatment" value="Коронки"><span>Коронки</span></label>
-        <label class="opt"><input type="radio" name="treatment" value="Виниры"><span>Виниры</span></label>
-        <label class="opt"><input type="radio" name="treatment" value="Ортодонтия"><span>Ортодонтия</span></label>
-        <label class="opt"><input type="radio" name="treatment" value="Другое"><span>Другое / не знаю</span></label>
-      </div>
-      <div class="err" role="alert"></div>
-    </div>
+<!-- вопросы -->
+<section id="faq" class="on-stone"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Вопросы</span><h2>Коротко о важном</h2></div>
+  <div class="faq rv" id="faqList"></div>
+</div></section>
 
-    <div class="q" data-step="1">
-      <h3>Какая челюсть требует лечения?</h3>
-      <div class="opts">
-        <label class="opt"><input type="radio" name="jaw" value="Верхняя"><span>Верхняя</span></label>
-        <label class="opt"><input type="radio" name="jaw" value="Нижняя"><span>Нижняя</span></label>
-        <label class="opt"><input type="radio" name="jaw" value="Обе"><span>Обе</span></label>
-        <label class="opt"><input type="radio" name="jaw" value="Не знаю"><span>Не знаю</span></label>
-      </div>
-      <div class="err" role="alert"></div>
+<!-- контакты -->
+<section id="contacts"><div class="wrap">
+  <div class="head rv"><span class="eyebrow">Контакты</span><h2>Как нас найти</h2></div>
+  <div class="contacts rv">
+    <div class="cinfo"><dl id="cinfo"></dl></div>
+    <div class="map" id="map" role="img" aria-label="Схема проезда">
+      <span class="road r1"></span><span class="road r2"></span>
+      <span class="pin"><b data-name-short></b><i></i></span>
+      <button class="btn line load" id="mapLoad" type="button">Загрузить карту</button>
     </div>
+  </div>
+</div></section>
 
-    <div class="q" data-step="2">
-      <h3>Есть ли у вас компьютерная томография (КТ)?</h3>
-      <div class="opts">
-        <label class="opt"><input type="radio" name="ct" value="Да"><span>Да, есть</span></label>
-        <label class="opt"><input type="radio" name="ct" value="Нет"><span>Нет</span></label>
-      </div>
-      <div id="ctUpload" hidden style="margin-top:14px">
-        <label class="f">Прикрепить КТ (необязательно, до 50 МБ: zip, dcm, jpg, png, pdf)
-          <input class="in" type="file" name="ctfile" id="ctfile" accept=".zip,.dcm,.jpg,.jpeg,.png,.pdf" style="padding:10px 14px">
-        </label>
-        <p class="note">Можно отправить позже — координатор подскажет удобный способ. Файл передаётся по защищённому соединению.</p>
-      </div>
-      <div class="err" role="alert"></div>
+<!-- заявка -->
+<section class="on-dark" id="request"><div class="wrap">
+  <div class="request">
+    <div class="rv">
+      <span class="eyebrow">Первый шаг</span>
+      <h2>Запишитесь<br>на <em>бесплатный</em> приём</h2>
+      <p class="lead">Осмотр, снимок и план лечения на руки — даже если лечиться вы решите не у нас. Администратор перезвонит и подтвердит время.</p>
     </div>
-
-    <div class="q" data-step="3">
-      <h3>Как с вами связаться?</h3>
-      <label class="f">Имя <input class="in" name="name" autocomplete="given-name" placeholder="Как к вам обращаться"></label>
-      <label class="f">Телефон * <input class="in" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></label>
-      <label class="check"><input type="checkbox" name="consent" required>
-        <span>Согласен(на) на обработку персональных и медицинских данных в соответствии с <a href="#" id="privacyLink" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
-      <div class="err" role="alert"></div>
-    </div>
-
-    <div class="q" data-step="4">
-      <div class="done"><div class="ok">✓</div>
-        <h3>Спасибо! Заявка принята</h3>
-        <p>Это демо-сайт — заявка никуда не ушла. На сайте реальной клиники она в ту же секунду придёт администратору, а вам — подтверждение.</p>
-      </div>
-    </div>
-
-    <div class="nav" id="quizNav">
-      <button type="button" class="btn ghost" id="prev">Назад</button>
-      <button type="button" class="btn" id="next" data-goal="quiz_next">Далее</button>
-    </div>
-  </form>
+    <form class="form rv" id="lead" novalidate>
+      <div class="f"><label for="fName">Как вас зовут</label><input id="fName" type="text" autocomplete="name" placeholder="Имя"></div>
+      <div class="f"><label for="fPhone">Телефон</label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 ___ ___ __ __"></div>
+      <div class="f"><label for="fTreat">Что вас беспокоит</label>
+        <select id="fTreat">
+          <option>Консультация и план лечения</option>
+          <option>Имплантация</option>
+          <option>Коронки и виниры</option>
+          <option>Кариес и каналы</option>
+          <option>Брекеты или элайнеры</option>
+          <option>Профессиональная гигиена</option>
+          <option>Детский приём</option>
+        </select></div>
+      <label class="agree"><input type="checkbox" id="fOk">
+        <span>Согласен на обработку персональных данных в соответствии с <a href="../../privacy/">политикой конфиденциальности</a>.</span></label>
+      <button class="btn brass" type="submit">Отправить заявку</button>
+      <div class="msg" id="fMsg" role="status"></div>
+    </form>
+  </div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
   <div class="cols">
-    <div><div class="logo" style="color:var(--ivory)"><b>КАСПИЙ</b><small>стоматология-студия</small></div></div>
-    <div><b>Контакты</b><br><a data-phone href="#"></a><br><a id="fTg" rel="noopener" target="_blank" href="#">Telegram</a> · <a id="fWa" rel="noopener" target="_blank" href="#">WhatsApp</a></div>
-    <div><b>Адрес</b><br><span id="fAddr"></span></div>
+    <div><div class="mark"><b data-name></b><small>стоматология-студия</small></div></div>
+    <div><h4>Лечение</h4><a href="#services">Имплантация</a><a href="#services">Коронки и виниры</a><a href="#services">Терапия</a><a href="#services">Детский приём</a></div>
+    <div><h4>Клиника</h4><a href="#calc">Смета</a><a href="#plan">План по снимку</a><a href="#doctors">Врачи</a><a href="#faq">Вопросы</a></div>
+    <div><h4>Контакты</h4><a data-phone href="#"></a><a data-wa target="_blank" rel="noopener" href="#">WhatsApp</a><a data-tg target="_blank" rel="noopener" href="#">Telegram</a><span class="note" id="fAddr" style="display:block;margin-top:10px"></span></div>
   </div>
-  <p id="license"></p>
-  <p>Имеются противопоказания, необходима консультация специалиста. Информация на сайте не является публичной офертой.
-  Клиника «Каспий», врачи, цены, отзывы и адрес вымышлены — это демонстрация работы, а не действующая организация.
-  © <span id="year"></span> · сайт собран в <a href="../../" rel="noopener">Tercia</a></p>
+  <p class="legal" id="legal"></p>
+  <div class="tercia">
+    <div><b>Хотите такой же сайт для своей клиники?</b>
+      <p>Разберём ваш сайт бесплатно и пришлём список того, что стоит исправить. За 24 часа.</p></div>
+    <a class="btn line" href="../../dental/">Смотреть предложение</a>
+  </div>
 </div></footer>
 
-<div class="sticky-cta"><a class="btn gold" href="#request" data-goal="cta_sticky">Записаться на приём</a></div>
 <script src="config.js"></script>
 <script src="app.js"></script>
 </body>
