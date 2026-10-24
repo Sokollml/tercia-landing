@@ -2,8 +2,7 @@
    «Каспий» — демо премиальной стоматологии.
    Язык: тишина и воздух. Антиква Prata в заголовках,
    Inter Tight в тексте, волосяные линии вместо теней,
-   латунь как единственный акцент. Фотография — чёрно-белая,
-   с лёгким зелёным тоном, чтобы весь ряд читался как один.
+   латунь как единственный акцент. Ни одной картинки.
    ============================================================ */
 
 @font-face{font-family:Prata;src:url(../../assets/fonts/prata-cyr.woff2) format('woff2');
@@ -98,24 +97,9 @@ p{max-width:64ch}
 html.mm-lock{overflow:hidden}
 
 /* ---------- первый экран ---------- */
-.hero{background:var(--deep);color:var(--ivory);position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:auto -10% -40% 40%;height:70%;z-index:2;
-  background:radial-gradient(closest-side,rgba(201,174,124,.14),transparent);pointer-events:none}
-
-/* ---------- фотография ----------
-   все снимки обесцвечены и подкрашены в зелень клиники: разная съёмка
-   перестаёт спорить между собой и читается как один ряд. */
-.shot{position:absolute;inset:0;overflow:hidden;z-index:0}
-.shot img{width:100%;height:100%;object-fit:cover;display:block;
-  filter:grayscale(1) contrast(1.06) brightness(.72)}
-.shot::after{content:'';position:absolute;inset:0;z-index:1;
-  background:linear-gradient(145deg,var(--forest),var(--brass));
-  mix-blend-mode:color;opacity:.62}
-.hero .shot::before{content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(100deg,var(--deep) 6%,rgba(12,17,14,.88) 42%,rgba(27,43,36,.46) 100%)}
-.hero .wrap,.claim .wrap{position:relative;z-index:3}
-.shot img{will-change:transform}
-.shot.par img{height:124%;top:-12%;position:absolute;left:0}
+.hero{background:var(--forest);color:var(--ivory);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:auto -10% -40% 40%;height:70%;
+  background:radial-gradient(closest-side,rgba(201,174,124,.16),transparent);pointer-events:none}
 .hero .wrap{position:relative;padding-block:clamp(72px,11vw,150px) clamp(0px,0vw,0px)}
 .hero .eyebrow{color:var(--brass-l)}
 .hero .eyebrow::before{background:var(--brass-l)}
@@ -150,23 +134,6 @@ section.tight{padding-block:clamp(44px,6vw,80px)}
 .figures b{display:block;font-family:var(--disp);font-size:clamp(30px,3.6vw,44px);line-height:1}
 .figures span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-top:12px}
 
-/* ---------- фотографии клиники ---------- */
-.gal{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;
-  gap:clamp(12px,1.6vw,20px)}
-.gal figure{position:relative;overflow:hidden;margin:0;background:var(--stone)}
-.gal figure:first-child{grid-row:span 2}
-.gal img{width:100%;height:100%;object-fit:cover;display:block;
-  filter:grayscale(1) contrast(1.05);transition:transform 1.4s var(--ease)}
-.gal figure:hover img{transform:scale(1.045)}
-.gal figure::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(145deg,var(--forest),var(--brass));mix-blend-mode:color;opacity:.58}
-.gal figcaption{position:absolute;left:0;bottom:0;z-index:2;padding:22px 26px;color:var(--ivory);
-  text-shadow:0 1px 20px rgba(12,17,14,.9)}
-.gal figcaption b{display:block;font-family:var(--disp);font-weight:400;font-size:21px;line-height:1}
-.gal figcaption span{display:block;font-size:12px;letter-spacing:.1em;color:rgba(247,244,238,.76);margin-top:8px}
-.gal figure::before{content:'';position:absolute;left:0;right:0;bottom:0;height:46%;z-index:1;
-  background:linear-gradient(transparent,rgba(12,17,14,.72))}
-
 /* ---------- услуги: указатель ---------- */
 .index{margin-top:clamp(36px,5vw,64px);border-top:1px solid var(--line)}
 .ix{display:grid;grid-template-columns:62px 1.1fr 1.5fr auto;gap:clamp(16px,3vw,44px);align-items:baseline;
@@ -182,10 +149,7 @@ section.tight{padding-block:clamp(44px,6vw,80px)}
   color:var(--soft);margin-top:6px;text-align:right}
 
 /* ---------- заявление ---------- */
-.claim{text-align:center;position:relative;overflow:hidden;background:var(--deep)}
-.claim .shot::before{content:'';position:absolute;inset:0;z-index:2;
-  background:linear-gradient(180deg,rgba(12,17,14,.72),rgba(27,43,36,.66))}
-.claim .shot img{filter:grayscale(1) contrast(1.08) brightness(.76)}
+.claim{text-align:center}
 .claim blockquote{font-family:var(--disp);font-size:clamp(26px,3.8vw,46px);line-height:1.22;max-width:20ch;
   margin:34px auto 0}
 .claim .by{margin-top:30px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
@@ -238,16 +202,11 @@ section.tight{padding-block:clamp(44px,6vw,80px)}
 
 /* ---------- врачи ---------- */
 .docs{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(36px,5vw,60px)}
-.doc .ph{aspect-ratio:3/4;display:grid;place-items:center;position:relative;overflow:hidden;
-  border:1px solid var(--line);background:linear-gradient(170deg,var(--stone-2),var(--stone))}
-.doc .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  filter:grayscale(1) contrast(1.06) brightness(.98);transition:transform 1.2s var(--ease)}
-.doc:hover .ph img{transform:scale(1.04)}
-.doc .ph::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(150deg,var(--forest),var(--brass));mix-blend-mode:color;opacity:.55}
+.doc .ph{aspect-ratio:3/4;display:grid;place-items:center;position:relative;border:1px solid var(--line);
+  background:linear-gradient(170deg,var(--stone-2),var(--stone))}
 .doc .ph span{font-family:var(--disp);font-size:clamp(34px,4vw,48px);color:rgba(18,23,20,.3);letter-spacing:.1em}
-.doc .ph i{position:absolute;right:0;bottom:0;z-index:2;background:var(--forest);color:var(--brass-l);
-  font-style:normal;padding:10px 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.doc .ph i{position:absolute;right:0;bottom:0;background:var(--forest);color:var(--brass-l);font-style:normal;
+  padding:10px 14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 .doc h3{margin-top:20px;font-size:21px}
 .doc .role{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-d);margin-top:8px}
 .doc .exp{font-size:14px;color:var(--muted);margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
@@ -343,7 +302,6 @@ footer a:hover{color:var(--ivory)}
 
 @media(max-width:1000px){
   .nav{display:none}.burger{display:flex}.mmenu{display:block}
-  .gal{grid-template-columns:1fr 1fr}
   .hdr .btn{display:none}
   .calc,.contacts,.request{grid-template-columns:1fr}
   .sum{position:static}
@@ -368,9 +326,7 @@ footer a:hover{color:var(--ivory)}
   .figures div{border-right:0;border-bottom:1px solid var(--line);padding-inline:0}
   .steps{grid-template-columns:1fr}
   .steps div{border-right:0;border-bottom:1px solid rgba(247,244,238,.16);padding-inline:0}
-  .gal{grid-template-columns:1fr}
-  .gal figure:first-child{grid-row:auto;aspect-ratio:4/5}
-  .gal figure{aspect-ratio:3/2}
+  .docs{grid-template-columns:1fr}
   footer .cols{grid-template-columns:1fr}
   .topline .wrap span{display:none}
   .topline .wrap{justify-content:center}

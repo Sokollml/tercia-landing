@@ -99,24 +99,11 @@ $('#calcSend').addEventListener('click', function () {
 /* ---------- врачи ---------- */
 function initials(n) { return n.split(/\s+/).slice(0, 2).map(function (w) { return w[0]; }).join(''); }
 $('#docs').innerHTML = C.doctors.map(function (d) {
-  /* фотография, а без неё — монограмма */
-  var face = d.photo
-    ? '<img src="' + esc(d.photo) + '" width="520" height="650" alt="' + esc(d.name) + '" loading="lazy" decoding="async">'
-    : '<span>' + esc(initials(d.name)) + '</span>';
-  return '<article class="doc"><div class="ph">' + face +
+  return '<article class="doc"><div class="ph"><span>' + esc(initials(d.name)) + '</span>' +
     '<i>' + d.years + ' лет</i></div>' +
     '<h3>' + esc(d.name) + '</h3><div class="role">' + esc(d.role) + '</div>' +
     '<p class="exp">' + esc(d.about) + '</p></article>';
 }).join('');
-
-/* ---------- фотографии клиники ---------- */
-if (C.gallery && C.gallery.length && $('#gal')) {
-  $('#gal').innerHTML = C.gallery.map(function (g) {
-    return '<figure><img src="' + esc(g.src) + '" width="' + g.w + '" height="' + g.h + '" alt="' +
-      esc(g.alt) + '" loading="lazy" decoding="async">' +
-      '<figcaption><b>' + esc(g.cap) + '</b><span>' + esc(g.sub) + '</span></figcaption></figure>';
-  }).join('');
-}
 
 /* ---------- отзывы, условия, вопросы ---------- */
 $('#revs').innerHTML = C.reviews.map(function (r) {
@@ -188,30 +175,4 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '0px 0px -6% 0px' });
   $$('.rv').forEach(function (el) { io.observe(el); });
 } else { $$('.rv').forEach(function (el) { el.classList.add('in'); }); }
-})();
-
-/* ---------- медленный сдвиг фотографий при прокрутке ---------- */
-(function () {
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  var shots = [].slice.call(document.querySelectorAll('.hero .shot,.claim .shot'));
-  if (!shots.length) return;
-  shots.forEach(function (sh) { sh.classList.add('par'); });
-  var tick = false;
-  function frame() {
-    tick = false;
-    var vh = window.innerHeight;
-    shots.forEach(function (sh) {
-      var r = sh.getBoundingClientRect();
-      if (r.bottom < -200 || r.top > vh + 200) return;
-      var img = sh.querySelector('img');
-      if (!img) return;
-      /* от -1 (блок под экраном) до 1 (ушёл вверх) */
-      var k = (vh / 2 - (r.top + r.height / 2)) / (vh / 2 + r.height / 2);
-      img.style.transform = 'translate3d(0,' + (k * 6).toFixed(2) + '%,0)';
-    });
-  }
-  function onScroll() { if (!tick) { tick = true; requestAnimationFrame(frame); } }
-  addEventListener('scroll', onScroll, { passive: true });
-  addEventListener('resize', onScroll);
-  frame();
 })();

@@ -13,9 +13,6 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B2B24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23C9AE7C' text-anchor='middle'%3E%D0%9A%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="../../assets/fonts/prata-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/intertight-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-1600.jpg" media="(min-width:761px)">
-<link rel="preload" as="image" href="img/hero-800.jpg" media="(max-width:760px)">
-<meta property="og:image" content="img/hero-1600.jpg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -59,14 +56,7 @@
 <main id="top">
 
 <!-- первый экран -->
-<section class="hero" style="padding:0">
-  <div class="shot" aria-hidden="true">
-    <picture>
-      <source media="(max-width:760px)" srcset="img/hero-800.jpg">
-      <img src="img/hero-1600.jpg" width="1500" height="940" alt="" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
-  <div class="wrap">
+<section class="hero" style="padding:0"><div class="wrap">
   <span class="eyebrow" data-city-short></span>
   <h1>Лечение, в котором <br>нет <em>неизвестности</em></h1>
   <p class="lead">План по вашему снимку — до первого визита. Смета, зафиксированная в договоре. Один врач, который ведёт вас от осмотра до гарантии.</p>
@@ -82,11 +72,6 @@
   <div class="figures rv" id="figures"></div>
 </div></section>
 
-<!-- клиника -->
-<section id="clinic" class="tight"><div class="wrap">
-  <div class="gal rv" id="gal"></div>
-</div></section>
-
 <!-- лечение -->
 <section id="services"><div class="wrap">
   <div class="head rv">
@@ -98,9 +83,7 @@
 </div></section>
 
 <!-- заявление -->
-<section class="on-dark claim">
-  <div class="shot" aria-hidden="true"><img src="img/band.jpg" width="1500" height="560" alt="" loading="lazy" decoding="async"></div>
-  <div class="wrap">
+<section class="on-dark claim"><div class="wrap">
   <span class="eyebrow">Принцип</span>
   <blockquote>Пациент должен знать стоимость до того, как сядет в кресло</blockquote>
   <div class="by">Смета фиксируется в договоре · доплат по ходу лечения не бывает</div>
@@ -152,6 +135,7 @@
     <p class="lead">Каждый ведёт пациента от первого приёма до контрольного осмотра. Над сложными случаями хирург и ортопед работают вместе.</p>
   </div>
   <div class="docs rv" id="docs"></div>
+  <p class="note rv" style="margin-top:26px">В демонстрационной версии вместо фотографий — монограммы. На сайте клиники здесь портреты врачей.</p>
 </div></section>
 
 <!-- отзывы -->
