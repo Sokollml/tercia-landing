@@ -13,6 +13,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B2B24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23C9AE7C' text-anchor='middle'%3E%D0%9A%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="../../assets/fonts/prata-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/intertight-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-1600.jpg" media="(min-width:761px)">
+<link rel="preload" as="image" href="img/hero-800.jpg" media="(max-width:760px)">
+<meta property="og:image" content="img/hero-1600.jpg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -38,15 +41,34 @@
     <a href="#contacts">Контакты</a>
   </nav>
   <a class="btn line" href="#request">Записаться</a>
-  <button class="burger" id="burger" aria-label="Меню"><i></i><i></i><i></i></button>
+  <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
+</div>
+<div class="mmenu" id="mmenu">
+  <nav class="mm-links" aria-label="Разделы">
+    <a href="#services">Лечение</a>
+    <a href="#calc">Смета</a>
+    <a href="#plan">План по снимку</a>
+    <a href="#doctors">Врачи</a>
+    <a href="#offers">Условия</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="btn brass mm-cta" href="#request">Записаться на приём</a>
 </div></header>
 
 <main id="top">
 
 <!-- первый экран -->
-<section class="hero" style="padding:0"><div class="wrap">
+<section class="hero" style="padding:0">
+  <div class="shot" aria-hidden="true">
+    <picture>
+      <source media="(max-width:760px)" srcset="img/hero-800.jpg">
+      <img src="img/hero-1600.jpg" width="1500" height="940" alt="" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap">
   <span class="eyebrow" data-city-short></span>
-  <h1>Лечение, в котором<br>нет <em>неизвестности</em></h1>
+  <h1>Лечение, в котором <br>нет <em>неизвестности</em></h1>
   <p class="lead">План по вашему снимку — до первого визита. Смета, зафиксированная в договоре. Один врач, который ведёт вас от осмотра до гарантии.</p>
   <div class="hero-act">
     <a class="btn brass" href="#request">Записаться на приём</a>
@@ -60,18 +82,25 @@
   <div class="figures rv" id="figures"></div>
 </div></section>
 
+<!-- клиника -->
+<section id="clinic" class="tight"><div class="wrap">
+  <div class="gal rv" id="gal"></div>
+</div></section>
+
 <!-- лечение -->
 <section id="services"><div class="wrap">
   <div class="head rv">
     <span class="eyebrow">Лечение</span>
-    <h2>Что мы делаем<br>и сколько это стоит</h2>
+    <h2>Что мы делаем <br>и сколько это стоит</h2>
     <p class="lead">Цены указаны «от». Точную сумму врач называет после осмотра и снимка — и она фиксируется в договоре до начала лечения.</p>
   </div>
   <div class="index rv" id="serviceIndex"></div>
 </div></section>
 
 <!-- заявление -->
-<section class="on-dark claim"><div class="wrap">
+<section class="on-dark claim">
+  <div class="shot" aria-hidden="true"><img src="img/band.jpg" width="1500" height="560" alt="" loading="lazy" decoding="async"></div>
+  <div class="wrap">
   <span class="eyebrow">Принцип</span>
   <blockquote>Пациент должен знать стоимость до того, как сядет в кресло</blockquote>
   <div class="by">Смета фиксируется в договоре · доплат по ходу лечения не бывает</div>
@@ -81,7 +110,7 @@
 <section id="calc"><div class="wrap">
   <div class="head rv">
     <span class="eyebrow">Смета</span>
-    <h2>Посчитайте<br>ориентировочную сумму</h2>
+    <h2>Посчитайте <br>ориентировочную сумму</h2>
     <p class="lead">Отметьте, что нужно. Покажем сумму в клинике рядом со средней ценой по Москве.</p>
   </div>
   <div class="calc rv">
@@ -104,7 +133,7 @@
 <section class="on-dark" id="plan"><div class="wrap">
   <div class="head rv">
     <span class="eyebrow">До визита</span>
-    <h2>План лечения<br>по вашему снимку</h2>
+    <h2>План лечения <br>по вашему снимку</h2>
     <p class="lead">Пришлите КТ или панорамный снимок — врачи разберут случай и ответят планом с этапами, числом визитов и вилкой по стоимости. Бесплатно и ни к чему не обязывает.</p>
   </div>
   <div class="steps rv">
@@ -119,11 +148,10 @@
 <section id="doctors"><div class="wrap">
   <div class="head rv">
     <span class="eyebrow">Команда</span>
-    <h2>Врачи, которые<br>ведут ваш случай</h2>
+    <h2>Врачи, которые <br>ведут ваш случай</h2>
     <p class="lead">Каждый ведёт пациента от первого приёма до контрольного осмотра. Над сложными случаями хирург и ортопед работают вместе.</p>
   </div>
   <div class="docs rv" id="docs"></div>
-  <p class="note rv" style="margin-top:26px">В демонстрационной версии вместо фотографий — монограммы. На сайте клиники здесь портреты врачей.</p>
 </div></section>
 
 <!-- отзывы -->
@@ -137,7 +165,7 @@
 <section id="offers"><div class="wrap">
   <div class="head rv">
     <span class="eyebrow">Условия</span>
-    <h2>Что включено<br>и при какой сумме</h2>
+    <h2>Что включено <br>и при какой сумме</h2>
   </div>
   <div class="offers rv" id="offersList"></div>
   <p class="note rv" id="offersNote" style="margin-top:24px"></p>
@@ -167,7 +195,7 @@
   <div class="request">
     <div class="rv">
       <span class="eyebrow">Первый шаг</span>
-      <h2>Запишитесь<br>на <em>бесплатный</em> приём</h2>
+      <h2>Запишитесь <br>на <em>бесплатный</em> приём</h2>
       <p class="lead">Осмотр, снимок и план лечения на руки — даже если лечиться вы решите не у нас. Администратор перезвонит и подтвердит время.</p>
     </div>
     <form class="form rv" id="lead" novalidate>
