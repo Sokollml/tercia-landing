@@ -3,27 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Династия — стоматология в Рязани для пациентов из Москвы</title>
-<meta name="description" content="Имплантация, виниры и протезирование в Рязани для жителей Москвы: предварительный план по КТ до поездки, персональный координатор, такси с вокзала. Посчитайте и сравните с московскими ценами.">
+<title>Каспий — стоматология-студия в Москве</title>
+<meta name="description" content="Демонстрационный сайт стоматологии: смета за 30 секунд со сравнением цен по Москве, план по КТ, запись за 4 шага. Клиника вымышленная — пример работы агентства Tercia.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0E3B3A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230E3B3A'/%3E%3Cpath d='M16 7c3 0 4 1.4 6 1.4 1.6 0 2.6 1.3 2.6 3.4 0 4-1.8 12.2-4.2 12.2-1.6 0-1.9-3.6-4.4-3.6s-2.8 3.6-4.4 3.6C9.2 24 7.4 15.8 7.4 11.8c0-2.1 1-3.4 2.6-3.4C12 8.4 13 7 16 7z' fill='%23F7F4EE'/%3E%3C/svg%3E">
-<link rel="preload" href="../../assets/fonts/unbounded-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/cormorant-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/manrope-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ===========================================================
-   «Династия» — демо-сайт стоматологии-студии для Tercia.
+   «Каспий» — демо-сайт стоматологии-студии для Tercia.
    Макет от 18 октября 2026. Шрифты локально, фото — SVG-заглушки,
    всё тяжёлое грузится только по нажатию. Бюджет первого экрана < 300 КБ.
    =========================================================== */
 
 /* --- шрифты локально, кириллица грузится первой --- */
-@font-face{font-family:Unbounded;src:url(../../assets/fonts/unbounded-cyr.woff2) format('woff2');
-  font-weight:400 800;font-display:swap;
-  unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:Unbounded;src:url(../../assets/fonts/unbounded-lat.woff2) format('woff2');
-  font-weight:400 800;font-display:swap;
-  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:Cormorant;src:url(../../assets/fonts/cormorant-cyr.woff2) format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Cormorant;src:url(../../assets/fonts/cormorant-lat.woff2) format('woff2');font-weight:400 700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:Cormorant;src:url(../../assets/fonts/cormorant-cyr-i.woff2) format('woff2');font-weight:400 700;font-style:italic;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Cormorant;src:url(../../assets/fonts/cormorant-lat-i.woff2) format('woff2');font-weight:400 700;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
+@font-face{font-family:Manrope;src:url(../../assets/fonts/manrope-cyr.woff2) format('woff2');font-weight:300 700;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Manrope;src:url(../../assets/fonts/manrope-lat.woff2) format('woff2');font-weight:300 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
 @font-face{font-family:Onest;src:url(../../assets/fonts/onest-cyr.woff2) format('woff2');
   font-weight:400 700;font-display:swap;
   unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -32,25 +32,29 @@
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+20AC,U+2122,U+2212}
 
 :root{
-  --deep:#0E3B3A; --teal:#1F7A70; --glass:#A8D8CC; --enamel:#F7F4EE;
-  --sand:#E8DCC8; --coral:#FF6A4D; --evening:#0B2227;
-  --ink:#0E3B3A; --body:#4A5F5C; --soft:#7E918E;
-  --bg:var(--enamel); --card:#FFFFFF; --line:#E4DED0; --line-2:#EFEAE0;
-  --accent:var(--coral); --accent-ink:#0E3B3A; --brand:var(--teal); --tile:var(--sand);
-  --disp:Unbounded,system-ui,sans-serif; --sans:Onest,system-ui,-apple-system,sans-serif;
-  --r:16px; --r-lg:24px; --maxw:1200px; --pad:clamp(16px,4.2vw,40px);
-  --ease:cubic-bezier(.22,1,.36,1);
+  /* палитра «Династии»: эспрессо, тёплая бумага, золото */
+  --espresso:#241913; --brown:#3A2A22; --brown-2:#5A463A;
+  --paper:#FFFDF8; --ivory:#FAF6EE; --cream:#F3EBDB;
+  --gold:#B8935A; --gold-l:#D9BF8C; --gold-d:#8F6D3A;
+  --deep:var(--espresso); --teal:var(--gold); --glass:#EADBC0; --enamel:var(--paper);
+  --sand:var(--cream); --coral:var(--gold); --evening:#1A110C;
+  --ink:#2B2019; --body:#5A463A; --soft:#8A7868;
+  --bg:var(--paper); --card:#FFFFFF; --line:#E6DCC8; --line-2:#F0E7D6;
+  --accent:var(--gold); --accent-ink:#2B2019; --brand:var(--gold-d); --tile:var(--cream);
+  --disp:Cormorant,'Cormorant Garamond',Georgia,serif; --sans:Manrope,system-ui,-apple-system,sans-serif;
+  --r:18px; --r-lg:22px; --maxw:1200px; --pad:clamp(16px,4.2vw,40px);
+  --ease:cubic-bezier(.22,.8,.2,1);
 }
 /* детский режим */
 html[data-mode="kids"]{
-  --brand:#2FA3C7; --accent:#FFB547; --accent-ink:#3A2600;
-  --glass:#CFEBF7; --sand:#FFEFD2; --tile:#FFEFD2; --line:#F2E3C8;
+  --brand:#A8703C; --accent:#E3A85C; --accent-ink:#2B2019;
+  --glass:#F6E3C6; --cream:#FBF0DC; --tile:#FBF0DC; --line:#F0E0C6;
 }
 /* вечерняя тема — после закрытия клиники */
 html[data-theme="evening"]{
-  --bg:var(--evening); --card:#12343A; --ink:#EAF3F0; --body:#AFC6C2; --soft:#7F9A96;
-  --line:#1E4A50; --line-2:#17403F; --sand:#143A3C; --tile:#143A3C; --glass:#1C5A58;
-  --deep:#EAF3F0;
+  --bg:var(--evening); --card:#2A1D16; --ink:#F6EFE2; --body:#CDB9A4; --soft:#9A8672;
+  --line:#3C2C22; --line-2:#33251C; --cream:#2A1D16; --tile:#2A1D16; --glass:#4A3426;
+  --paper:var(--evening); --ivory:#20150F; --deep:#F6EFE2; --brand:var(--gold-l);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -82,7 +86,7 @@ html[data-theme="evening"] .demobar a{color:#7FD1C4}
 /* --- шапка --- */
 .hdr{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 92%,transparent);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:14px;min-height:64px;padding-block:10px;flex-wrap:wrap;max-width:100%}
+.nav{display:flex;align-items:center;gap:12px;min-height:64px;padding-block:10px;flex-wrap:wrap;max-width:100%}
 .logo{display:flex;flex-direction:column;line-height:1.1;margin-right:auto}
 .logo b{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.02em;text-transform:lowercase}
 .logo span{font-size:11.5px;color:var(--soft);margin-top:3px}
@@ -92,10 +96,11 @@ html[data-theme="evening"] .demobar a{color:#7FD1C4}
 .status i{width:7px;height:7px;border-radius:50%;background:#34C759;flex:none;box-shadow:0 0 0 3px rgba(52,199,89,.18)}
 .status.shut i{background:var(--soft);box-shadow:0 0 0 3px rgba(126,145,142,.18)}
 .nav-l{display:none;gap:2px;margin-inline:auto;min-width:0;flex-wrap:wrap;justify-content:center}
-.nav-l a{font-size:14.2px;padding:9px 10px;border-radius:99px;color:var(--body);transition:.2s;white-space:nowrap}
+.nav-l a{font-size:13.6px;padding:8px 9px;border-radius:99px;color:var(--body);transition:.2s;white-space:nowrap}
 .nav-l a:hover{background:var(--tile);color:var(--ink)}
 .nav-ph{display:none;font-weight:600;font-size:15px;white-space:nowrap}
-@media(max-width:1180px){.nav-ph{display:none!important}}
+@media(max-width:1340px){.nav-ph{display:none!important}}
+@media(min-width:900px) and (max-width:1279px){.hdr .status{display:none}}
 .burger{width:44px;height:44px;border-radius:13px;border:1px solid var(--line);background:var(--card);
   display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;cursor:pointer;flex:none}
 .burger span{width:16px;height:2px;background:var(--ink);border-radius:2px;display:block}
@@ -609,27 +614,114 @@ html[data-theme="evening"] .ct{background:#07191C}
 @media(min-width:900px){ .ct{grid-template-columns:1fr 1fr;align-items:center} .rate-row{grid-template-columns:repeat(4,1fr)} }
 
 
-/* --- филиалы и Рязань между приёмами --- */
-.branches{display:grid;gap:10px}
-.branch{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);
-  border-radius:var(--r);padding:16px 18px;transition:.25s var(--ease)}
-.branch:hover{border-color:var(--brand);transform:translateX(4px)}
-.branch .n{flex:1;min-width:0}
-.branch .n b{display:block;font-weight:600;font-size:16px;letter-spacing:-.01em}
-.branch .n span{font-size:13.5px;color:var(--body)}
-.branch .ic{width:42px;height:42px;border-radius:12px;background:var(--glass);display:grid;place-items:center;
-  color:var(--deep);flex:none}
-.branch .go{font-size:13.5px;font-weight:600;color:var(--brand);white-space:nowrap}
-.places{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.place{border-radius:var(--r);padding:18px;min-height:132px;display:flex;flex-direction:column;justify-content:flex-end;
-  background:var(--tile);border:1px solid var(--line)}
-.place:nth-child(1){background:linear-gradient(160deg,#D7E7E2,#AFCCC5)}
-.place:nth-child(2){background:linear-gradient(160deg,#D4E3EC,#A8C3D4)}
-.place:nth-child(3){background:linear-gradient(160deg,#E9DECB,#CDB89A)}
-.place:nth-child(4){background:linear-gradient(160deg,#EADFE9,#C3AFC6)}
-.place b{font-weight:600;font-size:16px;letter-spacing:-.01em;color:var(--deep)}
-.place p{font-size:13.6px;color:rgba(14,59,58,.72);margin-top:5px}
-@media(min-width:900px){.places{grid-template-columns:repeat(4,1fr)}.branches{grid-template-columns:repeat(3,1fr);display:grid}}
+
+/* ============================================================
+   Слой стилистики «Династии»: антиква в заголовках, разрядка
+   капсом в служебном тексте, золотая линия как акцент,
+   тёплая бумага вместо белого, мягкие тени вместо жирных.
+   ============================================================ */
+h1,h2,h3,.hero h1{font-family:var(--disp);font-weight:500;line-height:1.04;letter-spacing:-.012em}
+h2{font-size:clamp(30px,5.2vw,52px)}
+.hero h1{font-size:clamp(40px,8vw,88px);line-height:1.02;letter-spacing:-.018em}
+.hero h1 .strike{color:var(--soft)}
+.hero h1 .strike::after{background:var(--gold);height:.05em;top:.58em}
+.accent-i{font-style:italic;color:var(--gold-d)}
+html[data-theme="evening"] .accent-i{color:var(--gold-l)}
+.sub,.lede,.note,.fine{font-weight:300}
+
+.kick{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-d);display:flex;align-items:center;gap:12px}
+.kick::before{content:'';width:34px;height:1px;background:var(--gold);flex:none}
+html[data-theme="evening"] .kick{color:var(--gold-l)}
+
+.btn{font-family:var(--sans);font-weight:600;font-size:12.5px;letter-spacing:.11em;text-transform:uppercase;
+  border-radius:99px;padding:17px 28px;line-height:1.1}
+.btn-sm{padding:12px 18px;font-size:11px;letter-spacing:.1em}
+.btn-c{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#2B2019;border-color:transparent;
+  box-shadow:0 10px 26px -16px rgba(143,109,58,.9)}
+.btn-c:hover{filter:none;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#FFFDF8;
+  box-shadow:0 14px 30px -14px rgba(143,109,58,.95)}
+.btn-d{background:var(--espresso);color:var(--paper);border-color:var(--espresso)}
+.btn-d:hover{background:var(--brown)}
+html[data-theme="evening"] .btn-d{background:var(--gold-l);color:var(--espresso);border-color:var(--gold-l)}
+.btn-o{background:transparent;border-color:var(--espresso);color:var(--ink)}
+.btn-o:hover{background:var(--espresso);color:var(--paper);border-color:var(--espresso)}
+html[data-theme="evening"] .btn-o{border-color:var(--body);color:var(--ink)}
+
+.trust b,.b-i .big,.total .big,.rate b,.rating b,.doc .n,.quiz-res .big,.sum .v,
+.acc .pr .v,.stepper output,.cmp-row b,.bk-top .t,.path .dot,.s-dot{font-family:var(--disp);font-weight:500;letter-spacing:0}
+.trust b{font-size:clamp(26px,3.2vw,34px)}
+.rate b,.rating b{font-size:28px}
+.total .big{font-size:clamp(30px,5vw,44px);letter-spacing:-.01em}
+.b-i .big{font-size:clamp(34px,5.4vw,46px)}
+.doc .n{font-size:21px}
+.row .nm b,.pick .n b,.ci b,.offer b,.b-i b,.inc .t{font-family:var(--sans);font-weight:600}
+
+.card,.rows,.acc,.rev,.ci,.quiz,.book,.ct-form,.slotcard,.trust>div,.rate,.rating>div,
+.b-i,.offer,.faq details,.search,.pick button,.days button,.slots button,.doc{border-radius:var(--r);border-color:var(--line)}
+.card,.rev,.ci,.b-i,.rate,.rating>div,.offer,.faq details,.doc{box-shadow:0 1px 0 rgba(43,32,25,.03)}
+.sec.tint{background:var(--ivory)}
+.calc,.quiz,.book{background:var(--paper);border:1px solid var(--line)}
+.hdr{background:color-mix(in srgb,var(--paper) 94%,transparent);border-bottom:1px solid var(--line)}
+
+.total,.quiz-res,.ct,.sum,.ftr,.thumb{background:var(--espresso);color:var(--paper)}
+.total .lab,.sum .lab{color:var(--gold-l);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.total .pay,.sum .fine,.total .fine{color:rgba(255,253,248,.72);font-weight:300}
+.cmp{border-top-color:rgba(217,191,140,.28)}
+.cmp-row.save b{color:var(--gold-l)}
+.cmp-bar{background:rgba(217,191,140,.2)}
+.cmp-bar i{background:linear-gradient(90deg,var(--gold-l),var(--gold))}
+.quiz-res .big{font-size:clamp(21px,2.6vw,28px)}
+.quiz-res .doc{background:rgba(217,191,140,.12)}
+.quiz-res .doc .av,.pick .av,.slotcard .av,.ci .ic,.inc .ic,.coord .av{background:var(--cream);color:var(--brown)}
+.ct-steps i{background:rgba(217,191,140,.16);font-family:var(--disp);font-weight:600}
+
+.demobar{background:var(--brown);color:var(--cream);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;padding:10px 0}
+.demobar a{color:var(--gold-l)}
+
+.seg,.matseg{background:var(--cream);border-radius:99px}
+.seg button,.matseg button{border-radius:99px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.seg button[aria-pressed="true"],.matseg button[aria-pressed="true"]{background:var(--espresso);color:var(--paper)}
+.tabs button,.chip{border-radius:99px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  padding:12px 20px;background:transparent}
+.tabs button[aria-selected="true"],.chip[aria-pressed="true"]{background:var(--espresso);color:var(--paper);border-color:var(--espresso)}
+.o-badge{letter-spacing:.14em;background:var(--cream);color:var(--brown-2)}
+.offer.on .o-badge{background:var(--gold-l);color:#2B2019}
+.offer.on{border-color:var(--gold)}
+.offer.on.best{border-color:var(--gold-d);background:color-mix(in srgb,var(--gold) 8%,var(--paper))}
+.badges span{border-radius:99px;font-weight:500;font-size:13px}
+.badges span::before{background:var(--gold)}
+
+.logo b{font-family:var(--disp);font-weight:600;font-size:23px;letter-spacing:.13em;text-transform:uppercase}
+.logo span{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);font-weight:500}
+.logo span i{color:var(--gold-d)}
+
+.hero-art,.svc-art{background:linear-gradient(165deg,var(--cream),#E7D9BF)}
+.doc .ph.a{background:linear-gradient(165deg,#EFE2CC,#D8C3A2)}
+.doc .ph.b{background:linear-gradient(165deg,#E8DAC6,#CDB08A)}
+.doc .ph.c{background:linear-gradient(165deg,#F2E8D8,#DCC9AC)}
+.doc .ph.d{background:linear-gradient(165deg,#EADCC6,#D2B894)}
+
+.badgeline{background:var(--brown);color:var(--cream);overflow:hidden;padding:13px 0}
+.badgeline-t{display:flex;gap:46px;width:max-content;animation:bl 46s linear infinite;
+  font-family:var(--disp);font-style:italic;font-size:19px;white-space:nowrap}
+.badgeline-t span{display:flex;align-items:center;gap:46px}
+.badgeline-t span::after{content:'·';color:var(--gold-l);font-style:normal}
+@keyframes bl{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.badgeline-t{animation:none}}
+
+.status{border-radius:99px;font-size:12px;letter-spacing:.08em}
+@media(max-width:620px){.trust{grid-template-columns:repeat(2,1fr)}}
+.horizon{color:var(--gold-l);opacity:.5}
+.ba .tagL{background:var(--espresso)}
+.ba .knob{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#2B2019}
+.map .pin i{background:var(--gold-d)}
+.path .step.lit .dot{background:var(--gold);border-color:var(--gold);color:#2B2019}
+.sell{background:var(--gold-l);color:#2B2019}
+.sell b{font-family:var(--disp);font-weight:600}
+.sell .btn{background:var(--espresso);color:var(--paper)}
+.wall div{border-radius:var(--r)}
 
 /* --- появление блоков при прокрутке --- */
 .rv{opacity:0;transform:translateY(14px)}
@@ -688,23 +780,23 @@ html[data-theme="evening"] .ct{background:#07191C}
 </defs></svg>
 
 <div class="demobar" id="demobar"><div class="in">
-  <span>Проект агентства Tercia для клиники «Династия», Рязань.</span>
+  <span>Это демо-сайт агентства Tercia. Клиника вымышлена.</span>
   <a href="../../dental/">Сделать такой же для вашей клиники →</a>
   <button class="x" id="demox" aria-label="Скрыть плашку">✕</button>
 </div></div>
 
 <header class="hdr"><div class="wrap nav">
-  <a class="logo" href="#top"><b>династия</b><span>стоматология <i>•</i> Рязань · для пациентов из Москвы</span></a>
+  <a class="logo" href="#top"><b>каспий</b><span>стоматология-студия <i>·</i> Москва</span></a>
   <div class="seg" role="group" aria-label="Для кого">
     <button type="button" data-mode="adults" aria-pressed="true">Взрослым</button>
     <button type="button" data-mode="kids" aria-pressed="false">Детям</button>
   </div>
   <nav class="nav-l">
-    <a href="#services">Услуги</a><a href="#calc">Смета</a><a href="#ct">План по КТ</a>
+    <a href="#services">Услуги</a><a href="#calc">Смета</a><a href="#ct">КТ</a>
     <a href="#doctors">Врачи</a><a href="#prices">Цены</a><a href="#contacts">Контакты</a>
   </nav>
   <span class="status" id="status"><i></i><span id="status-t">Открыто до 21:00</span></span>
-  <a class="nav-ph" href="tel:+74912515525">+7 (4912) 51-55-25</a>
+  <a class="nav-ph" href="tel:+74950000000">+7 495 000-00-00</a>
   <a href="#book" class="btn btn-c btn-sm" style="flex:none">Записаться</a>
   <button class="burger" aria-label="Меню" id="burger"><span></span><span></span><span></span></button>
 </div></header>
@@ -714,26 +806,26 @@ html[data-theme="evening"] .ct{background:#07191C}
 <!-- 1 · первый экран -->
 <section class="hero"><div class="wrap hero-grid">
   <div>
-    <h1>Лечение в Рязани без <span class="strike">переплаты</span> компромиссов</h1>
-    <p class="lede">Два часа на электричке — и импланты, виниры или протезирование на треть дешевле московских. План по вашему КТ присылаем до поездки, такси с вокзала наше.</p>
+    <h1>Лечим зубы без <span class="strike">боли</span> <span class="accent-i">страха</span></h1>
+    <p class="lede">Цена в договоре до начала лечения, КТ и консультация — 0 ₽. Не были у стоматолога пять лет? Это нормально, начнём с осмотра.</p>
     <div class="hero-act">
       <a href="#book" class="btn btn-c">Записаться за 2 минуты →</a>
-      <a href="#calc" class="btn btn-o">Сравнить с ценами Москвы</a>
+      <a href="#calc" class="btn btn-o">Посчитать стоимость лечения</a>
     </div>
     <div class="slotcard">
       <span class="av"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-user"/></svg></span>
       <div>
         <div class="t">Ближайшее окно</div>
         <div class="v" id="near-time">Сегодня, 18:30</div>
-        <div class="d">Ольга Парамошина · главный врач</div>
+        <div class="d">Анна Иванова · терапевт</div>
       </div>
-      <button class="btn btn-d btn-sm" data-goto-book data-svc="consult" data-doc="paramoshina">Занять</button>
+      <button class="btn btn-d btn-sm" data-goto-book data-svc="consult" data-doc="ivanova">Занять</button>
     </div>
     <div class="trust">
-      <div><b>5,0</b><span>Яндекс и Google</span></div>
+      <div><b>4,9</b><span>Яндекс · 214 отзывов</span></div>
       <div><b>14 лет</b><span>клинике</span></div>
-      <div><b>40+</b><span>специалистов</span></div>
-      <div><b>97 000+</b><span>пациентов</span></div>
+      <div><b>9 врачей</b><span>в штате</span></div>
+      <div><b>3 года</b><span>гарантия</span></div>
     </div>
   </div>
   <div class="hero-art">
@@ -741,8 +833,8 @@ html[data-theme="evening"] .ct{background:#07191C}
     <p class="ph">Иллюстрация. На сайте клиники — фотография кабинета</p>
     <a class="quote-card" href="#calc">
       <span class="k">Смета за 30 секунд</span>
-      <b>от 55 000 ₽</b>
-      <span class="s">имплант под ключ · в Москве от 75 000 ₽</span>
+      <b>от 68 000 ₽</b>
+      <span class="s">имплант под ключ · по Москве от 85 000 ₽</span>
       <span class="go">Посчитать свою →</span>
     </a>
   </div>
@@ -752,6 +844,8 @@ html[data-theme="evening"] .ct{background:#07191C}
   <div class="rate-row rv" id="rate-row"></div>
   <div class="badges rv" id="badges"></div>
 </div></section>
+
+<div class="badgeline" aria-hidden="true"><div class="badgeline-t" id="badgeline"></div></div>
 
 <svg class="horizon" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
   <path d="M0 24 Q150 10 300 20 T600 18 T900 24 T1200 14" stroke="currentColor" stroke-width="1.5" fill="none"/>
@@ -770,9 +864,9 @@ html[data-theme="evening"] .ct{background:#07191C}
     <div class="quiz-step on" data-step="1">
       <p style="font-weight:600;margin-bottom:14px">С чем пришли?</p>
       <div class="tiles" role="group">
-        <button class="tile" data-branch="missing"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="currentColor"><use href="#i-tooth"/></svg></span><b>Нет одного зуба</b></button>
-        <button class="tile" data-branch="noteeth"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-lab"/></svg></span><b>Нет нескольких зубов</b></button>
-        <button class="tile" data-branch="beauty"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="currentColor"><use href="#i-spark"/></svg></span><b>Хочу красивую улыбку</b></button>
+        <button class="tile" data-branch="pain"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="currentColor"><use href="#i-tooth"/></svg></span><b>Болит зуб</b></button>
+        <button class="tile" data-branch="missing"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><use href="#i-lab"/></svg></span><b>Нет зуба</b></button>
+        <button class="tile" data-branch="white"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="currentColor"><use href="#i-spark"/></svg></span><b>Хочу белые зубы</b></button>
         <button class="tile" data-branch="braces"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M8 9v6M12 9v6M16 9v6"/></svg></span><b>Кривые зубы</b></button>
         <button class="tile" data-branch="kid"><span class="ic"><svg width="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8.5 13.5s1.4 2 3.5 2 3.5-2 3.5-2M9 9.5h.01M15 9.5h.01"/></svg></span><b>Ребёнку</b></button>
       </div>
@@ -806,11 +900,11 @@ html[data-theme="evening"] .ct{background:#07191C}
 <section class="sec tint" id="services"><div class="wrap">
   <div class="head rv"><div class="kick">Услуги</div><h2>Что мы лечим</h2></div>
   <div class="tabs rv" role="tablist" aria-label="Направления">
-    <button role="tab" aria-selected="true" data-svc="implant">Имплантация</button>
-    <button role="tab" aria-selected="false" data-svc="allon4">All-on-4</button>
-    <button role="tab" aria-selected="false" data-svc="crown">Коронки и виниры</button>
-    <button role="tab" aria-selected="false" data-svc="ortho">Ортодонтия</button>
-    <button role="tab" aria-selected="false" data-svc="hygiene">Гигиена</button>
+    <button role="tab" aria-selected="true" data-svc="caries">Терапия</button>
+    <button role="tab" aria-selected="false" data-svc="implant">Имплантация</button>
+    <button role="tab" aria-selected="false" data-svc="white">Отбеливание</button>
+    <button role="tab" aria-selected="false" data-svc="braces">Ортодонтия</button>
+    <button role="tab" aria-selected="false" data-svc="crown">Протезирование</button>
     <button role="tab" aria-selected="false" data-svc="kids">Детям</button>
   </div>
   <div class="svc-body rv">
@@ -823,10 +917,10 @@ html[data-theme="evening"] .ct{background:#07191C}
 <section class="sec" id="ba"><div class="wrap">
   <div class="head rv"><div class="kick">До / после</div><h2>Потяните шторку —<br>увидите результат</h2></div>
   <div class="chips rv" role="group" aria-label="Вид лечения">
-    <button class="chip" aria-pressed="true" data-case="implant">Импланты</button>
-    <button class="chip" aria-pressed="false" data-case="allon4">All-on-4</button>
-    <button class="chip" aria-pressed="false" data-case="veneer">Виниры</button>
-    <button class="chip" aria-pressed="false" data-case="ortho">Элайнеры</button>
+    <button class="chip" aria-pressed="true" data-case="white">Отбеливание</button>
+    <button class="chip" aria-pressed="false" data-case="implant">Импланты</button>
+    <button class="chip" aria-pressed="false" data-case="crown">Виниры</button>
+    <button class="chip" aria-pressed="false" data-case="braces">Элайнеры</button>
   </div>
   <div class="ba-wrap rv">
     <div class="ba" id="ba" style="--x:50%">
@@ -849,7 +943,7 @@ html[data-theme="evening"] .ct{background:#07191C}
         <div><dt>Срок</dt><dd id="ba-term">1 визит</dd></div>
         <div><dt>Стоимость</dt><dd id="ba-price">14 900 ₽</dd></div>
       </dl>
-      <button class="btn btn-d btn-full" data-goto-book data-svc="implant" data-doc="hreshkova">Хочу так же — записаться</button>
+      <button class="btn btn-d btn-full" data-goto-book data-svc="implant" data-doc="petrov">Хочу так же — записаться</button>
       <p class="note">В демо — иллюстрация. На сайте клиники здесь фото реальных пациентов с их письменного согласия.</p>
     </div>
   </div>
@@ -872,7 +966,7 @@ html[data-theme="evening"] .ct{background:#07191C}
       </div>
 
       <div class="total">
-        <div class="lab">Ориентировочно в «Династии»</div>
+        <div class="lab">Ориентировочно в «Каспии»</div>
         <div class="big"><span id="calc-min">0</span> – <span id="calc-max">0</span> ₽</div>
         <div class="cmp" id="calc-cmp">
           <div class="cmp-row"><span>Средняя цена по Москве</span><b id="calc-msk">—</b></div>
@@ -893,14 +987,14 @@ html[data-theme="evening"] .ct{background:#07191C}
 <section class="sec" id="ct"><div class="wrap">
   <div class="ct rv">
     <div>
-      <div class="kick" style="color:var(--glass)">План до визита</div>
-      <h2>Пришлите КТ — план<br>составим до поездки</h2>
-      <p class="sub">Не нужно ехать в Рязань, чтобы узнать, что вас ждёт. Хирург и ортопед разберут снимок и пришлют предварительный план с этапами, числом визитов и вилкой по стоимости.</p>
+      <div class="kick">План до визита</div>
+      <h2>Пришлите КТ — врач<br>посмотрит и составит план</h2>
+      <p class="sub">Не нужно ехать в клинику, чтобы узнать, что вас ждёт. Хирург и ортопед разберут ваш снимок и пришлют предварительный план с этапами и вилкой по стоимости.</p>
       <div class="ct-steps">
         <div><i>1</i><span>Загружаете КТ или панорамный снимок — любым файлом до 200 МБ</span></div>
         <div><i>2</i><span>Врачи смотрят случай и отвечают в течение рабочего дня</span></div>
         <div><i>3</i><span>Вы получаете план с этапами, сроками и вилкой по цене</span></div>
-        <div><i>4</i><span>Решаете, ехать ли. Это бесплатно и ни к чему не обязывает</span></div>
+        <div><i>4</i><span>Решаете, приходить ли на осмотр. Это бесплатно и ни к чему не обязывает</span></div>
       </div>
     </div>
     <form class="ct-form" id="ct-form" novalidate>
@@ -925,17 +1019,17 @@ html[data-theme="evening"] .ct{background:#07191C}
 <section class="sec" id="path"><div class="wrap">
   <div class="head rv"><div class="kick">Как всё проходит</div><h2>Ваш путь в 6 шагов</h2></div>
   <div class="path rv">
-    <div class="step"><span class="dot">1</span><div><div class="t">Присылаете КТ</div><p>Или просто пишете координатору. Снимок можно сделать в Москве или уже у нас в день приезда.</p></div></div>
-    <div class="step"><span class="dot">2</span><div><div class="t">Врачи смотрят случай</div><p>Хирург и ортопед разбирают снимок и присылают предварительный план с этапами и вилкой по цене.</p></div></div>
-    <div class="step"><span class="dot">3</span><div><div class="t">Выбираете дату</div><p>Координатор подбирает день, бронирует врачей и заказывает такси с вокзала — встретим и отвезём.</p></div></div>
-    <div class="step"><span class="dot">4</span><div><div class="t">Приезжаете и лечитесь</div><p>Осмотр, окончательный план и смета в договоре. Дальше — лечение по плану, обычно за один-два приезда.</p></div></div>
-    <div class="step"><span class="dot">5</span><div><div class="t">Контроль</div><p>Часть контролей проходим онлайн по фотографиям, чтобы вы не ездили лишний раз.</p></div></div>
-    <div class="step"><span class="dot">6</span><div><div class="t">Гарантия</div><p>Гарантия на лечение и пожизненная — на импланты. Если что-то пойдёт не так, решаем за свой счёт.</p></div></div>
+    <div class="step"><span class="dot">1</span><div><div class="t">Заявка</div><p>Записываетесь онлайн или в мессенджере. Администратор подтверждает за 15 минут.</p></div></div>
+    <div class="step"><span class="dot">2</span><div><div class="t">Осмотр и КТ</div><p>Бесплатно. Смотрим, фотографируем, делаем снимок — без него плана не бывает.</p></div></div>
+    <div class="step"><span class="dot">3</span><div><div class="t">План и смета</div><p>Показываем варианты и цены. Смета фиксируется в договоре и дальше не растёт.</p></div></div>
+    <div class="step"><span class="dot">4</span><div><div class="t">Лечение</div><p>По плану, в своё время. Можно под седацией — если боитесь, скажите заранее.</p></div></div>
+    <div class="step"><span class="dot">5</span><div><div class="t">Контроль</div><p>Через неделю зовём на бесплатный осмотр, проверяем результат.</p></div></div>
+    <div class="step"><span class="dot">6</span><div><div class="t">Гарантия 3 года</div><p>Гарантийный случай лечим бесплатно. Бот напомнит о профосмотре через полгода.</p></div></div>
   </div>
   <div class="coord rv">
     <span class="av"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-chat"/></svg></span>
-    <div><b>Персональный координатор</b>
-      <p style="color:var(--body);font-size:14.4px;margin-top:3px">Один человек ведёт вас от первого сообщения до гарантии: собирает план у врачей, подбирает дату, заказывает такси, подсказывает гостиницу и следит за сметой.</p></div>
+    <div><b>Личный координатор лечения</b>
+      <p style="color:var(--body);font-size:14.4px;margin-top:3px">Один человек ведёт вас от первого звонка до гарантии: отвечает на вопросы, переносит визиты и следит, чтобы смета не росла.</p></div>
   </div>
 </div></section>
 
@@ -946,35 +1040,35 @@ html[data-theme="evening"] .ct{background:#07191C}
   <div class="docs rv">
     <article class="doc adultsonly">
       <div class="ph a" data-portrait="0"><span class="cap">Иллюстрация</span>
-        <button class="play" data-video="Ольга Хрешкова">▶ Видеовизитка 15 с</button></div>
-      <div class="b"><div class="n">Ольга Хрешкова</div><div class="sp">Хирург-имплантолог · стаж 21 год · на Заводском</div>
-        <p class="q">«Ставлю импланты двадцать лет. На КТ видно почти всё — поэтому план обсуждаем до того, как вы сядете в электричку.»</p>
-        <div class="free"><i></i>Ближайшее окно: завтра, 10:00</div>
-        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="hreshkova">Записаться к этому врачу</button></div>
+        <button class="play" data-video="Анна Иванова">▶ Видеовизитка 15 с</button></div>
+      <div class="b"><div class="n">Анна Иванова</div><div class="sp">Терапевт, эндодонтист · стаж 12 лет</div>
+        <p class="q">«Лечу каналы под микроскопом. Не бойтесь — я всё объясню до того, как возьму инструмент.»</p>
+        <div class="free"><i></i>Ближайшее окно: сегодня, 18:30</div>
+        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="ivanova">Записаться к этому врачу</button></div>
     </article>
     <article class="doc adultsonly">
       <div class="ph b" data-portrait="1"><span class="cap">Иллюстрация</span>
-        <button class="play" data-video="Ольга Парамошина">▶ Видеовизитка 15 с</button></div>
-      <div class="b"><div class="n">Ольга Парамошина</div><div class="sp">Главный врач, ортопед · стаж 14 лет · на Кальной</div>
-        <p class="q">«Своя лаборатория рядом: примерку делаем на следующий день, а не через три недели. Для приезжих это решает всё.»</p>
-        <div class="free"><i></i>Ближайшее окно: сегодня, 18:30</div>
-        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="paramoshina">Записаться к этому врачу</button></div>
+        <button class="play" data-video="Сергей Петров">▶ Видеовизитка 15 с</button></div>
+      <div class="b"><div class="n">Сергей Петров</div><div class="sp">Хирург-имплантолог · стаж 15 лет</div>
+        <p class="q">«Поставил больше двух тысяч имплантов. Операция занимает меньше часа, вечером вы уже работаете.»</p>
+        <div class="free"><i></i>Ближайшее окно: завтра, 10:00</div>
+        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="petrov">Записаться к этому врачу</button></div>
     </article>
     <article class="doc adultsonly">
       <div class="ph c" data-portrait="2"><span class="cap">Иллюстрация</span>
-        <button class="play" data-video="Светлана Рябова">▶ Видеовизитка 15 с</button></div>
-      <div class="b"><div class="n">Светлана Рябова</div><div class="sp">Ортодонт, зав. отделением · стаж 17 лет · на С. Середы</div>
-        <p class="q">«Элайнеры позволяют приезжать реже: часть контролей проходим онлайн, по фотографиям.»</p>
+        <button class="play" data-video="Мария Орлова">▶ Видеовизитка 15 с</button></div>
+      <div class="b"><div class="n">Мария Орлова</div><div class="sp">Ортодонт · стаж 9 лет</div>
+        <p class="q">«Покажу 3D-план: как будет выглядеть улыбка в конце — ещё до того, как вы согласитесь.»</p>
         <div class="free"><i></i>Ближайшее окно: завтра, 15:20</div>
-        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="ryabova">Записаться к этому врачу</button></div>
+        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="orlova">Записаться к этому врачу</button></div>
     </article>
     <article class="doc">
       <div class="ph d" data-portrait="3"><span class="cap">Иллюстрация</span>
-        <button class="play" data-video="Александра Исаева">▶ Видеовизитка 15 с</button></div>
-      <div class="b"><div class="n">Александра Исаева</div><div class="sp">Детский стоматолог · на Кальной</div>
+        <button class="play" data-video="Дмитрий Ковалёв">▶ Видеовизитка 15 с</button></div>
+      <div class="b"><div class="n">Дмитрий Ковалёв</div><div class="sp">Детский стоматолог · стаж 7 лет</div>
         <p class="q">«Сначала знакомимся, потом считаем зубы, и только потом лечим. Без слёз и уговоров.»</p>
         <div class="free"><i></i>Ближайшее окно: сегодня, 16:00</div>
-        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="isaeva">Записаться к этому врачу</button></div>
+        <button class="btn btn-d btn-sm btn-full" data-goto-book data-doc="kovalev">Записаться к этому врачу</button></div>
     </article>
   </div>
 </div></section>
@@ -985,30 +1079,30 @@ html[data-theme="evening"] .ct{background:#07191C}
   <div class="bento rv">
     <div class="b-i dark wide tall">
       <span class="ic"><svg width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-shield"/></svg></span>
-      <div class="big">−30%</div>
-      <b>К ценам Москвы</b>
-      <p>Те же материалы и протоколы, тот же цирконий и те же системы имплантов. Разница — в аренде и зарплатах, а не в качестве.</p>
+      <div class="big">3 года</div>
+      <b>Гарантия на работу</b>
+      <p>На пломбы, коронки и импланты. Гарантийный случай лечим бесплатно, без споров и экспертиз.</p>
     </div>
     <div class="b-i">
       <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-doc"/></svg></span>
-      <b>План до поездки</b><p>Разбираем ваш КТ онлайн и присылаем этапы и вилку по цене. Бесплатно.</p>
+      <b>Цена в договоре</b><p>Смета фиксируется до начала лечения. Доплат по ходу не бывает.</p>
     </div>
     <div class="b-i">
-      <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-pin"/></svg></span>
-      <b>Такси с вокзала</b><p>Встретим, отвезём в клинику и обратно. Всем иногородним, без доплат.</p>
+      <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-moon"/></svg></span>
+      <b>Лечение во сне</b><p>Седация для тех, кто боится. Проснётесь — всё уже сделано.</p>
     </div>
     <div class="b-i">
       <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-lab"/></svg></span>
-      <b>Своя лаборатория</b><p>Примерка на следующий день. Для приезжих это сокращает число визитов.</p>
+      <b>Своя лаборатория</b><p>Коронка за 5 дней, а не за три недели. И дешевле, чем на аутсорсе.</p>
     </div>
     <div class="b-i">
       <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-clock"/></svg></span>
-      <div class="big">2 ч</div>
-      <b>Дорога из Москвы</b><p>Электричка с Казанского вокзала. Выезжать ночью не нужно.</p>
+      <div class="big">6 минут</div>
+      <b>Среднее ожидание</b><p>Планируем расписание с запасом — в холле вы не сидите.</p>
     </div>
     <div class="b-i wide">
-      <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-moon"/></svg></span>
-      <b>Лечение во сне и гарантия</b><p>Седация для тех, кто боится. Гарантия на лечение и пожизненная — на импланты, с автоклавом класса B и протоколом стерильности.</p>
+      <span class="ic"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><use href="#i-chat"/></svg></span>
+      <b>Бот-напоминалка в Telegram</b><p>Напомнит о визите за час, поможет перенести запись в два нажатия и позовёт на профосмотр через полгода.</p>
     </div>
   </div>
 </div></section>
@@ -1040,14 +1134,14 @@ html[data-theme="evening"] .ct{background:#07191C}
 <section class="sec tint" id="reviews"><div class="wrap">
   <div class="head rv"><div class="kick">Отзывы</div><h2>Что говорят пациенты</h2></div>
   <div class="rating rv">
-    <div><b>5,0</b><span>Яндекс и Google</span></div>
-    <div><b>4,9</b><span>2ГИС и ПроДокторов</span></div>
-    <div><b>97 000+</b><span>принятых пациентов</span></div>
+    <div><b>4,9</b><span>Яндекс Карты · 214 отзывов</span></div>
+    <div><b>4,8</b><span>2ГИС · 96 отзывов</span></div>
+    <div><b>100%</b><span>отзывов с ответом клиники</span></div>
   </div>
   <div class="chips rv" role="group" aria-label="Фильтр отзывов">
     <button class="chip" aria-pressed="true" data-rev="all">Все</button>
+    <button class="chip" aria-pressed="false" data-rev="caries">Терапия</button>
     <button class="chip" aria-pressed="false" data-rev="implant">Импланты</button>
-    <button class="chip" aria-pressed="false" data-rev="crown">Протезирование</button>
     <button class="chip" aria-pressed="false" data-rev="kids">Детям</button>
   </div>
   <div class="revs rv" id="revs"></div>
@@ -1106,45 +1200,34 @@ html[data-theme="evening"] .ct{background:#07191C}
 <section class="sec tint" id="faq"><div class="wrap">
   <div class="head rv"><div class="kick">Вопросы</div><h2>Коротко о важном</h2></div>
   <div class="faq rv">
-    <details open><summary>Сколько времени займёт лечение и сколько поездок потребуется?</summary><p>Зависит от случая. После разбора КТ врачи дают предварительную оценку этапов и числа визитов; точный план определяется после очного осмотра. Имплантацию часто укладываем в два приезда, протезирование — в два-три.</p></details>
-    <details><summary>Можно ли узнать стоимость до приезда?</summary><p>Да. Координатор организует разбор вашего случая с врачами и сообщит ориентировочную стоимость. Окончательная определяется врачом после обследования и фиксируется в договоре.</p></details>
-    <details><summary>Что делать, если КТ ещё нет?</summary><p>Оставьте заявку без снимка — координатор подскажет, где сделать КТ в Москве, или организует снимок у нас в день приезда.</p></details>
-    <details><summary>Как передать КТ безопасно?</summary><p>Загрузите файл в форме на сайте — он уходит по защищённому соединению и сохраняется вне публичной части сайта. Либо пришлите позже тем способом, который предложит координатор.</p></details>
-    <details><summary>Это гарантированная экономия?</summary><p>Нет. Сравнение с московскими ценами ориентировочное: оно зависит от объёма лечения и клинических показаний. Считайте его поводом посчитать свой случай, а не обещанием.</p></details>
-    <details><summary>Какие гарантии даёт клиника?</summary><p>Гарантия на лечение и пожизненная гарантия на импланты. Условия уточняйте у координатора — они прописаны в договоре.</p></details>
-    <details><summary>Где жить, если лечение на несколько дней?</summary>
-      <p>Координатор подберёт гостиницу рядом с клиникой. При плане лечения от 200 000 ₽ проживание и билет на электричку — за наш счёт.</p>
-      <button class="btn btn-o btn-sm" data-goto-book data-svc="consult">Спросить координатора</button></details>
+    <details open><summary>Будет больно?</summary><p>Нет. Анестезию ставим после аппликационного геля — самого укола вы не почувствуете. Если боитесь сильно, скажите заранее: сделаем под седацией, вы проспите весь приём.</p></details>
+    <details><summary>Не был у стоматолога много лет. Будете ругать?</summary><p>Не будем. Это частая история, и нам правда всё равно, сколько времени прошло. Начнём с бесплатного осмотра и составим план от самого срочного к тому, что может подождать.</p></details>
+    <details><summary>Есть рассрочка?</summary><p>Да, от 100 000 ₽ — 0% на 12 месяцев по договору с клиникой, без банка и переплаты. Первый платёж после первого визита.</p></details>
+    <details><summary>Дадите справку для налогового вычета?</summary>
+      <p>Да. Готовим справку об оплате медицинских услуг по форме налоговой, копию лицензии и договор. Вернуть можно 13% от суммы лечения.</p>
+      <button class="btn btn-o btn-sm" data-goto-book data-svc="consult">Запросить справку</button></details>
+    <details><summary>Что с гарантией?</summary><p>Три года на пломбы, коронки и импланты при соблюдении рекомендаций и профосмотрах раз в полгода. Гарантийный случай переделываем бесплатно.</p></details>
+    <details><summary>Где припарковаться?</summary><p>Своя парковка во дворе, 8 мест. Если занято — вдоль улицы бесплатно, место почти всегда есть.</p></details>
   </div>
-</div></section>
-
-<!-- 12б · Рязань между приёмами -->
-<section class="sec tint" id="ryazan"><div class="wrap">
-  <div class="head rv"><div class="kick">Между приёмами</div><h2>Рязань — больше,<br>чем поездка к врачу</h2>
-  <p class="sub">Тихий старинный город в двух часах от Москвы: кремль на высоком берегу Оки, набережная и неспешные кофейни. Если визитов несколько, координатор подскажет, чем занять паузу.</p></div>
-  <div class="places rv" id="places"></div>
-  <p class="note">Рекомендации по гостиницам и местам отдыха — по запросу у координатора.</p>
 </div></section>
 
 <!-- 13 · контакты -->
 <section class="sec" id="contacts"><div class="wrap">
-  <div class="head rv"><div class="kick">Контакты</div><h2>Три клиники в Рязани</h2>
-  <p class="sub">Координатор подберёт ту, где нужный врач свободен в удобный вам день, и закажет такси с вокзала.</p></div>
-  <div class="branches rv" id="branches" style="margin-bottom:14px"></div>
+  <div class="head rv"><div class="kick">Контакты</div><h2>Как нас найти</h2></div>
   <div class="cont rv">
     <div style="display:grid;gap:10px;align-content:start">
       <div class="ci"><span class="ic"><svg width="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-pin"/></svg></span>
-        <div><b>Как добраться</b><span>Электричка с Казанского вокзала — 2 ч 10 мин<br>На вокзале встретит наше такси, доплат нет</span></div></div>
+        <div><b>Адрес</b><span>Москва, ул. Полярная, 24к1<br>7 минут от метро «Медведково», своя парковка</span></div></div>
       <div class="ci"><span class="ic"><svg width="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-clock"/></svg></span>
-        <div><b>Часы работы</b><span>Пн–Пт 09:00–21:00 · Сб–Вс 10:00–18:00<br>Москва и Рязань — один часовой пояс</span></div></div>
+        <div><b>Часы работы</b><span>Пн–Пт 09:00–21:00<br>Сб–Вс 10:00–18:00</span></div></div>
       <div class="ci"><span class="ic"><svg width="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-phone"/></svg></span>
-        <div><b>Телефон</b><span>+7 (4912) 51-55-25 — круглосуточно</span></div></div>
+        <div><b>Телефон</b><span>+7 495 000-00-00 — круглосуточно</span></div></div>
       <div class="ci"><span class="ic"><svg width="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-chat"/></svg></span>
-        <div><b>Координатор</b><span>WhatsApp и Telegram — отвечаем до 22:00<br>Поможет с КТ, планом и дорогой</span></div></div>
+        <div><b>Мессенджеры</b><span>WhatsApp и Telegram — отвечаем до 22:00</span></div></div>
     </div>
-    <div class="map" id="map" role="img" aria-label="Схема проезда: Рязань, улица Кальная, 34">
+    <div class="map" id="map" role="img" aria-label="Схема проезда: Москва, улица Полярная, 24к1">
       <span class="grid"></span><span class="road r1"></span><span class="road r2"></span>
-      <span class="pin"><b>«Династия» на Кальной</b><i></i></span>
+      <span class="pin"><b>«Каспий» · м. Медведково</b><i></i></span>
       <button class="btn btn-d btn-sm load" id="map-load">Загрузить Яндекс Карту</button>
     </div>
   </div>
@@ -1152,20 +1235,20 @@ html[data-theme="evening"] .ct{background:#07191C}
 </main>
 
 <div class="thumb" id="thumb">
-  <a href="tel:+74912515525"><svg width="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><use href="#i-phone"/></svg>Звонок</a>
-  <a href="https://wa.me/74912575469" target="_blank" rel="noopener"><svg width="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><use href="#i-chat"/></svg>WhatsApp</a>
+  <a href="tel:+74950000000"><svg width="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><use href="#i-phone"/></svg>Звонок</a>
+  <a href="https://wa.me/74950000000" target="_blank" rel="noopener"><svg width="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><use href="#i-chat"/></svg>WhatsApp</a>
   <a href="#book" class="go">Записаться</a>
 </div>
 
 <footer class="ftr"><div class="wrap">
   <div class="f-g">
     <div>
-      <span class="logo"><b>династия</b><span>стоматология · Рязань</span></span>
+      <span class="logo"><b>каспий</b><span>стоматология-студия · Москва</span></span>
       <p style="font-size:14.2px;color:#92AAA5;margin-top:12px;max-width:32ch">Вымышленная клиника. Сайт создан как демонстрация работы агентства Tercia.</p>
     </div>
     <div><div class="f-h">Лечение</div><a href="#services">Терапия</a><a href="#services">Имплантация</a><a href="#services">Ортодонтия</a><a href="#services">Детский приём</a></div>
     <div><div class="f-h">Клиника</div><a href="#prices">Цены</a><a href="#doctors">Врачи</a><a href="#ba">До / после</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a></div>
-    <div><div class="f-h">Запись</div><a href="#book">Онлайн-запись</a><a href="#calc">Посчитать смету</a><a href="#ct">Прислать КТ</a><a href="tel:+74912515525">+7 (4912) 51-55-25</a><a href="#contacts">Адрес и часы</a></div>
+    <div><div class="f-h">Запись</div><a href="#book">Онлайн-запись</a><a href="#calc">Посчитать смету</a><a href="#ct">Прислать КТ</a><a href="tel:+74950000000">+7 495 000-00-00</a><a href="#contacts">Адрес и часы</a></div>
   </div>
 
   <div class="sell">
@@ -1175,18 +1258,17 @@ html[data-theme="evening"] .ct{background:#07191C}
   </div>
 
   <div class="legal">
-    Клиника «Династия», г. Рязань. Лицензия на медицинскую деятельность № Л041-01183-62/00306059.<br>
-    Имеются противопоказания, необходима консультация специалиста. Цены на сайте носят ориентировочный характер
-    и не являются публичной офертой; сравнение с московскими ценами приблизительное и зависит от клинической ситуации.
-    Окончательная стоимость определяется врачом после осмотра и фиксируется в договоре.<br>
-    Фотографии заменены иллюстрациями; перед публикацией подставьте снимки клиники и врачей.<br>
-    © 2026 · сайт собран в <a href="../../" style="color:var(--glass);display:inline">Tercia</a>
+    Демо-сайт. Клиника «Каспий», врачи, цены, отзывы и адрес вымышлены — это пример работы, а не действующая организация.<br>
+    На сайте реальной клиники в этом месте: номер лицензии на медицинскую деятельность, реквизиты юридического лица,
+    политика обработки персональных данных и согласие на обработку у каждой формы.<br>
+    Имеются противопоказания, необходима консультация специалиста.<br>
+    © 2026 · сделано в <a href="../../" style="color:var(--gold-l);display:inline">Tercia</a>
   </div>
 </div></footer>
 
 <script>
 /* ============================================================
-   «Династия» — вся логика демо. Без библиотек, без сборки.
+   «Каспий» — вся логика демо. Без библиотек, без сборки.
    Данные лежат одним объектом: в реальном проекте их отдаёт админка.
    ============================================================ */
 (function () {
@@ -1194,95 +1276,81 @@ html[data-theme="evening"] .ct{background:#07191C}
 var $ = function (s, r) { return (r || document).querySelector(s); };
 var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 var money = function (n) { return n.toLocaleString('ru-RU'); };
-var WA = '74912575469';
+var WA = '74950000000';
 
 /* ---------- данные ---------- */
 var DOCS = {
-  hreshkova:   { n: 'Ольга Хрешкова',    s: 'хирург-имплантолог, стаж 21 год',        i: 'ОХ', r: '5,0', free: 'завтра, 10:00',  cl: 'на Заводском' },
-  paramoshina: { n: 'Ольга Парамошина',  s: 'главный врач, ортопед, стаж 14 лет',     i: 'ОП', r: '5,0', free: 'сегодня, 18:30', cl: 'на Кальной' },
-  ryabova:     { n: 'Светлана Рябова',   s: 'ортодонт, зав. отделением, стаж 17 лет', i: 'СР', r: '4,9', free: 'завтра, 15:20',  cl: 'на С. Середы' },
-  isaeva:      { n: 'Александра Исаева', s: 'детский стоматолог',                     i: 'АИ', r: '5,0', free: 'сегодня, 16:00', cl: 'на Кальной' }
+  ivanova: { n:'Анна Иванова',    s:'терапевт, эндодонтист, стаж 12 лет', i:'АИ', r:'4,9', free:'сегодня, 18:30' },
+  petrov:  { n:'Сергей Петров',   s:'хирург-имплантолог, стаж 15 лет',    i:'СП', r:'5,0', free:'завтра, 10:00' },
+  orlova:  { n:'Мария Орлова',    s:'ортодонт, стаж 9 лет',               i:'МО', r:'4,8', free:'завтра, 15:20' },
+  kovalev: { n:'Дмитрий Ковалёв', s:'детский стоматолог, стаж 7 лет',     i:'ДК', r:'5,0', free:'сегодня, 16:00' }
 };
 
-/* три клиники в Рязани */
-var CLINICS = [
-  { n: '«Династия» на Кальной',   a: 'ул. Кальная, д. 34',       m: 'https://yandex.ru/maps/?pt=39.787418,54.623253&z=16&l=map' },
-  { n: '«Династия» на С. Середы', a: 'ул. Семёна Середы, д. 36', m: 'https://yandex.ru/maps/?pt=39.718605,54.622062&z=16&l=map' },
-  { n: '«Династия» на Заводском', a: 'Заводской проезд, д. 1',   m: 'https://yandex.ru/maps/?pt=39.702839,54.631999&z=16&l=map' }
-];
-
-/* чем заняться в Рязани между приёмами */
-var PLACES = [
-  { t: 'Рязанский кремль',  d: 'Соборы XV–XVII веков и музейный комплекс на высоком берегу Оки.' },
-  { t: 'Набережная Оки',    d: 'Неспешная прогулка после приёма — пятнадцать минут от клиники.' },
-  { t: 'Кафе и рестораны',  d: 'Подборка мест, которые советует координатор — от завтраков до ужина.' },
-  { t: 'Экскурсии',         d: 'Авторские программы на полдня и на день, если визитов несколько.' }
-];
-
 var SVC = [
-  { id:'consult', t:'Консультация и план по КТ', doc:'paramoshina', from:0, to:0, unit:'',
-    visits:'онлайн, до поездки', art:'[Иллюстрация: врач смотрит КТ на экране]',
-    d:'Врачи разбирают ваш снимок и присылают предварительный план с этапами и вилкой по стоимости. Бесплатно и до того, как вы поедете.' },
-  { id:'implant', t:'Имплантация под ключ', doc:'hreshkova', from:55000, to:72000, unit:'за имплант',
+  { id:'consult', t:'Консультация и план лечения', doc:'ivanova', from:0, to:0, unit:'',
+    visits:'1 визит', art:'[Иллюстрация: врач показывает снимок на экране]',
+    d:'Осмотр, КТ и расчёт сметы. Бесплатно, план отдаём на руки — даже если лечиться решите не у нас.' },
+  { id:'implant', t:'Имплантация под ключ', doc:'petrov', from:68000, to:96000, unit:'за зуб',
     visits:'2 визита + приживление', art:'[Иллюстрация: имплант, абатмент и коронка]',
-    d:'Имплант, абатмент и коронка. Пожизненная гарантия на имплант. В Москве то же лечение в среднем на треть дороже.' },
-  { id:'allon4', t:'Протезирование All-on-4 и All-on-6', doc:'paramoshina', from:330000, to:410000, unit:'за челюсть',
-    visits:'3–4 визита', art:'[Иллюстрация: несъёмный протез на четырёх опорах]',
-    d:'Несъёмный протез на четырёх или шести имплантах. Временная коронка в день операции — уезжаете с зубами.' },
-  { id:'crown', t:'Коронки и виниры', doc:'paramoshina', from:22000, to:30000, unit:'за единицу',
+    d:'Имплант, абатмент и коронка. Ставим за один визит, коронку — после приживления. Пожизненная гарантия производителя.' },
+  { id:'caries', t:'Терапия: кариес и каналы', doc:'ivanova', from:9500, to:14800, unit:'за зуб',
+    visits:'1–2 визита', art:'[Иллюстрация: лечение под микроскопом]',
+    d:'Лечение кариеса и каналов под микроскопом. Анестезию ставим после геля — самого укола вы не почувствуете.' },
+  { id:'crown', t:'Коронки и виниры', doc:'petrov', from:32000, to:48000, unit:'за единицу',
     visits:'2 визита', art:'[Иллюстрация: зуботехническая лаборатория]',
     d:'Цирконий, керамика, виниры. Своя лаборатория — примерка на следующий день, а не через три недели.' },
-  { id:'ortho', t:'Брекеты и элайнеры', doc:'ryabova', from:170000, to:220000, unit:'курс',
+  { id:'braces', t:'Брекеты и элайнеры', doc:'orlova', from:120000, to:240000, unit:'курс',
     visits:'курс 12–18 мес', art:'[Иллюстрация: элайнер и 3D-план]',
-    d:'Исправление прикуса в любом возрасте. Часть контролей — онлайн, ездить каждый месяц не нужно.' },
-  { id:'sinus', t:'Синус-лифтинг и костная пластика', doc:'hreshkova', from:50000, to:70000, unit:'за операцию',
-    visits:'1 визит', art:'[Иллюстрация: схема костной пластики]',
-    d:'Когда кости мало для импланта. Делаем одномоментно с установкой, если позволяет ситуация.' },
-  { id:'hygiene', t:'Профессиональная гигиена', doc:'paramoshina', from:6000, to:6000, unit:'',
+    d:'Исправление прикуса в любом возрасте. Сначала показываем 3D-план: как будет выглядеть улыбка в конце.' },
+  { id:'white', t:'Отбеливание ZOOM', doc:'ivanova', from:24900, to:24900, unit:'',
+    visits:'1 визит', art:'[Иллюстрация: улыбка после отбеливания]',
+    d:'Аппаратное отбеливание за один приём. Эмаль не повреждается, результат держится до двух лет.' },
+  { id:'hygiene', t:'Профессиональная гигиена', doc:'ivanova', from:7900, to:7900, unit:'',
     visits:'1 визит', art:'[Иллюстрация: Air Flow и чистка]',
-    d:'Ультразвук, Air Flow и полировка. Обычно совмещаем с приездом на основное лечение.' },
-  { id:'kids', t:'Детская стоматология', doc:'isaeva', from:2500, to:6000, unit:'приём',
+    d:'Ультразвук, Air Flow и полировка. Раз в полгода — и кариеса почти не бывает.' },
+  { id:'kids', t:'Детская стоматология', doc:'kovalev', from:4500, to:9800, unit:'приём',
     visits:'1 визит', art:'[Иллюстрация: детский кабинет]',
-    d:'Клиника входит в топ-100 детских клиник России по рейтингу ИД «Коммерсантъ». Лечим без слёз и уговоров.' }
+    d:'Отдельный кабинет, игровая зона и врач, который умеет договариваться. Лечим без слёз и уговоров.' }
 ];
 var svcById = {}; SVC.forEach(function (s) { svcById[s.id] = s; });
 
 /* калькулятор: коэффициент премиум-материала */
-/* p — цена в «Династии», msk — средняя по Москве (для сравнения) */
+/* p — цена в клинике, msk — средняя по Москве (для сравнения) */
 var CALC = [
-  { id:'implant', t:'Имплантация зуба под ключ',    p:55000,  msk:75000,  unit:'за имплант',  prem:1.3,  max:8 },
-  { id:'all4',    t:'Протезирование All-on-4',      p:330000, msk:450000, unit:'за челюсть',  prem:1.24, max:2 },
-  { id:'crown',   t:'Коронка цирконий / керамика',  p:22000,  msk:30000,  unit:'за коронку',  prem:1.32, max:10 },
-  { id:'veneer',  t:'Керамический винир',           p:30000,  msk:40000,  unit:'за винир',    prem:1.2,  max:10 },
-  { id:'ortho',   t:'Брекеты или элайнеры',         p:170000, msk:220000, unit:'за курс',     prem:1.35, max:1 },
-  { id:'sinus',   t:'Синус-лифтинг',                p:50000,  msk:70000,  unit:'за операцию', prem:1,    max:2 },
-  { id:'hygiene', t:'Профессиональная гигиена',     p:6000,   msk:8000,   unit:'',            prem:1,    max:2 }
+  { id:'implant', t:'Имплант под ключ',    p:68000,  msk:85000,  unit:'за зуб', prem:1.38, max:6 },
+  { id:'crown',   t:'Коронка из циркония', p:32000,  msk:41000,  unit:'за зуб', prem:1.35, max:8 },
+  { id:'veneer',  t:'Керамический винир',  p:42000,  msk:52000,  unit:'за зуб', prem:1.25, max:8 },
+  { id:'caries',  t:'Лечение кариеса',     p:9500,   msk:12000,  unit:'за зуб', prem:1,    max:8 },
+  { id:'canal',   t:'Лечение канала',      p:14800,  msk:18500,  unit:'за зуб', prem:1,    max:6 },
+  { id:'braces',  t:'Брекеты, курс',       p:120000, msk:155000, unit:'',       prem:2,    max:1 },
+  { id:'white',   t:'Отбеливание ZOOM',    p:24900,  msk:31000,  unit:'',       prem:1,    max:1 },
+  { id:'hygiene', t:'Профгигиена',         p:7900,   msk:9800,   unit:'',       prem:1,    max:2 }
 ];
-var calcQty = { implant:2, all4:0, crown:1, veneer:0, ortho:0, sinus:0, hygiene:1 }, calcMat = 'std';
+var calcQty = { implant:1, crown:1, veneer:0, caries:2, canal:0, braces:0, white:0, hygiene:1 }, calcMat = 'std';
 
 /* акции включаются от суммы сметы — механика взята из лендинга «Династия» */
 var OFFERS = [
-  { id:'taxi',  from:0,      badge:'Всем иногородним', t:'Такси с вокзала и обратно',
-    d:'Встретим на вокзале, довезём в клинику, а после приёма — обратно. Такси вызываем мы, доплат нет.' },
-  { id:'train', from:100000, badge:'от 100 000 ₽',     t:'Билет на электричку Москва — Рязань',
-    d:'При плане лечения от 100 000 ₽ билет дарим. Дорога — два с небольшим часа, выезжать ночью не нужно.' },
-  { id:'hotel', from:200000, badge:'от 200 000 ₽', best:true, t:'Электричка и гостиница',
-    d:'При лечении от 200 000 ₽ — билет и проживание в одной из лучших гостиниц Рязани. Плюс такси с вокзала и обратно.' }
+  { id:'ct',   from:0,      badge:'Всем',         t:'КТ и консультация — бесплатно',
+    d:'Снимок, осмотр и план лечения на руки. Даже если лечиться решите не у нас.' },
+  { id:'rass', from:100000, badge:'от 100 000 ₽', t:'Рассрочка 0% на 12 месяцев',
+    d:'Без банка и переплаты, по договору с клиникой. Первый платёж — после первого визита.' },
+  { id:'full', from:200000, badge:'от 200 000 ₽', best:true, t:'Гигиена и санация в подарок',
+    d:'Плюс персональный координатор: ведёт вас от плана до гарантии и подстраивает визиты под ваш график.' }
 ];
 
 var RATINGS = [
-  { src:'Яндекс',      v:'5,0', n:'отзывы пациентов' },
-  { src:'Google',      v:'5,0', n:'отзывы пациентов' },
-  { src:'ПроДокторов', v:'4,9', n:'отзывы пациентов' },
-  { src:'2ГИС',        v:'4,9', n:'отзывы пациентов' }
+  { src:'Яндекс Карты', v:'4,9', n:'214 отзывов' },
+  { src:'2ГИС',         v:'4,8', n:'96 отзывов' },
+  { src:'ПроДокторов',  v:'4,9', n:'140 отзывов' },
+  { src:'Google',       v:'4,8', n:'63 отзыва' }
 ];
 var BADGES = [
-  'Топ-100 детских клиник России — рейтинг ИД «Коммерсантъ»',
-  '17 место среди региональных частных клиник',
-  'Гарантия на лечение и пожизненная — на импланты',
-  'Автоклав Mocom класса B — стерильность по протоколу',
-  'План лечения обсуждается до его начала',
-  '40+ специалистов в трёх клиниках'
+  'Гарантия 3 года на лечение и пожизненная — на импланты',
+  'Смета фиксируется в договоре до начала лечения',
+  'Автоклав класса B — стерильность по протоколу',
+  'Лечение во сне: седация для тех, кто боится',
+  'Своя зуботехническая лаборатория',
+  'Работаем с полисами ДМС'
 ];
 
 var PRICES = [
@@ -1314,40 +1382,40 @@ var PRICES = [
 ];
 
 var REVS = [
-  { tag:'implant', n:'Елена М.', i:'ЕМ', d:'октябрь 2026', s:'Имплантация · из Москвы',
-    t:'Приехала из Москвы на два визита. План прислали по снимку заранее, и он совпал со сметой до рубля. С вокзала встретили, после приёма отвезли обратно — не пришлось искать такси с онемевшей щекой.' },
-  { tag:'crown', n:'Алексей Т.', i:'АТ', d:'сентябрь 2026', s:'Протезирование',
-    t:'Делал коронки. Своя лаборатория — это правда удобно: примерка на следующий день, а не через три недели. В Москве за ту же работу просили почти вдвое.' },
-  { tag:'implant', n:'Пациент', i:'ЯК', d:'14.10.2026', s:'Яндекс',
-    t:'Пользуюсь услугами клиники несколько лет, никаких нареканий. Последний раз посетила Бочковского Э. С. — прекрасный внимательный доктор, всё объяснил.' },
-  { tag:'kids', n:'Пациент', i:'2Г', d:'15.10.2026', s:'2ГИС',
-    t:'Замечательный доктор Исаева Александра Юрьевна! Были с дочкой уже 2 раза на приёме, второй раз уже планово на лечение.' },
-  { tag:'crown', n:'Марина С.', i:'МС', d:'август 2026', s:'Виниры · из Москвы',
-    t:'Боялась, что в области будет «попроще». Оказалось наоборот: микроскоп, автоклав, всё по протоколу. Между приёмами успели погулять по кремлю — поездка получилась почти как выходные.' }
+  { tag:'caries', n:'Елена М.', i:'ЕМ', d:'2 недели назад', s:'Терапия',
+    t:'Лечила канал под микроскопом у Анны Сергеевны. Совсем не больно, объяснили каждый шаг и показали снимок до и после. Цена совпала со сметой до рубля.' },
+  { tag:'implant', n:'Алексей Т.', i:'АТ', d:'месяц назад', s:'Имплантация',
+    t:'Поставил два импланта. Операция заняла меньше часа, вечером уже работал. Бот напоминал про осмотры — удобно, не надо держать в голове.' },
+  { tag:'kids', n:'Ольга К.', i:'ОК', d:'месяц назад', s:'Детский приём',
+    t:'Водим сюда сына, ему 6. Единственная клиника, куда он идёт без слёз. Дмитрий умеет разговаривать с детьми, а не просто лечить зубы.' },
+  { tag:'caries', n:'Марат А.', i:'МА', d:'2 месяца назад', s:'Терапия',
+    t:'Не был у стоматолога лет восемь, стыдно было идти. Никто слова не сказал — просто составили план на четыре визита. Прошёл всё за месяц.' },
+  { tag:'crown', n:'Марина С.', i:'МС', d:'3 месяца назад', s:'Протезирование',
+    t:'Делала виниры. Своя лаборатория — это правда удобно: примерка на следующий день, а не через три недели.' }
 ];
 
 var CASES = {
-  implant:{ t:'Имплант вместо утраченного зуба', doc:'Ольга Хрешкова', term:'2 визита', price:'55 000 ₽',
+  white:  { t:'Отбеливание ZOOM за один приём', doc:'Анна Иванова', term:'1 визит', price:'24 900 ₽',
+            before:'#D9C98C', after:'#FFFFFF', gap:false },
+  implant:{ t:'Имплант вместо утраченного зуба', doc:'Сергей Петров', term:'2 визита', price:'68 000 ₽',
             before:'#EFE7D6', after:'#FFFFFF', gap:true },
-  allon4: { t:'All-on-4 на верхней челюсти', doc:'Ольга Парамошина', term:'3 визита', price:'330 000 ₽',
-            before:'#E0CFA8', after:'#FDFDFB', gap:true },
-  veneer: { t:'Керамические виниры на шесть зубов', doc:'Ольга Парамошина', term:'2 визита', price:'180 000 ₽',
-            before:'#E3D6B8', after:'#FDFDFB', gap:false },
-  ortho:  { t:'Исправление прикуса элайнерами', doc:'Светлана Рябова', term:'14 месяцев', price:'220 000 ₽',
-            before:'#F0E8D8', after:'#FFFFFF', gap:false, crooked:true }
+  braces: { t:'Исправление прикуса элайнерами', doc:'Мария Орлова', term:'14 месяцев', price:'240 000 ₽',
+            before:'#F0E8D8', after:'#FFFFFF', gap:false, crooked:true },
+  crown:  { t:'Керамические виниры на шесть зубов', doc:'Сергей Петров', term:'2 визита', price:'252 000 ₽',
+            before:'#E3D6B8', after:'#FDFDFB', gap:false }
 };
 
 var QUIZ = {
+  pain:    { q:'Давно болит?', a:['Сегодня начало','Несколько дней','Больше недели'],
+             svc:'caries', doc:'ivanova', res:'Похоже на кариес или воспаление канала. Нужен терапевт и снимок.' },
   missing: { q:'Сколько зубов отсутствует?', a:['Один','Два-три','Больше трёх'],
-             svc:'implant', doc:'hreshkova', res:'Нужна консультация хирурга-имплантолога и КТ.' },
-  noteeth: { q:'Чем пользуетесь сейчас?', a:['Съёмный протез','Ничем','Старый мост'],
-             svc:'allon4', doc:'paramoshina', res:'Скорее всего, подойдёт несъёмный протез на имплантах — All-on-4 или All-on-6.' },
-  beauty:  { q:'Что хочется исправить?', a:['Цвет и форму','Сколы и щели','Всё сразу'],
-             svc:'crown', doc:'paramoshina', res:'Это к ортопеду: виниры или коронки из циркония.' },
+             svc:'implant', doc:'petrov', res:'Вам нужна консультация хирурга-имплантолога.' },
+  white:   { q:'Что хочется исправить?', a:['Цвет эмали','Налёт и камень','И то, и другое'],
+             svc:'white', doc:'ivanova', res:'Начнём с гигиены, затем отбеливание ZOOM за один приём.' },
   braces:  { q:'Для кого исправляем прикус?', a:['Для себя','Для подростка','Пока просто узнаю'],
-             svc:'ortho', doc:'ryabova', res:'Вам нужна консультация ортодонта и 3D-план.' },
+             svc:'braces', doc:'orlova', res:'Вам, скорее всего, нужна консультация ортодонта.' },
   kid:     { q:'Сколько лет ребёнку?', a:['До 3 лет','3–7 лет','Старше 7'],
-             svc:'kids', doc:'isaeva', res:'Запишем к детскому стоматологу — первый приём знакомство, без лечения.' }
+             svc:'kids', doc:'kovalev', res:'Запишем к детскому стоматологу — первый приём знакомство, без лечения.' }
 };
 
 
@@ -1361,25 +1429,25 @@ function svg(vb, body) {
 
 /* кабинет с видом на море */
 var HERO = svg('0 0 420 460',
-  '<rect width="420" height="460" fill="#EFE6D6"/>' +
-  '<rect x="34" y="30" width="352" height="236" rx="20" fill="#CFE3DC"/>' +
-  '<path d="M34 182h352v64a20 20 0 0 1-20 20H54a20 20 0 0 1-20-20z" fill="#8FC2B6"/>' +
-  '<circle cx="306" cy="110" r="34" fill="#FFD9A8"/>' +
-  '<path d="M34 182q60-16 118 0t118-8 116 8v10H34z" fill="#A8D8CC"/>' +
-  '<rect x="202" y="30" width="10" height="236" fill="#EFE6D6" opacity=".85"/>' +
-  '<rect x="34" y="140" width="352" height="9" fill="#EFE6D6" opacity=".85"/>' +
+  '<rect width="420" height="460" fill="#F3EBDB"/>' +
+  '<rect x="34" y="30" width="352" height="236" rx="20" fill="#E7D9BF"/>' +
+  '<path d="M34 182h352v64a20 20 0 0 1-20 20H54a20 20 0 0 1-20-20z" fill="#C9B189"/>' +
+  '<circle cx="306" cy="110" r="34" fill="#EEDCBC"/>' +
+  '<path d="M34 182q60-16 118 0t118-8 116 8v10H34z" fill="#D9BF8C"/>' +
+  '<rect x="202" y="30" width="10" height="236" fill="#F3EBDB" opacity=".85"/>' +
+  '<rect x="34" y="140" width="352" height="9" fill="#F3EBDB" opacity=".85"/>' +
   // кресло
-  '<path d="M96 430v-52a26 26 0 0 1 26-26h132a26 26 0 0 1 26 26v52z" fill="#1F7A70"/>' +
-  '<path d="M118 352v-62a22 22 0 0 1 22-22h44a22 22 0 0 1 22 22v62z" fill="#0E3B3A"/>' +
-  '<rect x="236" y="300" width="74" height="26" rx="13" fill="#0E3B3A"/>' +
-  '<rect x="150" y="404" width="120" height="56" rx="10" fill="#0E3B3A" opacity=".18"/>' +
+  '<path d="M96 430v-52a26 26 0 0 1 26-26h132a26 26 0 0 1 26 26v52z" fill="#8F6D3A"/>' +
+  '<path d="M118 352v-62a22 22 0 0 1 22-22h44a22 22 0 0 1 22 22v62z" fill="#241913"/>' +
+  '<rect x="236" y="300" width="74" height="26" rx="13" fill="#241913"/>' +
+  '<rect x="150" y="404" width="120" height="56" rx="10" fill="#241913" opacity=".18"/>' +
   // лампа
-  '<path d="M330 300v-54a18 18 0 0 0-18-18h-26" stroke="#0E3B3A" stroke-width="7" fill="none" stroke-linecap="round"/>' +
-  '<ellipse cx="338" cy="310" rx="30" ry="16" fill="#0E3B3A"/>' +
-  '<ellipse cx="338" cy="306" rx="22" ry="10" fill="#FFE9BE"/>' +
+  '<path d="M330 300v-54a18 18 0 0 0-18-18h-26" stroke="#241913" stroke-width="7" fill="none" stroke-linecap="round"/>' +
+  '<ellipse cx="338" cy="310" rx="30" ry="16" fill="#241913"/>' +
+  '<ellipse cx="338" cy="306" rx="22" ry="10" fill="#F6E3C6"/>' +
   // растение
-  '<path d="M52 460v-40" stroke="#1F7A70" stroke-width="6" stroke-linecap="round"/>' +
-  '<path d="M52 430c-18-6-24-24-18-38 16 2 24 18 18 38zM52 420c16-8 20-26 12-38-14 4-20 20-12 38z" fill="#1F7A70"/>');
+  '<path d="M52 460v-40" stroke="#8F6D3A" stroke-width="6" stroke-linecap="round"/>' +
+  '<path d="M52 430c-18-6-24-24-18-38 16 2 24 18 18 38zM52 420c16-8 20-26 12-38-14 4-20 20-12 38z" fill="#8F6D3A"/>');
 
 /* портреты врачей */
 function portrait(bg1, bg2, hair, coat, hairPath) {
@@ -1387,90 +1455,90 @@ function portrait(bg1, bg2, hair, coat, hairPath) {
     '<defs><linearGradient id="g' + hair.slice(1) + '" x1="0" y1="0" x2="0" y2="1">' +
     '<stop offset="0" stop-color="' + bg1 + '"/><stop offset="1" stop-color="' + bg2 + '"/></linearGradient></defs>' +
     '<rect width="300" height="330" fill="url(#g' + hair.slice(1) + ')"/>' +
-    '<circle cx="150" cy="118" r="92" fill="#FFFFFF" opacity=".17"/>' +
+    '<circle cx="150" cy="118" r="92" fill="#FFFDF8" opacity=".17"/>' +
     '<path d="M46 330v-24c0-44 36-66 104-66s104 22 104 66v24z" fill="' + coat + '"/>' +
-    '<path d="M150 240l-30 90h60z" fill="#FFFFFF" opacity=".55"/>' +
-    '<rect x="186" y="268" width="26" height="8" rx="4" fill="#1F7A70" opacity=".8"/>' +
+    '<path d="M150 240l-30 90h60z" fill="#FFFDF8" opacity=".55"/>' +
+    '<rect x="186" y="268" width="26" height="8" rx="4" fill="#8F6D3A" opacity=".8"/>' +
     hairPath.replace(/HAIR/g, hair) +
-    '<ellipse cx="150" cy="150" rx="46" ry="54" fill="#E8C4A6"/>' +
+    '<ellipse cx="150" cy="150" rx="46" ry="54" fill="#E6C9A8"/>' +
     '<path d="M104 146c0-34 20-54 46-54s46 20 46 54c0-44-20-62-46-62s-46 18-46 62z" fill="' + hair + '"/>' +
-    '<circle cx="134" cy="150" r="3.4" fill="#3B2A21"/><circle cx="166" cy="150" r="3.4" fill="#3B2A21"/>' +
-    '<path d="M140 174q10 8 20 0" stroke="#3B2A21" stroke-width="3" fill="none" stroke-linecap="round"/>' +
-    '<rect x="128" y="196" width="44" height="30" fill="#E8C4A6"/>');
+    '<circle cx="134" cy="150" r="3.4" fill="#2B2019"/><circle cx="166" cy="150" r="3.4" fill="#2B2019"/>' +
+    '<path d="M140 174q10 8 20 0" stroke="#2B2019" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+    '<rect x="128" y="196" width="44" height="30" fill="#E6C9A8"/>');
 }
 var PORTRAITS = [
-  portrait('#D7E7E2', '#AFCCC5', '#4A3327', '#FFFFFF',
+  portrait('#EFE2CC', '#D8C3A2', '#4A3327', '#FFFDF8',
     '<path d="M98 150c-6-48 14-74 52-74s58 26 52 74c6-56-16-82-52-82s-58 26-52 82z" fill="HAIR"/>' +
     '<path d="M96 140q-14 44 4 74 6-40 2-74z" fill="HAIR"/><path d="M204 140q14 44-4 74-6-40-2-74z" fill="HAIR"/>'),
-  portrait('#E9DECB', '#CDB89A', '#2E2621', '#F4F6F5',
+  portrait('#E8DAC6', '#CDB08A', '#2B2019', '#FFFDF8',
     '<path d="M100 148c-4-44 16-68 50-68s54 24 50 68c4-52-14-76-50-76s-54 24-50 76z" fill="HAIR"/>'),
-  portrait('#D4E3EC', '#A8C3D4', '#5A3B2E', '#FFFFFF',
+  portrait('#F2E8D8', '#DCC9AC', '#4A3327', '#FFFDF8',
     '<path d="M98 152c-8-52 16-78 52-78s60 26 52 78c8-58-16-86-52-86s-60 28-52 86z" fill="HAIR"/>' +
     '<path d="M92 146q-16 56 6 92 8-50 2-92z" fill="HAIR"/><path d="M208 146q16 56-6 92-8-50-2-92z" fill="HAIR"/>'),
-  portrait('#EADFE9', '#C3AFC6', '#38302B', '#FFFFFF',
+  portrait('#EADCC6', '#D2B894', '#33261E', '#FFFDF8',
     '<path d="M102 146c-4-42 16-66 48-66s52 24 48 66c4-50-12-74-48-74s-52 24-48 74z" fill="HAIR"/>')
 ];
 
 /* сцены услуг */
 var SCENES = {
   caries: svg('0 0 420 300',
-    '<rect width="420" height="300" fill="#E8DCC8"/>' +
-    '<circle cx="300" cy="90" r="64" fill="#A8D8CC" opacity=".55"/>' +
-    '<path d="M120 236V124a16 16 0 0 1 16-16h26" stroke="#0E3B3A" stroke-width="10" fill="none" stroke-linecap="round"/>' +
-    '<rect x="92" y="236" width="80" height="18" rx="9" fill="#0E3B3A"/>' +
-    '<path d="M162 108h54l-16 44h-54z" fill="#1F7A70"/>' +
-    '<circle cx="186" cy="92" r="20" fill="#0E3B3A"/>' +
-    '<path d="M258 196c20 0 26 9 38 9s18-9 38-9c12 0 19 8 19 23 0 26-12 60-26 60-10 0-11-20-27-20s-17 20-27 20c-14 0-26-34-26-60 0-15 7-23 19-23z" fill="#FFFFFF"/>' +
-    '<circle cx="312" cy="232" r="11" fill="#FF6A4D"/>'),
+    '<rect width="420" height="300" fill="#F3EBDB"/>' +
+    '<circle cx="300" cy="90" r="64" fill="#D9BF8C" opacity=".55"/>' +
+    '<path d="M120 236V124a16 16 0 0 1 16-16h26" stroke="#241913" stroke-width="10" fill="none" stroke-linecap="round"/>' +
+    '<rect x="92" y="236" width="80" height="18" rx="9" fill="#241913"/>' +
+    '<path d="M162 108h54l-16 44h-54z" fill="#8F6D3A"/>' +
+    '<circle cx="186" cy="92" r="20" fill="#241913"/>' +
+    '<path d="M258 196c20 0 26 9 38 9s18-9 38-9c12 0 19 8 19 23 0 26-12 60-26 60-10 0-11-20-27-20s-17 20-27 20c-14 0-26-34-26-60 0-15 7-23 19-23z" fill="#FFFDF8"/>' +
+    '<circle cx="312" cy="232" r="11" fill="#B8935A"/>'),
   implant: svg('0 0 420 300',
-    '<rect width="420" height="300" fill="#E8DCC8"/>' +
-    '<rect x="42" y="38" width="200" height="224" rx="14" fill="#0E3B3A"/>' +
-    '<path d="M74 210c0-46 22-78 68-78s68 32 68 78" stroke="#A8D8CC" stroke-width="6" fill="none"/>' +
-    '<circle cx="142" cy="128" r="30" fill="#1F7A70" opacity=".6"/>' +
-    '<rect x="300" y="86" width="22" height="92" rx="11" fill="#9AA4AB"/>' +
-    '<path d="M300 100h22M300 116h22M300 132h22M300 148h22M300 164h22" stroke="#E8DCC8" stroke-width="4"/>' +
-    '<path d="M302 86h18l-4-26h-10z" fill="#B9A88E"/>' +
-    '<path d="M288 60c10 0 13 5 19 5s9-5 19-5c6 0 10 4 10 12 0 13-6 30-13 30-5 0-6-10-14-10s-8 10-13 10c-7 0-13-17-13-30 0-8 4-12 10-12z" fill="#FFFFFF"/>'),
+    '<rect width="420" height="300" fill="#F3EBDB"/>' +
+    '<rect x="42" y="38" width="200" height="224" rx="14" fill="#241913"/>' +
+    '<path d="M74 210c0-46 22-78 68-78s68 32 68 78" stroke="#D9BF8C" stroke-width="6" fill="none"/>' +
+    '<circle cx="142" cy="128" r="30" fill="#8F6D3A" opacity=".6"/>' +
+    '<rect x="300" y="86" width="22" height="92" rx="11" fill="#A89880"/>' +
+    '<path d="M300 100h22M300 116h22M300 132h22M300 148h22M300 164h22" stroke="#F3EBDB" stroke-width="4"/>' +
+    '<path d="M302 86h18l-4-26h-10z" fill="#C9B189"/>' +
+    '<path d="M288 60c10 0 13 5 19 5s9-5 19-5c6 0 10 4 10 12 0 13-6 30-13 30-5 0-6-10-14-10s-8 10-13 10c-7 0-13-17-13-30 0-8 4-12 10-12z" fill="#FFFDF8"/>'),
   white: svg('0 0 420 300',
-    '<rect width="420" height="300" fill="#E8DCC8"/>' +
-    '<circle cx="210" cy="150" r="104" fill="#FFFFFF" opacity=".45"/>' +
-    '<path d="M118 150q92-62 184 0-92 86-184 0z" fill="#8E4A46"/>' +
-    '<path d="M134 150q76-48 152 0-76 70-152 0z" fill="#3B1C1C"/>' +
+    '<rect width="420" height="300" fill="#F3EBDB"/>' +
+    '<circle cx="210" cy="150" r="104" fill="#FFFDF8" opacity=".45"/>' +
+    '<path d="M118 150q92-62 184 0-92 86-184 0z" fill="#8A5A4A"/>' +
+    '<path d="M134 150q76-48 152 0-76 70-152 0z" fill="#2B1A14"/>' +
     '<rect x="146" y="124" width="26" height="36" rx="6" fill="#FFF"/><rect x="176" y="120" width="28" height="40" rx="6" fill="#FFF"/>' +
     '<rect x="208" y="120" width="28" height="40" rx="6" fill="#FFF"/><rect x="240" y="124" width="26" height="36" rx="6" fill="#FFF"/>' +
-    '<path d="M330 66l7 17 17 7-17 7-7 17-7-17-17-7 17-7z" fill="#FF6A4D"/>' +
-    '<path d="M92 196l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#1F7A70"/>'),
+    '<path d="M330 66l7 17 17 7-17 7-7 17-7-17-17-7 17-7z" fill="#B8935A"/>' +
+    '<path d="M92 196l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#8F6D3A"/>'),
   braces: svg('0 0 420 300',
-    '<rect width="420" height="300" fill="#E8DCC8"/>' +
-    '<circle cx="110" cy="92" r="58" fill="#A8D8CC" opacity=".5"/>' +
-    '<rect x="96" y="128" width="228" height="48" rx="24" fill="#FFFFFF"/>' +
-    '<path d="M96 152h228" stroke="#9AA4AB" stroke-width="5"/>' +
-    '<g fill="#1F7A70"><rect x="118" y="140" width="18" height="24" rx="5"/><rect x="158" y="140" width="18" height="24" rx="5"/>' +
+    '<rect width="420" height="300" fill="#F3EBDB"/>' +
+    '<circle cx="110" cy="92" r="58" fill="#D9BF8C" opacity=".5"/>' +
+    '<rect x="96" y="128" width="228" height="48" rx="24" fill="#FFFDF8"/>' +
+    '<path d="M96 152h228" stroke="#A89880" stroke-width="5"/>' +
+    '<g fill="#8F6D3A"><rect x="118" y="140" width="18" height="24" rx="5"/><rect x="158" y="140" width="18" height="24" rx="5"/>' +
     '<rect x="198" y="140" width="18" height="24" rx="5"/><rect x="238" y="140" width="18" height="24" rx="5"/>' +
     '<rect x="278" y="140" width="18" height="24" rx="5"/></g>' +
-    '<rect x="150" y="206" width="120" height="58" rx="12" fill="#0E3B3A"/>' +
-    '<path d="M166 246q44-26 88 0" stroke="#A8D8CC" stroke-width="6" fill="none"/>'),
+    '<rect x="150" y="206" width="120" height="58" rx="12" fill="#241913"/>' +
+    '<path d="M166 246q44-26 88 0" stroke="#D9BF8C" stroke-width="6" fill="none"/>'),
   crown: svg('0 0 420 300',
-    '<rect width="420" height="300" fill="#E8DCC8"/>' +
-    '<rect x="48" y="176" width="324" height="20" rx="10" fill="#B9A88E"/>' +
-    '<path d="M126 176c0-28 14-46 38-46s38 18 38 46z" fill="#FFFFFF"/>' +
-    '<path d="M216 176c0-34 16-56 44-56s44 22 44 56z" fill="#FFFFFF"/>' +
-    '<rect x="150" y="196" width="28" height="44" rx="8" fill="#9AA4AB"/>' +
-    '<rect x="246" y="196" width="28" height="44" rx="8" fill="#9AA4AB"/>' +
-    '<circle cx="332" cy="92" r="40" fill="#A8D8CC" opacity=".55"/>' +
-    '<path d="M86 108h64v44H86z" fill="#1F7A70" opacity=".65"/>'),
+    '<rect width="420" height="300" fill="#F3EBDB"/>' +
+    '<rect x="48" y="176" width="324" height="20" rx="10" fill="#C9B189"/>' +
+    '<path d="M126 176c0-28 14-46 38-46s38 18 38 46z" fill="#FFFDF8"/>' +
+    '<path d="M216 176c0-34 16-56 44-56s44 22 44 56z" fill="#FFFDF8"/>' +
+    '<rect x="150" y="196" width="28" height="44" rx="8" fill="#A89880"/>' +
+    '<rect x="246" y="196" width="28" height="44" rx="8" fill="#A89880"/>' +
+    '<circle cx="332" cy="92" r="40" fill="#D9BF8C" opacity=".55"/>' +
+    '<path d="M86 108h64v44H86z" fill="#8F6D3A" opacity=".65"/>'),
   kids: svg('0 0 420 300',
-    '<rect width="420" height="300" fill="#FFEFD2"/>' +
-    '<circle cx="312" cy="86" r="52" fill="#7FD1F0" opacity=".6"/>' +
-    '<path d="M150 246c0-54 24-86 62-86s62 32 62 86z" fill="#FFFFFF"/>' +
-    '<circle cx="212" cy="140" r="54" fill="#FFD9A8"/>' +
-    '<path d="M158 138c0-38 24-60 54-60s54 22 54 60c0-48-24-68-54-68s-54 20-54 68z" fill="#5A3B2E"/>' +
-    '<circle cx="194" cy="140" r="4" fill="#3B2A21"/><circle cx="230" cy="140" r="4" fill="#3B2A21"/>' +
-    '<path d="M196 166q16 14 32 0" stroke="#3B2A21" stroke-width="4" fill="none" stroke-linecap="round"/>' +
-    '<path d="M96 222l8 19 19 8-19 8-8 19-8-19-19-8 19-8z" fill="#FFB547"/>')
+    '<rect width="420" height="300" fill="#FBF0DC"/>' +
+    '<circle cx="312" cy="86" r="52" fill="#E3C9A4" opacity=".6"/>' +
+    '<path d="M150 246c0-54 24-86 62-86s62 32 62 86z" fill="#FFFDF8"/>' +
+    '<circle cx="212" cy="140" r="54" fill="#EEDCBC"/>' +
+    '<path d="M158 138c0-38 24-60 54-60s54 22 54 60c0-48-24-68-54-68s-54 20-54 68z" fill="#4A3327"/>' +
+    '<circle cx="194" cy="140" r="4" fill="#2B2019"/><circle cx="230" cy="140" r="4" fill="#2B2019"/>' +
+    '<path d="M196 166q16 14 32 0" stroke="#2B2019" stroke-width="4" fill="none" stroke-linecap="round"/>' +
+    '<path d="M96 222l8 19 19 8-19 8-8 19-8-19-19-8 19-8z" fill="#C9A05C"/>')
 };
 SCENES.consult = SCENES.caries; SCENES.hygiene = SCENES.white;
-SCENES.allon4 = SCENES.crown; SCENES.ortho = SCENES.braces; SCENES.sinus = SCENES.implant; SCENES.veneer = SCENES.crown;
+SCENES.veneer = SCENES.crown; SCENES.canal = SCENES.caries;
 
 /* вставляем иллюстрации */
 $('#hero-scene').innerHTML = HERO;
@@ -1483,7 +1551,7 @@ function setScene(id) {
   if (g) g.setAttribute('preserveAspectRatio', 'xMidYMid meet');
   $('#svc-art-t').textContent = 'Иллюстрация · ' + svcById[id].t.toLowerCase();
 }
-setScene('implant');
+setScene('caries');
 
 
 /* ============================================================
@@ -1655,17 +1723,17 @@ function initImplant3D() {
    титры и честная подпись под окном.
    ============================================================ */
 var VIDEO = {
-  'Ольга Хрешкова': { i: 0, s: 'хирург-имплантолог, стаж 21 год', lines: [
-    'Здравствуйте, я Ольга Хрешкова.', 'Ставлю импланты больше двадцати лет.',
-    'Пришлите КТ — скажу, что вас ждёт, ещё до поездки.'] },
-  'Ольга Парамошина': { i: 1, s: 'главный врач, ортопед', lines: [
-    'Здравствуйте, я Ольга Парамошина.', 'Лаборатория у нас своя, в соседнем крыле.',
-    'Примерка — на следующий день, а не через три недели.'] },
-  'Светлана Рябова': { i: 2, s: 'ортодонт, зав. отделением', lines: [
-    'Здравствуйте, я Светлана Рябова.', 'Покажу 3D-план вашей улыбки до начала лечения.',
-    'С элайнерами часть контролей проходим онлайн.'] },
-  'Александра Исаева': { i: 3, s: 'детский стоматолог', lines: [
-    'Привет, я Александра.', 'Сначала знакомимся, потом считаем зубы.',
+  'Анна Иванова': { i: 0, s: 'терапевт, эндодонтист', lines: [
+    'Здравствуйте, я Анна.', 'Лечу каналы под микроскопом.',
+    'Не бойтесь — я всё объясню до того, как возьму инструмент.'] },
+  'Сергей Петров': { i: 1, s: 'хирург-имплантолог', lines: [
+    'Здравствуйте, я Сергей.', 'Поставил больше двух тысяч имплантов.',
+    'Операция занимает меньше часа — вечером вы уже работаете.'] },
+  'Мария Орлова': { i: 2, s: 'ортодонт', lines: [
+    'Здравствуйте, я Мария.', 'Покажу 3D-план вашей улыбки.',
+    'Вы увидите результат до того, как согласитесь на лечение.'] },
+  'Дмитрий Ковалёв': { i: 3, s: 'детский стоматолог', lines: [
+    'Привет, я Дмитрий.', 'Сначала знакомимся, потом считаем зубы.',
     'И только потом лечим — без слёз и уговоров.'] }
 };
 
@@ -1819,7 +1887,7 @@ $('#quiz-again').addEventListener('click', function () {
 });
 
 /* ---------- услуги ---------- */
-var TAB_SVC = ['implant','allon4','crown','ortho','hygiene','kids'];
+var TAB_SVC = ['caries','implant','white','braces','crown','kids'];
 $('#svc-panes').innerHTML = TAB_SVC.map(function (id, i) {
   var s = svcById[id], d = DOCS[s.doc];
   return '<div class="svc-pane' + (i ? '' : ' on') + '" data-pane="' + id + '">' +
@@ -1859,7 +1927,7 @@ function smile(color, opts) {
   return '<path d="M40 150 Q200 72 360 150 Q200 248 40 150Z" fill="#8E4A46"/>' +
          '<path d="M58 150 Q200 92 342 150 Q200 232 58 150Z" fill="#3B1C1C"/>' + teeth;
 }
-var baCase = 'implant';
+var baCase = 'white';
 function drawBA() {
   var c = CASES[baCase];
   $('#smile-before').innerHTML = smile(c.before, { gap: c.gap, crooked: c.crooked });
@@ -1943,7 +2011,7 @@ $('#calc-send').addEventListener('click', function () {
   if (!t.mn) { alert('Выберите хотя бы одну услугу — тогда посчитаем смету.'); return; }
   var lines = CALC.filter(function (c) { return calcQty[c.id] > 0; })
     .map(function (c) { return '• ' + c.t + ' × ' + calcQty[c.id]; }).join('\n');
-  var txt = 'Здравствуйте! Посчитал смету на сайте клиники «Династия»:\n' + lines +
+  var txt = 'Здравствуйте! Посчитал смету на сайте клиники «Каспий»:\n' + lines +
     '\nМатериал: ' + (calcMat === 'prem' ? 'премиум' : 'стандарт') +
     '\nИтого ориентировочно: ' + money(t.mn) + ' – ' + money(t.mx) + ' ₽' +
     (t.save > 0 ? '\nСредняя по Москве: ' + money(t.msk) + ' ₽ (выгода ' + money(t.save) + ' ₽)' : '') +
@@ -1993,17 +2061,8 @@ $('#rate-row').innerHTML = RATINGS.map(function (r) {
   return '<div class="rate"><b>' + r.v + '</b><div class="src">' + r.src + '</div><div class="n">' + r.n + '</div></div>';
 }).join('');
 $('#badges').innerHTML = BADGES.map(function (b) { return '<span>' + b + '</span>'; }).join('');
+(function () { var line = BADGES.map(function (b) { return '<span>' + b + '</span>'; }).join(''); $('#badgeline').innerHTML = line + line; })();
 
-/* ---------- филиалы и места в Рязани ---------- */
-$('#branches').innerHTML = CLINICS.map(function (c) {
-  return '<a class="branch" href="' + c.m + '" target="_blank" rel="noopener">' +
-    '<span class="ic"><svg width="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="#i-pin"/></svg></span>' +
-    '<span class="n"><b>' + c.n + '</b><span>' + c.a + '</span></span>' +
-    '<span class="go">На карте →</span></a>';
-}).join('');
-$('#places').innerHTML = PLACES.map(function (pl) {
-  return '<div class="place"><b>' + pl.t + '</b><p>' + pl.d + '</p></div>';
-}).join('');
 
 /* ---------- предварительный план по КТ ---------- */
 (function () {
@@ -2150,7 +2209,7 @@ $('#bk-next3').addEventListener('click', function () {
 });
 function bkText() {
   var d = new Date(Date.now() + bk.day * 864e5), s = svcById[bk.svc], doc = DOCS[bk.doc];
-  return 'Здравствуйте! Записываюсь в клинику «Династия».\n' +
+  return 'Здравствуйте! Записываюсь в клинику «Каспий».\n' +
     'Услуга: ' + s.t + '\nВрач: ' + doc.n + '\n' +
     'Когда: ' + DAYS[d.getDay()] + ', ' + d.getDate() + ' ' + MON[d.getMonth()] + ' в ' + bk.time + '\n' +
     'Имя: ' + ($('#bk-name').value || '—') + '\nТелефон: ' + ($('#bk-tel').value || '—') +
@@ -2192,10 +2251,10 @@ document.addEventListener('click', function (e) {
 $('#map-load').addEventListener('click', function () {
   /* кладём карту поверх схемы: если виджет не откроется, схема останется видна */
   var m = $('#map'), f = document.createElement('iframe');
-  f.title = 'Карта: Рязань, улица Кальная, 34';
+  f.title = 'Карта: Москва, улица Полярная, 24к1';
   f.loading = 'lazy';
   f.style.cssText = 'position:absolute;inset:0;border:0;width:100%;height:100%;z-index:4;opacity:0;transition:opacity .4s';
-  f.src = 'https://yandex.ru/map-widget/v1/?pt=39.787418,54.623253&z=16&l=map';
+  f.src = 'https://yandex.ru/map-widget/v1/?ll=37.6513%2C55.8869&z=15&text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9F%D0%BE%D0%BB%D1%8F%D1%80%D0%BD%D0%B0%D1%8F';
   f.addEventListener('load', function () { f.style.opacity = '1'; });
   this.remove();
   m.appendChild(f);
