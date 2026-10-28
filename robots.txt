@@ -1,0 +1,8 @@
+User-agent: *
+# демо-сайты вымышленных компаний — не для поиска
+Disallow: /portfolio/dental-demo/
+Disallow: /portfolio/fitness/
+Disallow: /portfolio/restaurant/
+Disallow: /portfolio/landings/
+
+Sitemap: https://tercia.dev/sitemap.xml
