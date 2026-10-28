@@ -13,8 +13,8 @@ function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
 /* ---------- имя, город, контакты ---------- */
 $$('[data-name]').forEach(function (el) { el.textContent = C.clinic.name; });
 $$('[data-name-short]').forEach(function (el) { el.textContent = '«' + C.clinic.name + '»'; });
-$$('[data-city]').forEach(function (el) { el.textContent = C.clinic.city + ' · ' + C.clinic.district; });
-$$('[data-city-short]').forEach(function (el) { el.textContent = C.clinic.city + ' · ' + C.clinic.district; });
+$$('[data-city]').forEach(function (el) { el.textContent = C.clinic.city + ' · м. ' + C.clinic.metro; });
+$$('[data-city-short]').forEach(function (el) { el.textContent = C.clinic.city + ' · м. ' + C.clinic.metro; });
 $$('[data-phone]').forEach(function (el) { el.textContent = C.clinic.phone; el.href = 'tel:' + C.clinic.phoneHref; });
 $$('[data-wa]').forEach(function (el) { el.href = C.clinic.whatsapp; });
 $$('[data-tg]').forEach(function (el) { el.href = C.clinic.telegram; });
