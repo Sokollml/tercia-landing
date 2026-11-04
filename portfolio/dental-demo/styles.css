@@ -106,6 +106,13 @@ html.mm-lock{overflow:hidden}
 .hero h1{margin-top:30px;max-width:16ch}
 .hero .lead{color:rgba(247,244,238,.72);max-width:48ch}
 .hero-act{display:flex;gap:16px;flex-wrap:wrap;margin-top:44px}
+.hero-addr{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:30px;font-size:13px;
+  letter-spacing:.02em;color:rgba(247,244,238,.78)}
+.hero-addr .metro{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;
+  border:1px solid rgba(201,174,124,.45);color:var(--brass-l);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;white-space:nowrap}
+.hero-addr .metro::before{content:'';width:8px;height:8px;background:var(--brass);
+  border-radius:50%;flex:none}
 .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(56px,8vw,104px);
   border-top:1px solid rgba(247,244,238,.16)}
 .hero-facts div{padding:30px 34px 36px;border-right:1px solid rgba(247,244,238,.16)}
@@ -262,6 +269,9 @@ section.tight{padding-block:clamp(44px,6vw,80px)}
 .map .pin b{display:block;background:var(--forest);color:var(--ivory);padding:12px 20px;font-size:12px;
   letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 .map .pin i{display:block;width:9px;height:9px;background:var(--brass);margin:12px auto 0;transform:rotate(45deg)}
+.map-addr{position:absolute;left:0;right:0;bottom:0;padding:18px 22px;background:var(--paper);
+  border-top:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--muted)}
+.map-addr b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
 .map .load{position:absolute;left:50%;bottom:22px;transform:translateX(-50%)}
 
 /* ---------- заявка ---------- */

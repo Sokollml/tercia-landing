@@ -19,6 +19,23 @@ $$('[data-phone]').forEach(function (el) { el.textContent = C.clinic.phone; el.h
 $$('[data-wa]').forEach(function (el) { el.href = C.clinic.whatsapp; });
 $$('[data-tg]').forEach(function (el) { el.href = C.clinic.telegram; });
 $('#fAddr').textContent = C.clinic.address;
+
+/* адрес и станция метро: в первом экране и на схеме проезда */
+(function () {
+  var c = C.clinic;
+  var ha = $('#heroAddr');
+  if (ha) {
+    ha.innerHTML = '<span>' + esc(c.city) + ', ' + esc(c.street) + '</span>' +
+      '<span class="metro">метро «' + esc(c.metro) + '»</span>' +
+      '<span>' + esc(c.metroWalk) + '</span>';
+  }
+  var ma = $('#mapAddr');
+  if (ma) {
+    ma.innerHTML = '<b>' + esc(c.city) + ', ' + esc(c.street) + '</b>' +
+      'Метро «' + esc(c.metro) + '», ' + esc(c.metroLine) + ' — ' + esc(c.metroWalk) + '.' +
+      ' Своя парковка во дворе.';
+  }
+})();
 $('#legal').innerHTML = esc(C.clinic.legal) + '<br>© ' + new Date().getFullYear() +
   ' · сайт собран в <a href="../../">Tercia</a>';
 

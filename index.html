@@ -85,7 +85,9 @@ main,header,footer{position:relative;z-index:2}
 .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,3.4vw,54px);align-items:start}
 .about-card{border:1px solid var(--line);background:var(--panel);border-radius:var(--r);padding:clamp(22px,2.6vw,30px)}
 .ab-top{display:flex;gap:16px;align-items:center}
-.ab-ava{width:62px;height:62px;border-radius:18px;background:linear-gradient(140deg,var(--acid),var(--acid-2));display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:21px;color:var(--ink);flex:none;letter-spacing:-.02em}
+.ab-ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ab-ava:has(img) span{display:none}
+.ab-ava{position:relative;overflow:hidden;width:62px;height:62px;border-radius:18px;background:linear-gradient(140deg,var(--acid),var(--acid-2));display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:21px;color:var(--ink);flex:none;letter-spacing:-.02em}
 .ab-n{font-family:var(--disp);font-weight:600;font-size:18px;letter-spacing:-.02em}
 .ab-r{color:var(--muted-2);font-size:13.4px;margin-top:3px}
 .ab-list{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:18px}
@@ -503,8 +505,8 @@ html.mm-lock{overflow:hidden}
     <article class="card c-half h-v">
       <div class="c-num">02</div>
       <div class="c-ico"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 5 3 11l6 2 2 6z"/></svg></div>
-      <div><div class="c-t">Telegram-боты и mini-app</div><p>Воронки, оплаты, личные кабинеты. Продажи и поддержка 24/7 без менеджера.</p>
-      <div class="c-price">от 29 000 ₽ <span>· + 3 000 ₽/мес</span></div></div>
+      <div><div class="c-t">Telegram-боты и mini-app</div><p>Запись, оплаты, личные кабинеты, программа лояльности. Продажи и поддержка 24/7 без менеджера.</p>
+      <div class="c-price">от 29 000 ₽ <span>· + 3 000 ₽/мес · mini-app с лояльностью — от 69 000 ₽</span></div></div>
     </article>
     <article class="card c-third">
       <div class="c-num">03</div>
@@ -596,7 +598,9 @@ html.mm-lock{overflow:hidden}
   <div class="about">
     <div class="about-card">
       <div class="ab-top">
-        <div class="ab-ava">АА</div>
+        <!-- Фото появится само, как только в assets/about/ ляжет amir.jpg.
+             Пока файла нет, img удаляется и остаются инициалы. -->
+        <div class="ab-ava"><img src="assets/about/amir.jpg" alt="Амир Абдурахманов, основатель Tercia" width="124" height="124" loading="lazy" decoding="async" onerror="this.remove()"><span>АА</span></div>
         <div><div class="ab-n">Амир Абдурахманов</div><div class="ab-r">Основатель Tercia · разработка и продукт</div></div>
       </div>
       <div class="ab-list">
@@ -656,7 +660,7 @@ html.mm-lock{overflow:hidden}
       <p>Агентство цифровых продуктов полного цикла. Идея, продукт, рост — три такта одной команды.</p>
     </div>
     <div class="f-col"><div class="f-h">Услуги</div><a href="#services">Сайты</a><a href="#services">Боты и mini-app</a><a href="#services">Автоматизация</a><a href="reputation/">Репутация на картах</a><a href="dental/">Стоматологиям</a></div>
-    <div class="f-col"><div class="f-h">Агентство</div><a href="#about">О нас</a><a href="#cases">Кейсы</a><a href="portfolio/">Портфолио</a><a href="#process">Процесс</a><a href="#zayavka">Контакты</a><a href="privacy/">Политика конфиденциальности</a><a href="offer/">Договор-оферта</a></div>
+    <div class="f-col"><div class="f-h">Агентство</div><a href="#about">О нас</a><a href="#cases">Кейсы</a><a href="portfolio/">Портфолио</a><a href="#process">Процесс</a><a href="#zayavka">Контакты</a><a href="privacy/">Политика конфиденциальности</a><a href="offer/">Договор-оферта</a><a href="dpa/">Поручение на обработку ПДн</a></div>
     <div class="f-col"><div class="f-h">Связь</div><a href="https://t.me/tercia_it">@tercia_it</a><a href="https://wa.me/79166649555">+7 916 664 95 55</a><a href="mailto:terciaagency@gmail.com">terciaagency@gmail.com</a></div>
   </div>
   <div class="req">
