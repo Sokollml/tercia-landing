@@ -23,17 +23,20 @@ $('#fAddr').textContent = C.clinic.address;
 /* адрес и станция метро: в первом экране и на схеме проезда */
 (function () {
   var c = C.clinic;
+  /* улица выводится, только если она задана: в демо дома нет */
+  var place = c.city + (c.street ? ', ' + c.street : '');
   var ha = $('#heroAddr');
   if (ha) {
-    ha.innerHTML = '<span>' + esc(c.city) + ', ' + esc(c.street) + '</span>' +
+    ha.innerHTML = '<span>' + esc(place) + '</span>' +
       '<span class="metro">метро «' + esc(c.metro) + '»</span>' +
       '<span>' + esc(c.metroWalk) + '</span>';
   }
   var ma = $('#mapAddr');
   if (ma) {
-    ma.innerHTML = '<b>' + esc(c.city) + ', ' + esc(c.street) + '</b>' +
+    ma.innerHTML = '<b>' + esc(place) + '</b>' +
       'Метро «' + esc(c.metro) + '», ' + esc(c.metroLine) + ' — ' + esc(c.metroWalk) + '.' +
-      ' Своя парковка во дворе.';
+      ' Своя парковка во дворе.' +
+      (c.street ? '' : ' Точный адрес в демонстрационной версии не указан.');
   }
 })();
 $('#legal').innerHTML = esc(C.clinic.legal) + '<br>© ' + new Date().getFullYear() +
