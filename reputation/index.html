@@ -437,12 +437,12 @@ html.mm-lock{overflow:hidden}
         <div class="field"><label for="f-phone">Телефон или ссылка на карточку</label><input id="f-phone" type="text" autocomplete="tel" placeholder="+7 ___ ___ __ __ или ссылка с Яндекс Карт" required></div>
         <div class="field"><label for="f-task">Город и сфера</label><textarea id="f-task" placeholder="Например: Махачкала, стоматология, одна точка"></textarea></div>
         <label class="consent"><input type="checkbox" id="f-ok" required>
-          <span>Согласен на обработку персональных данных в соответствии с <a href="../privacy/">политикой конфиденциальности</a>.</span></label>
+          <span>Согласен на обработку имени и контакта, чтобы со мной связались по заявке. Данные уходят на нашу почту на домене tercia.dev и хранятся в России — подробности в <a href="../privacy/">политике конфиденциальности</a>.</span></label>
         <div class="send-row">
-          <button type="submit" class="btn btn-wa">Отправить в WhatsApp</button>
-          <button type="button" class="btn btn-tg" data-tg>Отправить в Telegram</button>
-        </div>
-        <p class="formnote">Заявка уйдёт в мессенджер с уже готовым текстом — останется нажать «отправить»</p>
+  <button type="submit" class="btn btn-v" data-send>Отправить заявку</button>
+</div>
+<div class="alt-row" data-alt><span data-alt-label>Или напишите сразу:</span><button type="button" class="btn btn-wa" data-wa>WhatsApp</button><button type="button" class="btn btn-tg" data-tg>Telegram</button></div>
+        <p class="formnote">Заявка придёт нам на почту <b>info@tercia.dev</b>. Ответим в рабочее время, обычно в тот же день.</p>
         <div class="status" id="f-status" role="status"></div>
       </form>
     </div>
@@ -462,49 +462,7 @@ html.mm-lock{overflow:hidden}
   <div class="f-bot"><span>© 2026 Tercia</span><span>tercia.dev</span></div>
 </div></footer>
 
-<script>
-(function () {
-  var form = document.getElementById('lead'); if (!form) return;
-  var WA = '79166649555', TG = 'tercia_it', status = document.getElementById('f-status');
-  function val(id){ return (document.getElementById(id).value||'').trim(); }
-  function say(m, ok){
-    status.textContent = m; status.classList.add('on');
-    status.style.border = '1px solid ' + (ok ? 'rgba(84,224,138,.3)' : 'rgba(255,138,107,.35)');
-    status.style.background = ok ? 'rgba(84,224,138,.08)' : 'rgba(255,138,107,.08)';
-    status.style.color = ok ? 'var(--ok)' : 'var(--warn)';
-  }
-  function valid(){
-    if(!val('f-name')){ say('Напишите название компании.', false); return false; }
-    if(!val('f-phone')){ say('Оставьте телефон или ссылку на карточку.', false); return false; }
-    if(!document.getElementById('f-ok').checked){ say('Отметьте согласие на обработку данных.', false); return false; }
-    return true;
-  }
-  function compose(){
-    var t = 'Заявка с сайта tercia.dev/reputation\n';
-    t += 'Компания: ' + val('f-name') + '\nКонтакт: ' + val('f-phone') + '\n';
-    if (val('f-task')) t += 'Город и сфера: ' + val('f-task') + '\n';
-    return t;
-  }
-  function send(ch){
-    if(!valid()) return;
-    var text = compose();
-    if (ch === 'wa') {
-      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-      say('Открыли WhatsApp — текст заявки уже подставлен, нажмите «отправить».', true);
-    } else {
-      var go = function(){
-        window.open('https://t.me/' + TG, '_blank', 'noopener');
-        say('Текст заявки скопирован. Открыли Telegram — вставьте его в чат и отправьте.', true);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(go, go);
-      else go();
-    }
-  }
-  form.addEventListener('submit', function(e){ e.preventDefault(); send('wa'); });
-  var tg = form.querySelector('[data-tg]');
-  if (tg) tg.addEventListener('click', function(){ send('tg'); });
-})();
-</script>
+<script src="../assets/lead.js" defer></script>
 
 <script>
 /* мобильное меню */

@@ -523,12 +523,12 @@ html.mm-lock{overflow:hidden}
         <div class="field"><label for="f-phone">Телефон или адрес сайта</label><input id="f-phone" name="phone" type="text" autocomplete="tel" placeholder="+7 ___ ___ __ __ или site.ru" required></div>
         <div class="field"><label for="f-task">Что нужно</label><textarea id="f-task" name="task" placeholder="Например: сайт клиники с ценами и онлайн-записью"></textarea></div>
         <label class="consent"><input type="checkbox" id="f-ok" required>
-          <span>Согласен на обработку персональных данных в соответствии с <a href="../privacy/">политикой конфиденциальности</a>.</span></label>
+          <span>Согласен на обработку имени и контакта, чтобы со мной связались по заявке. Данные уходят на нашу почту на домене tercia.dev и хранятся в России — подробности в <a href="../privacy/">политике конфиденциальности</a>.</span></label>
         <div class="send-row">
-          <button type="submit" class="btn btn-wa" data-ch="wa">Отправить в WhatsApp</button>
-          <button type="button" class="btn btn-tg" data-ch="tg">Отправить в Telegram</button>
+          <button type="submit" class="btn btn-v" data-send>Отправить заявку</button>
         </div>
-        <p class="formnote">Заявка уйдёт в мессенджер с уже готовым текстом — останется нажать «отправить»</p>
+        <div class="alt-row" data-alt><span data-alt-label>Или напишите сразу:</span><button type="button" class="btn btn-wa" data-wa>WhatsApp</button><button type="button" class="btn btn-tg" data-tg>Telegram</button></div>
+        <p class="formnote">Заявка придёт нам на почту <b>info@tercia.dev</b>. Ответим в рабочее время, обычно в тот же день.</p>
         <div class="status" id="f-status" role="status"></div>
       </form>
     </div>
@@ -554,65 +554,7 @@ html.mm-lock{overflow:hidden}
   <div class="f-bot"><span>© 2026 Tercia</span><span>tercia.dev</span></div>
 </div></footer>
 
-<script>
-/* Форма → мессенджер. Бэкенда нет (GitHub Pages — статика),
-   поэтому собираем текст заявки и открываем WhatsApp или Telegram.
-   Для Telegram текст кладём в буфер обмена: t.me не умеет подставлять текст в личный чат. */
-(function () {
-  var form = document.getElementById('lead');
-  if (!form) return;
-  var WA = '79166649555', TG = 'tercia_it';
-  var status = document.getElementById('f-status');
-
-  function val(id) { return (document.getElementById(id).value || '').trim(); }
-
-  function compose() {
-    var t = 'Заявка с сайта tercia.dev/dental\n';
-    t += 'Имя: ' + val('f-name') + '\n';
-    t += 'Контакт: ' + val('f-phone') + '\n';
-    var task = val('f-task');
-    if (task) t += 'Задача: ' + task + '\n';
-    return t;
-  }
-
-  function valid() {
-    if (!val('f-name')) { say('Напишите, как к вам обращаться.', false); return false; }
-    if (!val('f-phone')) { say('Оставьте телефон или адрес сайта — без них не сможем ответить.', false); return false; }
-    if (!document.getElementById('f-ok').checked) { say('Отметьте согласие на обработку данных.', false); return false; }
-    return true;
-  }
-
-  function say(msg, ok) {
-    status.textContent = msg;
-    status.classList.add('on');
-    status.style.borderColor = ok ? 'rgba(84,224,138,.3)' : 'rgba(255,138,107,.35)';
-    status.style.background = ok ? 'rgba(84,224,138,.08)' : 'rgba(255,138,107,.08)';
-    status.style.color = ok ? 'var(--ok)' : 'var(--warn)';
-  }
-
-  function send(channel) {
-    if (!valid()) return;
-    var text = compose();
-    if (channel === 'wa') {
-      window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-      say('Открыли WhatsApp — текст заявки уже подставлен, нажмите «отправить».', true);
-    } else {
-      var done = function () {
-        window.open('https://t.me/' + TG, '_blank', 'noopener');
-        say('Текст заявки скопирован. Открыли Telegram — вставьте его в чат и отправьте.', true);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, done);
-      } else { done(); }
-    }
-  }
-
-  form.addEventListener('submit', function (e) { e.preventDefault(); send('wa'); });
-  Array.prototype.forEach.call(form.querySelectorAll('[data-ch]'), function (b) {
-    if (b.getAttribute('data-ch') === 'tg') b.addEventListener('click', function () { send('tg'); });
-  });
-})();
-</script>
+<script src="../assets/lead.js" defer></script>
 
 <script>
 /* мобильное меню */
