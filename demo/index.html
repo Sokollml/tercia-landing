@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Демо-концепты Tercia</title>
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#07070B;color:#F5F5F7;font-family:'Manrope',system-ui,sans-serif;padding:clamp(24px,5vw,64px) clamp(18px,4vw,40px)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto}
+.kick{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#D8FF4F}
+h1{font-size:clamp(28px,4.6vw,44px);line-height:1.05;letter-spacing:-.035em;margin:14px 0 16px;font-weight:800}
+.lead{color:#A9A9B6;max-width:62ch;font-size:16px;line-height:1.6}
+.warn{margin:26px 0 34px;border:1px dashed rgba(255,255,255,.2);border-radius:14px;padding:18px 20px;color:#C9C9D6;font-size:14.4px;line-height:1.6}
+.warn b{color:#fff}
+.grid{display:grid;gap:14px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+.card{border:1px solid rgba(255,255,255,.09);background:#101017;border-radius:20px;padding:24px;display:flex;flex-direction:column}
+.card h2{font-size:21px;letter-spacing:-.02em;margin-bottom:4px}
+.card .where{color:#77778A;font-size:13.4px}
+.card ul{list-style:none;margin:16px 0 20px;display:grid;gap:8px}
+.card li{font-size:14.4px;color:#C2C2CE;padding-left:18px;position:relative;line-height:1.5}
+.card li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:2px;background:#D8FF4F}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.lnk{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.16);border-radius:99px;padding:8px 13px;transition:.2s}
+.lnk:hover{background:#D8FF4F;color:#07070B;border-color:#D8FF4F}
+.lnk.main{background:#D8FF4F;color:#07070B;border-color:#D8FF4F}
+.foot{margin-top:38px;color:#77778A;font-size:13.4px;line-height:1.6;max-width:70ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kick">Внутренняя страница</div>
+  <h1>Демо-концепты под первые обращения</h1>
+  <p class="lead">Четыре мобильных демо на общей основе. У каждого четыре экрана: сайт, заявка глазами сотрудника, работа с отзывом и сверка карточек в Яндексе и 2ГИС. Кнопки проигрывают сценарий внутри страницы и никуда ничего не отправляют.</p>
+
+  <div class="warn">
+    <b>Это концепты Tercia, а не сайты компаний.</b> Названия услуг, цены, сроки, врачи, мастера, телефоны и отзывы — вымышленные. Страницы закрыты от индексации, логотипы компаний не используются. Показываем только адресату и только по прямой ссылке.<br><br>
+    <b>В первое письмо ссылку не вкладываем.</b> По заключению юриста первое касание идёт без цены, без перечня услуг и без ссылки на демо — только скриншот и вопрос. Ссылка уходит вторым письмом, после ответа «да, пришлите».
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>«ПеретяжкА»</h2>
+      <div class="where">Мебельная мастерская · Пенягинская, 10к1</div>
+      <ul>
+        <li>Сайт с портфолио и оценкой по фото: клиент прикладывает снимки, мастер сразу видит, что чинить</li>
+        <li>Заявка с источником — видно, пришёл человек с сайта или с карты, и сколько их за неделю</li>
+        <li>Карточки на обеих площадках ведут на сайт к одной и той же кнопке</li>
+      </ul>
+      <div class="links">
+        <a class="lnk main" href="peretyazhka/">Открыть</a>
+        <a class="lnk" href="peretyazhka/#form">Оценка по фото</a>
+        <a class="lnk" href="peretyazhka/#staff">Экран мастера</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>«Стелла»</h2>
+      <div class="where">Стоматология · Карельский бульвар, 5</div>
+      <ul>
+        <li>Сайт с ценами, врачами и запросом на запись: пациент выбирает направление и время</li>
+        <li>Администратор видит запрос, свободный слот и подтверждает — пациенту уходит сообщение</li>
+        <li>Отзыв без ответа: черновик готовит Tercia, публикуем после согласования с управляющей</li>
+      </ul>
+      <div class="links">
+        <a class="lnk main" href="stella/">Открыть</a>
+        <a class="lnk" href="stella/#staff">Глазами администратора</a>
+        <a class="lnk" href="stella/#rev">Отзыв и согласование</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>«Лама рядом»</h2>
+      <div class="where">Ветклиника · Гродненская, 10</div>
+      <ul>
+        <li>Два понятных действия на первом экране: срочный звонок и плановая запись</li>
+        <li>Схема прохода со двора — то, на что жалуются в отзывах</li>
+        <li>В Яндексе запись уже есть, в 2ГИС нет: приводим карточки к одному виду</li>
+      </ul>
+      <div class="links">
+        <a class="lnk main" href="lama/">Открыть</a>
+        <a class="lnk" href="lama/#rev">Отзыв из 2ГИС</a>
+        <a class="lnk" href="lama/#maps">Расхождение карточек</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Te Amo Beauty Studio</h2>
+      <div class="where">Салон красоты · Волгоградский просп., 70</div>
+      <ul>
+        <li>Путь «услуга → мастер → запись»: цена и свободное время видны до звонка</li>
+        <li>В заявке видно площадку, с которой пришёл клиент, и выбранную услугу</li>
+        <li>Новый отзыв: уведомление ответственному и черновик ответа на согласование</li>
+      </ul>
+      <div class="links">
+        <a class="lnk main" href="teamo/">Открыть</a>
+        <a class="lnk" href="teamo/#staff">Заявка и источник</a>
+        <a class="lnk" href="teamo/#rev">Отзыв и ответ</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="foot">Основа общая: <code>demo/assets/demo.css</code> и <code>demo/assets/demo.js</code>, содержимое каждой компании — в её <code>config.js</code>. Поменять текст, цены или сценарий — значит поправить один конфиг, движок не трогается. Пятую компанию добавить — скопировать папку и переписать конфиг.</p>
+</div>
+</body>
+</html>

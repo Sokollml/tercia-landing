@@ -1,0 +1,141 @@
+/* Общая основа для демо-концептов Tercia. Мобильный макет,
+   на широком экране — в рамке телефона. Содержимое — из config.js. */
+:root{
+  --bg:#0A0A0F; --stage:#101017; --card:#FFFFFF; --ink:#14141B; --soft:#6B6B7B;
+  --line:rgba(20,20,27,.09); --line-2:rgba(20,20,27,.16);
+  --accent:#2F6BFF; --accent-ink:#FFFFFF; --ok:#1C9B5E; --warn:#C2410C;
+  --r:16px; --sans:'Manrope',-apple-system,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{max-width:100%;display:block}
+
+/* ---------- сцена и рамка телефона ---------- */
+.stage{min-height:100%;display:grid;place-items:start center;padding:0}
+#app{width:100%;display:flex;flex-direction:column;align-items:center}
+.ribbon{width:100%;max-width:430px;z-index:40;background:#15151D;color:#D8D8E4;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:9px 14px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.08)}
+.ribbon b{color:#D8FF4F;font-weight:600}
+.ribbon a{text-decoration:underline;opacity:.8}
+.phone{width:100%;max-width:430px;background:var(--card);min-height:calc(100vh - 44px);position:relative;
+  display:flex;flex-direction:column}
+@media(min-width:900px){
+  .stage{padding:64px 20px 40px}
+  .phone{min-height:860px;max-height:92vh;border-radius:38px;overflow:hidden;
+    box-shadow:0 60px 120px -40px #000,0 0 0 10px #1A1A22,0 0 0 11px rgba(255,255,255,.06)}
+  .ribbon{max-width:450px;border-radius:12px;margin-bottom:14px;border:1px solid rgba(255,255,255,.08)}
+}
+.scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-bottom:84px}
+
+/* ---------- верхняя панель ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;gap:11px}
+.logo-dot{width:30px;height:30px;border-radius:9px;background:var(--accent);color:var(--accent-ink);
+  display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.top .nm{font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.top .sub{font-size:11.5px;color:var(--soft);margin-top:1px}
+
+/* ---------- общие элементы ---------- */
+.sec{padding:26px 18px;border-bottom:1px solid var(--line)}
+.sec:last-child{border-bottom:0}
+.eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:27px;line-height:1.14;letter-spacing:-.03em;font-weight:800;margin:10px 0}
+h2{font-size:19px;line-height:1.2;letter-spacing:-.02em;font-weight:700;margin-bottom:14px}
+h3{font-size:15.5px;font-weight:700;letter-spacing:-.01em}
+p{font-size:14.8px;line-height:1.55;color:#3A3A47}
+.muted{color:var(--soft)}
+.sm{font-size:13px}
+.xs{font-size:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 18px;
+  border-radius:13px;font-weight:700;font-size:15px;transition:.2s;width:100%;text-align:center}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:active{transform:scale(.985)}
+.btn-ghost{border:1px solid var(--line-2);color:var(--ink)}
+.btn-urgent{background:#C2102E;color:#fff}
+.btn-row{display:grid;gap:9px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:99px;
+  border:1px solid var(--line-2);font-size:12.5px;background:#fff}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  padding:13px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row b{font-variant-numeric:tabular-nums}
+.row>b:last-child{white-space:nowrap}
+.staff .row b{white-space:normal;max-width:62%}
+.tile{border:1px solid var(--line);border-radius:var(--r);padding:16px;background:#fff}
+.tiles{display:grid;gap:10px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ph{aspect-ratio:4/3;border-radius:12px;background:linear-gradient(145deg,#E9E6E1,#CFC9C1);
+  display:grid;place-items:center;color:#8A8278;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:8px}
+.note{margin-top:14px;padding:12px 14px;border-radius:12px;background:#F6F6F9;
+  color:var(--soft);font-size:12.6px;line-height:1.5}
+.note b{color:var(--ink)}
+
+/* ---------- нижние вкладки ---------- */
+.tabs{position:absolute;left:0;right:0;bottom:0;z-index:30;display:grid;grid-auto-flow:column;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+.tab{padding:11px 4px 13px;display:grid;gap:4px;justify-items:center;color:var(--soft);font-size:10.5px;font-weight:600}
+.tab span.i{width:22px;height:22px;display:grid;place-items:center}
+.tab[aria-current]{color:var(--accent)}
+.view{display:none}
+.view.on{display:block}
+
+/* ---------- форма ---------- */
+.field{margin-bottom:13px}
+.field label{display:block;font-size:12.4px;font-weight:600;color:var(--soft);margin-bottom:6px}
+.field input,.field textarea,.field select{width:100%;padding:13px 14px;border:1px solid var(--line-2);
+  border-radius:12px;font-family:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.field textarea{min-height:84px;resize:vertical}
+.drop{border:1.5px dashed var(--line-2);border-radius:14px;padding:20px 16px;text-align:center;background:#FAFAFC}
+.drop .big{font-weight:700;font-size:14.5px}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.thumb{width:66px;height:66px;border-radius:10px;overflow:hidden;border:1px solid var(--line-2);position:relative;background:#EEE}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.ok-box{text-align:center;padding:30px 18px}
+.ok-ic{width:54px;height:54px;border-radius:50%;background:rgba(28,155,94,.12);color:var(--ok);
+  display:grid;place-items:center;margin:0 auto 16px}
+
+/* ---------- экран сотрудника ---------- */
+.staff{background:#0E0E14;color:#EDEDF4;min-height:calc(100vh - 150px)}
+@media(min-width:900px){.staff{min-height:740px}}
+.staff .sec{border-color:rgba(255,255,255,.08)}
+.staff h2,.staff h3{color:#fff}
+.staff p{color:#A9A9B8}
+.staff .tile{background:#15151D;border-color:rgba(255,255,255,.1)}
+.staff .row{border-color:rgba(255,255,255,.08)}
+.staff .muted{color:#7A7A8C}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:99px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase}
+.b-new{background:rgba(47,107,255,.16);color:#8FB2FF}
+.b-ok{background:rgba(28,155,94,.16);color:#5FD39B}
+.b-warn{background:rgba(194,65,12,.18);color:#FFA573}
+.b-src{background:rgba(255,255,255,.08);color:#B9B9C9}
+
+/* ---------- отзывы ---------- */
+.rev{border:1px solid var(--line);border-radius:var(--r);padding:15px;background:#fff}
+.rev .who{display:flex;justify-content:space-between;font-size:13px;color:var(--soft);margin-bottom:8px}
+.stars{color:#F5A623;letter-spacing:1px}
+.draft{margin-top:12px;border-left:3px solid var(--accent);padding:10px 0 2px 12px}
+.draft .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.flow{display:grid;gap:10px;margin-top:14px}
+.step-row{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start}
+.step-dot{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;
+  font-size:11.5px;font-weight:700;color:var(--soft)}
+.step-dot.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.step-dot.now{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ---------- карты ---------- */
+.maps{display:grid;gap:12px}
+.mapcard{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff}
+.mapcard .hd{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px}
+.mapcard .bd{padding:14px}
+.kv{display:grid;grid-template-columns:96px 1fr;gap:8px 12px;font-size:13.4px}
+.kv dt{color:var(--soft)}
+.match{display:flex;align-items:center;gap:7px;font-size:12.6px;color:var(--ok);margin-top:12px;font-weight:600}
