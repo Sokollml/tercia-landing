@@ -65,13 +65,15 @@ main,header,footer{position:relative;z-index:2}
 
 
 /* ---------- нишевые решения ---------- */
-.niches{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.niches{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:1180px){.niches{grid-template-columns:1fr 1fr}.niches>.niche:last-child{grid-column:1/-1;min-height:0}}
 .niche{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);padding:clamp(24px,2.8vw,34px);display:flex;flex-direction:column;transition:.3s;min-height:270px}
 .niche:hover{transform:translateY(-5px);border-color:color-mix(in srgb, var(--nh) 40%, transparent)}
 .niche::after{content:'';position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb, var(--nh) 22%, transparent),transparent);top:-200px;right:-110px;opacity:.55;transition:.35s}
 .niche:hover::after{opacity:1}
 .n-d{--nh:var(--acid)}
 .n-r{--nh:var(--violet-2)}
+.n-a{--nh:var(--cyan)}
 .niche .lbl{position:relative;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--nh);display:flex;align-items:center;gap:9px}
 .niche .lbl::before{content:'';width:20px;height:1px;background:var(--nh)}
 .niche h3{position:relative;font-family:var(--disp);font-size:clamp(21px,2.4vw,28px);font-weight:600;letter-spacing:-.025em;margin:16px 0 10px;line-height:1.1}
@@ -394,7 +396,7 @@ html.mm-lock{overflow:hidden}
   <a class="logo" href="#top"><svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#spk"/></svg><span>Tercia</span></a>
   <span class="logo-tag">Агентство<br>цифровых продуктов</span>
   <nav class="nav-links">
-    <a href="#services">Услуги</a><a href="dental/">Стоматологиям</a><a href="reputation/">Репутация</a><a href="#cases">Демо</a><a href="portfolio/">Портфолио</a><a href="#zayavka">Контакты</a>
+    <a href="#services">Услуги</a><a href="dental/">Стоматологиям</a><a href="automation/">Автоматизация</a><a href="reputation/">Репутация</a><a href="#cases">Демо</a><a href="portfolio/">Портфолио</a><a href="#zayavka">Контакты</a>
   </nav>
   <a href="#zayavka" class="btn btn-acid">Обсудить проект</a>
   <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
@@ -533,7 +535,7 @@ html.mm-lock{overflow:hidden}
 <section class="sec wrap" id="niches">
   <div class="head">
     <div><div class="kick">Готовые решения</div><h2>Собрано под конкретный<br>бизнес</h2></div>
-    <p class="lead">Два направления, где у нас готовы и продукт, и цены. Открывайте — там всё по делу: что входит, сколько стоит и живое демо.</p>
+    <p class="lead">Три направления, где у нас готовы и продукт, и цены. Открывайте — там всё по делу: что входит, сколько стоит и что увидите в демо.</p>
   </div>
   <div class="niches">
     <a class="niche n-d" href="dental/">
@@ -548,6 +550,13 @@ html.mm-lock{overflow:hidden}
       <h3>Отзывы и карточки<br>на Картах и 2ГИС</h3>
       <p>Отвечаем на отзывы и оформляем карточки на Яндекс Картах и 2ГИС, собираем отзывы у реальных клиентов. Без накруток.</p>
       <div class="n-meta"><span><b>от 19 900 ₽</b>/мес</span><span>аудит бесплатно</span><span><b>−50%</b> первым 10 в Москве</span></div>
+      <span class="go">Смотреть решение →</span>
+    </a>
+    <a class="niche n-a" href="automation/">
+      <span class="lbl">Автоматизация заявок</span>
+      <h3>Форма сайта —<br>в CRM или общую очередь</h3>
+      <p>Начнём с одной формы. Настроим передачу заявки, назначение ответственного и уведомление. На тестовых данных покажем, что заявка доходит, а повторная отправка не создаёт дубль.</p>
+      <div class="n-meta"><span><b>от 39 000 ₽</b></span><span>пилот — одна форма</span><span>срок <b>5 рабочих дней</b></span></div>
       <span class="go">Смотреть решение →</span>
     </a>
   </div>
