@@ -10,15 +10,15 @@
 <meta property="og:site_name" content="Tercia">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://tercia.dev/portfolio/">
-<meta property="og:title" content="Портфолио Tercia — двадцать собственных работ, четыре с живым демо">
-<meta property="og:description" content="Сайты, Telegram-боты, mini-app и автоматизация. Каждую работу можно открыть и потрогать.">
+<meta property="og:title" content="Портфолио Tercia — сайты и интерактивные проекты">
+<meta property="og:description" content="Сайты, Telegram-боты, mini-app и автоматизация. Откройте интерактивные демо и посмотрите, как работают проекты Tercia.">
 <meta property="og:image" content="https://tercia.dev/assets/og/portfolio.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Обложка: портфолио Tercia">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Портфолио Tercia — двадцать собственных работ, четыре с живым демо">
-<meta name="twitter:description" content="Сайты, Telegram-боты, mini-app и автоматизация. Каждую работу можно открыть и потрогать.">
+<meta name="twitter:title" content="Портфолио Tercia — сайты и интерактивные проекты">
+<meta name="twitter:description" content="Сайты, Telegram-боты, mini-app и автоматизация. Откройте интерактивные демо и посмотрите, как работают проекты Tercia.">
 <meta name="twitter:image" content="https://tercia.dev/assets/og/portfolio.jpg">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -81,6 +81,10 @@ h1 em{font-style:normal;background:linear-gradient(104deg,var(--acid) 20%,var(--
 .cover{aspect-ratio:16/10;position:relative;overflow:hidden;background:radial-gradient(120% 100% at 20% 0%,#1C1C27,#0B0B11)}
 .cover img{width:100%;height:100%;display:block;object-fit:cover;object-position:top center;transition:transform .7s var(--ease)}
 .work:hover .cover img{transform:scale(1.04)}
+.project-demos{scroll-margin-top:96px;margin-bottom:clamp(44px,7vw,90px)}
+.project-demos h2{margin-bottom:clamp(20px,3vw,32px)}
+.project-cover img{object-fit:contain;object-position:center}
+.project-demos .cover.has-chat{min-height:230px}
 .badge{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg);background:rgba(7,7,11,.72);border:1px solid var(--line-3);backdrop-filter:blur(8px);border-radius:99px;padding:6px 11px}
 .body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
 .num{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted-2)}
@@ -192,7 +196,69 @@ html.mm-lock{overflow:hidden}
     <div class="orb orb-a"></div><div class="orb orb-b"></div>
     <div class="kick">Портфолио</div>
     <h1>Работы, которые <em>можно открыть</em></h1>
-    <p class="lead">Это <b>наши собственные демонстрационные проекты</b>, не заказы клиентов: названия, цены и отзывы в них вымышлены. Четыре работы открываются прямо сейчас — стоматология, ресторан, фитнес-студия и четыре лендинга. Остальные показываю на созвоне: это макеты интерфейсов и схемы воркфлоу.</p>
+    <p class="lead">Откройте интерактивные демо Tercia: в них можно пройти путь заявки, проверить запись и посмотреть, что видит сотрудник. В демо используются тестовые данные. Проекты без публичной ссылки показываем на созвоне.</p>
+  </section>
+
+  <section class="project-demos" id="project-demos" aria-labelledby="project-demos-title">
+    <h2 id="project-demos-title">Интерактивные проекты</h2>
+    <div class="works">
+    <article class="work" id="stella">
+      <div class="cover project-cover"><img src="../assets/cases/project-stella.png" alt="Экран записи в стоматологию «Стелла»" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="for">Стоматология</div>
+        <h3 class="w-title">Стелла</h3>
+        <p class="pitch">Запрос на запись, подтверждение времени администратором и согласование ответа на отзыв.</p>
+        <div class="acts"><a class="btn btn-ghost" href="demos/stella/" aria-label="Открыть демо — Стелла">Открыть демо</a></div>
+      </div>
+    </article>
+
+    <article class="work" id="peretyazhka">
+      <div class="cover project-cover"><img src="../assets/cases/project-peretyazhka.png" alt="Экран заявки на оценку мебели" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="for">Мебельная мастерская</div>
+        <h3 class="w-title">ПеретяжкА</h3>
+        <p class="pitch">Клиент прикладывает фото мебели, а мастер получает заявку с описанием работ.</p>
+        <div class="acts"><a class="btn btn-ghost" href="demos/peretyazhka/" aria-label="Открыть демо — ПеретяжкА">Открыть демо</a></div>
+      </div>
+    </article>
+
+    <article class="work" id="lama">
+      <div class="cover project-cover"><img src="../assets/cases/project-lama.png" alt="Экран выбора срочного звонка или плановой записи" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="for">Ветеринарная клиника</div>
+        <h3 class="w-title">Лама рядом</h3>
+        <p class="pitch">Срочный звонок и плановая запись с отдельным сценарием работы с отзывом.</p>
+        <div class="acts"><a class="btn btn-ghost" href="demos/lama/" aria-label="Открыть демо — Лама рядом">Открыть демо</a></div>
+      </div>
+    </article>
+
+    <article class="work" id="teamo">
+      <div class="cover project-cover"><img src="../assets/cases/project-teamo.png" alt="Экран выбора услуги в Te Amo Beauty Studio" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="for">Салон красоты</div>
+        <h3 class="w-title">Te Amo Beauty Studio</h3>
+        <p class="pitch">Выбор услуги и мастера, переход к записи через Яндекс и отображение источника заявки.</p>
+        <div class="acts"><a class="btn btn-ghost" href="demos/teamo/" aria-label="Открыть демо — Te Amo Beauty Studio">Открыть демо</a></div>
+      </div>
+    </article>
+
+    <article class="work" id="inquiry-desk">
+      <div class="cover has-chat" aria-hidden="true">
+        <div class="chat" data-head="Inquiry Desk">
+          <div class="msg me">Отправить тестовую заявку</div>
+          <div class="msg">Тестовая заявка принята.</div>
+          <div class="msg me">Повторить отправку</div>
+          <div class="msg">В очереди одна заявка.</div>
+        </div>
+      </div>
+      <div class="body">
+        <div class="for">Автоматизация заявок</div>
+        <h3 class="w-title">Inquiry Desk</h3>
+        <p class="pitch">Три сценария приёма заявки с сайта — отправка, повтор без дубля и ошибка подтверждения.</p>
+        <div class="acts"><a class="btn btn-ghost" href="demos/inquiry-desk/" aria-label="Открыть демо — Inquiry Desk">Открыть демо</a></div>
+      </div>
+    </article>
+    </div>
   </section>
 
   <section class="works" aria-label="Избранные работы">
