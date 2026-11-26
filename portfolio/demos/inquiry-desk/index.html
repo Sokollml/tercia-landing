@@ -42,6 +42,10 @@
             <input id="subject" name="subject" required maxlength="150" value="Упаковочные материалы для склада">
             <label for="email">Тестовый email</label>
             <input id="email" name="email" type="email" required maxlength="150" value="test@example.com">
+            <label for="category">Категория</label>
+            <select id="category" name="category">
+              <option>Закупки</option><option>Логистика</option><option>Поддержка</option>
+            </select>
             <div class="actions">
               <button type="submit" id="submit">Отправить заявку</button>
               <button type="button" class="secondary" id="error">Показать ошибку</button>
@@ -54,6 +58,15 @@
             <h2 id="queue-title">Очередь заявок</h2>
             <button type="button" class="secondary" id="reset">Сбросить</button>
           </div>
+          <div class="queue-tools" aria-label="Фильтры очереди">
+            <label for="queue-search">Поиск
+              <input id="queue-search" type="search" placeholder="Номер, тема или email">
+            </label>
+            <label for="queue-filter">Статус
+              <select id="queue-filter"><option value="">Все заявки</option><option value="new">Новые</option><option value="active">В работе</option><option value="done">Закрытые</option></select>
+            </label>
+          </div>
+          <p id="queue-summary" class="queue-summary" role="status"></p>
           <p id="empty" class="empty">Здесь появится заявка после отправки.</p>
           <ul id="queue" aria-label="Принятые заявки"></ul>
         </section>

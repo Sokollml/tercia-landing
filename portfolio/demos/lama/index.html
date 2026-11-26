@@ -14,13 +14,18 @@
   <div class="demo-bar">
     <div class="wrap demo-inner">
       <a href="../../#project-demos">← Портфолио Tercia</a>
+      <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
       <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">Л</span>Лама рядом</button>
-      <a class="header-link" href="#services" data-home-link>Чем помогаем</a>
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="#services" data-home-link>Чем помогаем</a>
+        <a href="#about" data-home-link>Как это работает</a>
+        <a href="#contacts" data-home-link>Контакты</a>
+      </nav>
       <button type="button" class="button" data-action="form">Записаться планово</button>
     </div>
   </header>
@@ -39,14 +44,66 @@
         <img src="../../../assets/portfolio-projects/lama.jpg" alt="Золотистый ретривер крупным планом" fetchpriority="high">
       </figure>
     </section>
-    <section class="wrap details" id="services">
-      <h2>Чем помогаем</h2>
+    <section class="wrap details" id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Чем помогаем</h2>
+      <p class="section-intro">Для планового визита выберите причину обращения и укажите, кого хотите записать.</p>
       <div class="services">
-          <article class="service"><h3>Первичный приём</h3><p>Осмотр и план дальнейших действий</p></article>
-          <article class="service"><h3>Вакцинация</h3><p>Плановый визит с ветпаспортом</p></article>
-          <article class="service"><h3>УЗИ</h3><p>Диагностика по записи</p></article>
+        <article class="service">
+          <h3>Первичный приём</h3>
+          <p class="service-description">Осмотр и обсуждение дальнейших действий с врачом.</p>
+          <p class="service-price">По записи</p>
+          <button type="button" data-action="service" data-index="0">Записаться<span class="sr-only"> «Первичный приём»</span></button>
+        </article>
+        <article class="service">
+          <h3>Вакцинация</h3>
+          <p class="service-description">Плановый визит с ветпаспортом.</p>
+          <p class="service-price">По записи</p>
+          <button type="button" data-action="service" data-index="1">Записаться<span class="sr-only"> «Вакцинация»</span></button>
+        </article>
+        <article class="service">
+          <h3>УЗИ</h3>
+          <p class="service-description">Диагностика после согласования времени.</p>
+          <p class="service-price">По записи</p>
+          <button type="button" data-action="service" data-index="2">Записаться<span class="sr-only"> «УЗИ»</span></button>
+        </article>
       </div>
     </section>
+    <section class="feature-band" id="about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <h2 id="about-heading">Как проходит визит</h2>
+
+        <div class="features">
+        <article class="feature">
+          <p class="feature-label">Запись</p><h3>Выберите обращение</h3><p>Укажите вид питомца, причину визита и подходящее время.</p>
+
+        </article>
+        <article class="feature">
+          <p class="feature-label">Подтверждение</p><h3>Дождитесь ответа</h3><p>Администратор проверит расписание и подтвердит время.</p>
+
+        </article>
+        <article class="feature">
+          <p class="feature-label">Адрес</p><h3>Найдите вход</h3><p>Откройте карточку на карте, чтобы посмотреть маршрут до клиники.</p>
+
+        </article>
+        </div>
+      </div>
+    </section>
+    <div class="wrap details information-grid">
+      <section id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Частые вопросы</h2>
+        <div class="faq-list">
+        <details><summary>Как подготовиться к плановому визиту?</summary><p>Администратор подскажет, какие документы и результаты предыдущих визитов пригодятся.</p></details>
+        <details><summary>Можно ли записать нескольких питомцев?</summary><p>Оставьте отдельный запрос для каждого питомца, чтобы администратор выделил время на каждый визит.</p></details>
+        <details><summary>Где уточнять время и доступность врача?</summary><p>Через контакты в карточке организации. Тестовые слоты на этой странице показывают, как устроена запись.</p></details>
+        </div>
+      </section>
+      <section id="contacts" class="location" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Как нас найти</h2>
+        <address>Москва, Гродненская, 10</address>
+        <p>Круглосуточно <span class="example-note">· часы в демо</span></p>
+        <a class="button secondary" href="https://yandex.ru/maps/org/lama_ryadom/224915592681/" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
+      </section>
+    </div>
   </div>
 </main>
 <footer class="info-footer">

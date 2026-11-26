@@ -14,13 +14,18 @@
   <div class="demo-bar">
     <div class="wrap demo-inner">
       <a href="../../#project-demos">← Портфолио Tercia</a>
+      <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
       <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">✧</span>Стелла</button>
-      <a class="header-link" href="#services" data-home-link>Направления</a>
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="#services" data-home-link>Направления</a>
+        <a href="#about" data-home-link>Команда</a>
+        <a href="#contacts" data-home-link>Контакты</a>
+      </nav>
       <button type="button" class="button" data-action="form">Запросить запись</button>
     </div>
   </header>
@@ -39,14 +44,66 @@
         <img src="../../../assets/portfolio-projects/stella.jpg" alt="Стоматологический кабинет" fetchpriority="high">
       </figure>
     </section>
-    <section class="wrap details" id="services">
-      <h2>Направления</h2>
+    <section class="wrap details" id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Направления</h2>
+      <p class="section-intro">Выберите услугу, чтобы сразу перейти к записи. Стоимость указана для примера.</p>
       <div class="services">
-          <article class="service"><h3>Консультация</h3><p>1 500 ₽</p></article>
-          <article class="service"><h3>Профессиональная гигиена</h3><p>6 500 ₽</p></article>
-          <article class="service"><h3>Лечение кариеса</h3><p>от 4 900 ₽</p></article>
+        <article class="service">
+          <h3>Консультация</h3>
+          <p class="service-description">Первичный приём, обсуждение запроса и план следующих шагов.</p>
+          <p class="service-price">1 500 ₽</p>
+          <button type="button" data-action="service" data-index="0">Выбрать направление<span class="sr-only"> «Консультация»</span></button>
+        </article>
+        <article class="service">
+          <h3>Профессиональная гигиена</h3>
+          <p class="service-description">Отдельный визит для профессионального ухода и обсуждения домашней гигиены.</p>
+          <p class="service-price">6 500 ₽</p>
+          <button type="button" data-action="service" data-index="1">Выбрать направление<span class="sr-only"> «Профессиональная гигиена»</span></button>
+        </article>
+        <article class="service">
+          <h3>Лечение кариеса</h3>
+          <p class="service-description">Запросите консультацию терапевта. План и стоимость уточняются на приёме.</p>
+          <p class="service-price">от 4 900 ₽</p>
+          <button type="button" data-action="service" data-index="2">Выбрать направление<span class="sr-only"> «Лечение кариеса»</span></button>
+        </article>
       </div>
     </section>
+    <section class="feature-band" id="about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <h2 id="about-heading">Врачи и специализации</h2>
+        <p class="section-intro">В карточках используются демонстрационные профили.</p>
+        <div class="features">
+        <article class="feature">
+          <p class="feature-label">Стоматолог-терапевт</p><h3>Ирина К.</h3><p>Консультации и лечение</p>
+          <button type="button" data-action="specialist" data-index="0">Выбрать врача</button>
+        </article>
+        <article class="feature">
+          <p class="feature-label">Стоматолог-хирург</p><h3>Дмитрий С.</h3><p>Консультации по хирургическим вопросам</p>
+          <button type="button" data-action="specialist" data-index="1">Выбрать врача</button>
+        </article>
+        <article class="feature">
+          <p class="feature-label">Стоматолог-ортодонт</p><h3>Анна Л.</h3><p>Консультации по прикусу</p>
+          <button type="button" data-action="specialist" data-index="2">Выбрать врача</button>
+        </article>
+        </div>
+      </div>
+    </section>
+    <div class="wrap details information-grid">
+      <section id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Частые вопросы</h2>
+        <div class="faq-list">
+        <details><summary>Когда время считается подтверждённым?</summary><p>Слот считается подтверждённым после проверки администратором. В проекте этот шаг можно пройти в кабинете сотрудника.</p></details>
+        <details><summary>Можно ли выбрать врача?</summary><p>Да, выберите специалиста из списка или оставьте подбор администратору.</p></details>
+        <details><summary>Как уточнить стоимость?</summary><p>В карточках указаны примерные цены. Администратор может уточнить стоимость первичного приёма, а план дальнейших процедур обсуждается отдельно.</p></details>
+        </div>
+      </section>
+      <section id="contacts" class="location" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Как нас найти</h2>
+        <address>Москва, Карельский бульвар, 5</address>
+        <p>Ежедневно, 9:00–21:00 <span class="example-note">· часы в демо</span></p>
+        <a class="button secondary" href="https://yandex.ru/medicine/clinic/stella_1020206695" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
+      </section>
+    </div>
   </div>
 </main>
 <footer class="info-footer">

@@ -14,13 +14,18 @@
   <div class="demo-bar">
     <div class="wrap demo-inner">
       <a href="../../#project-demos">← Портфолио Tercia</a>
+      <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
       <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">П</span>ПеретяжкА</button>
-      <a class="header-link" href="#services" data-home-link>Что мы восстанавливаем</a>
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="#services" data-home-link>Что мы восстанавливаем</a>
+        <a href="#about" data-home-link>Как это работает</a>
+        <a href="#contacts" data-home-link>Контакты</a>
+      </nav>
       <button type="button" class="button" data-action="form">Оценить по фото</button>
     </div>
   </header>
@@ -39,14 +44,66 @@
         <img src="../../../assets/portfolio-projects/peretyazhka.jpg" alt="Диван с зелёной обивкой в гостиной" fetchpriority="high">
       </figure>
     </section>
-    <section class="wrap details" id="services">
-      <h2>Что мы восстанавливаем</h2>
+    <section class="wrap details" id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Что мы восстанавливаем</h2>
+      <p class="section-intro">Выберите предмет мебели, затем проверьте, как меняется ориентир по стоимости при выборе ткани.</p>
       <div class="services">
-          <article class="service"><h3>Диваны</h3><p>Обивка, наполнитель и ремонт каркаса</p></article>
-          <article class="service"><h3>Кресла</h3><p>Новая ткань и восстановление посадки</p></article>
-          <article class="service"><h3>Стулья</h3><p>Перетяжка сидений и спинок</p></article>
+        <article class="service">
+          <h3>Диваны</h3>
+          <p class="service-description">Обивка, наполнитель и ремонт каркаса.</p>
+          <p class="service-price">от 18 000 ₽</p>
+          <button type="button" data-action="service" data-index="0">Рассчитать стоимость<span class="sr-only"> «Диваны»</span></button>
+        </article>
+        <article class="service">
+          <h3>Кресла</h3>
+          <p class="service-description">Новая ткань, подлокотники и восстановление посадки.</p>
+          <p class="service-price">от 9 000 ₽</p>
+          <button type="button" data-action="service" data-index="1">Рассчитать стоимость<span class="sr-only"> «Кресла»</span></button>
+        </article>
+        <article class="service">
+          <h3>Стулья</h3>
+          <p class="service-description">Перетяжка сидений и спинок с подбором ткани.</p>
+          <p class="service-price">от 2 500 ₽</p>
+          <button type="button" data-action="service" data-index="2">Рассчитать стоимость<span class="sr-only"> «Стулья»</span></button>
+        </article>
       </div>
     </section>
+    <section class="feature-band" id="about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <h2 id="about-heading">От фото до готовой мебели</h2>
+
+        <div class="features">
+        <article class="feature">
+          <p class="feature-label">Фото и задача</p><h3>Покажите мебель</h3><p>Прикрепите общий вид и опишите, что нужно заменить. Если фото нет, воспользуйтесь образцом в форме.</p>
+
+        </article>
+        <article class="feature">
+          <p class="feature-label">Ткань и объём работ</p><h3>Согласуйте материалы</h3><p>Мастер уточнит размеры, подберёт ткань и согласует стоимость.</p>
+
+        </article>
+        <article class="feature">
+          <p class="feature-label">Передача и возврат</p><h3>Выберите время</h3><p>Порядок передачи мебели и срок мастер согласует после оценки.</p>
+
+        </article>
+        </div>
+      </div>
+    </section>
+    <div class="wrap details information-grid">
+      <section id="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Частые вопросы</h2>
+        <div class="faq-list">
+        <details><summary>Какие фото нужны для оценки?</summary><p>Подойдут общий вид мебели и крупный план изношенного участка. В форме можно использовать готовый образец.</p></details>
+        <details><summary>Что входит в предварительный расчёт?</summary><p>Расчёт учитывает тип мебели и выбранную ткань. Ремонт каркаса, наполнитель и перевозку мастер оценивает отдельно.</p></details>
+        <details><summary>Можно ли обить мебель своей тканью?</summary><p>Укажите это в описании заявки. Мастер уточнит пригодность материала и нужный метраж.</p></details>
+        </div>
+      </section>
+      <section id="contacts" class="location" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Как нас найти</h2>
+        <address>Москва, Пенягинская, 10к1</address>
+        <p>Пн–Сб, 10:00–20:00 <span class="example-note">· часы в демо</span></p>
+        <a class="button secondary" href="https://yandex.ru/maps/org/peretyazhka/161300112243/" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
+      </section>
+    </div>
   </div>
 </main>
 <footer class="info-footer">
@@ -55,6 +112,6 @@
     <p>Москва, Пенягинская, 10к1</p>
   </div>
 </footer>
-<script type="application/json" id="project-data">{"brand":"ПеретяжкА","type":"Мебельная мастерская","tag":"Мягкая мебель • Митино","title":"Вернём любимому дивану форму","intro":"Перетягиваем диваны, кресла и стулья. Подбираем ткань и восстанавливаем наполнитель.","address":"Москва, Пенягинская, 10к1","hours":"Пн–Сб, 10:00–20:00","accent":"#594328","paper":"#f6ede0","services":[["Диваны","Обивка, наполнитель и ремонт каркаса"],["Кресла","Новая ткань и восстановление посадки"],["Стулья","Перетяжка сидений и спинок"]],"people":[],"cta":"Оценить по фото","map":"https://yandex.ru/maps/org/peretyazhka/161300112243/"}</script>
+<script type="application/json" id="project-data">{"brand":"ПеретяжкА","type":"Мебельная мастерская","tag":"Мягкая мебель • Митино","title":"Вернём любимому дивану форму","intro":"Перетягиваем диваны, кресла и стулья. Подбираем ткань и восстанавливаем наполнитель.","address":"Москва, Пенягинская, 10к1","hours":"Пн–Сб, 10:00–20:00","accent":"#594328","paper":"#f6ede0","services":[["Диваны","от 18 000 ₽"],["Кресла","от 9 000 ₽"],["Стулья","от 2 500 ₽"]],"people":[],"cta":"Оценить по фото","map":"https://yandex.ru/maps/org/peretyazhka/161300112243/"}</script>
 </body>
 </html>
