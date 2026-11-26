@@ -53,3 +53,19 @@ select { width: 100%; min-width: 0; padding: 10px 11px; margin-bottom: 9px; bord
 #queue .ticket-status[data-state=done] { background: #e3f1e9; color: #255b3d; }
 .ticket-action { justify-self: start; margin-top: 5px; }
 @media(max-width: 420px) { .queue-tools { grid-template-columns: 1fr; } }
+textarea { width:100%; padding:10px 11px; margin-bottom:9px; min-width:0; border:1px solid var(--line); border-radius:8px; background:#faf9fd; color:var(--text); font:inherit; resize:vertical; }
+.queue-explainer { color:var(--muted); font-size:.86rem; }
+.ticket-details { padding-block:5px; font-size:.88rem; }
+.ticket-details summary { width:fit-content; color:var(--violet); cursor:pointer; font-weight:700; }
+.ticket-details p { color:var(--muted); margin:7px 0; }
+.ticket-notes { padding:0; list-style:none; }
+#queue .ticket-notes li { margin:4px 0; padding:7px; border:0; border-radius:5px; background:#f4f0fa; }
+.ticket-note-form button { justify-self:start; }
+.workspace-grid.one-panel { grid-template-columns:minmax(0,760px); }
+.sidebar nav a:first-child { background:transparent; }
+.sidebar nav a[aria-current="page"],.sidebar nav a:hover { background:#35284d; }
+.desk-guide { display:grid; gap:15px; margin-block:25px; }
+.desk-guide h2 { margin-bottom:7px; }
+.desk-guide p { color:var(--muted); margin:6px 0 0; }
+.desk-guide summary { cursor:pointer; font-weight:750; }
+.desk-guide details + details { margin-top:12px; }

@@ -3,115 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Перетягиваем диваны, кресла и стулья. Пришлите фото, чтобы мастер оценил объём работ и предложил варианты ткани.">
+  <meta name="description" content="Восстанавливаем диваны, кресла и стулья. Покажите мебель на фото, выберите ткань и получите предварительную оценку.">
   <title>ПеретяжкА — проект Tercia</title>
   <link rel="icon" href="../../../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../project-pages.css">
+  <script src="project-data.js" defer></script>
   <script src="../project.js" defer></script>
 </head>
-<body class="peretyazhka">
+<body class="peretyazhka" data-site-home="./">
 <main>
   <div class="demo-bar">
     <div class="wrap demo-inner">
-      <a href="../../#project-demos">← Портфолио Tercia</a>
+      <a href="../../../portfolio/#project-demos">← Портфолио Tercia</a>
       <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
-      <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">П</span>ПеретяжкА</button>
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">П</span>ПеретяжкА</a>
       <nav class="site-nav" aria-label="Разделы сайта">
-        <a href="#services" data-home-link>Что мы восстанавливаем</a>
-        <a href="#about" data-home-link>Как это работает</a>
-        <a href="#contacts" data-home-link>Контакты</a>
+        <a href="./" aria-current="page">Главная</a>
+        <a href="./services/">Услуги и цены</a>
+        <a href="./materials/">Ткани</a>
+        <a href="./gallery/">Галерея</a>
+        <a href="./contacts/">Контакты</a>
       </nav>
-      <button type="button" class="button" data-action="form">Оценить по фото</button>
+      <a class="button" href="./booking/">Оценить по фото</a>
     </div>
   </header>
   <div id="panel" tabindex="-1">
     <section class="wrap hero-section">
       <div class="hero-copy">
         <span class="eyebrow">Мебельная мастерская в Митино</span>
-        <h1>Новая жизнь любимой мебели</h1>
-        <p>Перетягиваем диваны, кресла и стулья. Пришлите фото, чтобы мастер оценил объём работ и предложил варианты ткани.</p>
-        <div class="hero-actions">
-          <button type="button" class="button" data-action="form">Оценить по фото</button>
-
-        </div>
+        <h1>Новая жизнь любимой мебели</h1><p>Восстанавливаем диваны, кресла и стулья. Покажите мебель на фото, выберите ткань и получите предварительную оценку.</p>
+        <div class="hero-actions"><a class="button" href="./booking/">Оценить по фото</a><a class="button secondary" href="./materials/">Изучить ткани</a></div>
       </div>
-      <figure class="hero-visual">
-        <img src="../../../assets/portfolio-projects/peretyazhka.jpg" alt="Диван с зелёной обивкой в гостиной" fetchpriority="high">
-      </figure>
+      <figure class="hero-visual"><img src="../../../assets/portfolio-projects/peretyazhka.jpg" alt="Диван в оливковой обивке" fetchpriority="high"></figure>
     </section>
-    <section class="wrap details" id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Что мы восстанавливаем</h2>
-      <p class="section-intro">Выберите предмет мебели, затем проверьте, как меняется ориентир по стоимости при выборе ткани.</p>
-      <div class="services">
-        <article class="service">
-          <h3>Диваны</h3>
-          <p class="service-description">Обивка, наполнитель и ремонт каркаса.</p>
-          <p class="service-price">от 18 000 ₽</p>
-          <button type="button" data-action="service" data-index="0">Рассчитать стоимость<span class="sr-only"> «Диваны»</span></button>
+    <section class="wrap details">
+      <div class="section-heading"><div><h2>Услуги</h2><p>Посмотрите примеры обивки, сравните ткани и узнайте, что влияет на оценку.</p></div><a class="button secondary" href="./services/">Перейти к прайсу</a></div>
+      <div class="service-tiles">        <article class="service-tile">
+          <p class="service-kicker">Диваны и мягкие секции</p><h3>Перетяжка дивана</h3><p>Новая обивка корпуса и подушек. По фото можно обсудить размеры, посадку и состояние наполнителя.</p>
+          <div class="service-bottom"><strong>от 18 000 ₽</strong><a href="./booking/?service=0">Выбрать<span class="sr-only"> «Перетяжка дивана»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Кресла</h3>
-          <p class="service-description">Новая ткань, подлокотники и восстановление посадки.</p>
-          <p class="service-price">от 9 000 ₽</p>
-          <button type="button" data-action="service" data-index="1">Рассчитать стоимость<span class="sr-only"> «Кресла»</span></button>
+        <article class="service-tile">
+          <p class="service-kicker">Классические и современные кресла</p><h3>Перетяжка кресла</h3><p>Обновление сиденья, спинки и подлокотников. Объём зависит от конструкции кресла.</p>
+          <div class="service-bottom"><strong>от 9 000 ₽</strong><a href="./booking/?service=1">Выбрать<span class="sr-only"> «Перетяжка кресла»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Стулья</h3>
-          <p class="service-description">Перетяжка сидений и спинок с подбором ткани.</p>
-          <p class="service-price">от 2 500 ₽</p>
-          <button type="button" data-action="service" data-index="2">Рассчитать стоимость<span class="sr-only"> «Стулья»</span></button>
-        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Сиденья, спинки и комплекты</p><h3>Перетяжка стула</h3><p>Замена обивки сиденья или спинки. Для комплекта укажите количество стульев в заявке.</p>
+          <div class="service-bottom"><strong>от 2 500 ₽</strong><a href="./booking/?service=2">Выбрать<span class="sr-only"> «Перетяжка стула»</span></a></div>
+        </article></div>
+    </section>
+        <section class="how-band">
+      <div class="wrap how-inner">
+        <h2>Как мы работаем</h2>
+        <ol class="how-steps">
+          <li><h3>Покажите мебель</h3><p>Сделайте общий кадр и крупный план участков, требующих ремонта. Укажите примерные габариты.</p></li>
+          <li><h3>Согласуйте смету</h3><p>Мы уточняем конструкцию и ткань. Наполнитель, ремонт и перевозка оцениваются отдельно.</p></li>
+          <li><h3>Договоритесь о передаче</h3><p>Когда работы согласованы, уточните способ и время передачи мебели.</p></li>
+        </ol>
       </div>
     </section>
-    <section class="feature-band" id="about" aria-labelledby="about-heading">
-      <div class="wrap">
-        <h2 id="about-heading">От фото до готовой мебели</h2>
-
-        <div class="features">
-        <article class="feature">
-          <p class="feature-label">Фото и задача</p><h3>Покажите мебель</h3><p>Прикрепите общий вид и опишите, что нужно заменить. Если фото нет, воспользуйтесь образцом в форме.</p>
-
-        </article>
-        <article class="feature">
-          <p class="feature-label">Ткань и объём работ</p><h3>Согласуйте материалы</h3><p>Мастер уточнит размеры, подберёт ткань и согласует стоимость.</p>
-
-        </article>
-        <article class="feature">
-          <p class="feature-label">Передача и возврат</p><h3>Выберите время</h3><p>Порядок передачи мебели и срок мастер согласует после оценки.</p>
-
-        </article>
-        </div>
-      </div>
+    <section class="wrap details">
+      <div class="section-heading"><h2>Работы и материалы</h2><a class="button secondary" href="./gallery/">Вся галерея</a></div>
+      <div class="project-photos"><figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/peretyazhka-1.jpg" data-gallery-photo aria-label="Увеличить фото: Диван в оливковой обивке"><img src="../../../assets/portfolio-projects/gallery/peretyazhka-1.jpg" alt="Диван в оливковой обивке" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Диван в оливковой обивке</h3><p>Пример спокойного оттенка и мягкой посадки. В оценку можно включить подушки и наполнитель.</p></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/peretyazhka-2.jpg" data-gallery-photo aria-label="Увеличить фото: Кресло из фактурной ткани"><img src="../../../assets/portfolio-projects/gallery/peretyazhka-2.jpg" alt="Кресло из фактурной ткани" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Кресло из фактурной ткани</h3><p>Пример материала с видимой текстурой. На объём работ влияют подлокотники и конструкция спинки.</p></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/peretyazhka-3.jpg" data-gallery-photo aria-label="Увеличить фото: Образцы тканей"><img src="../../../assets/portfolio-projects/gallery/peretyazhka-3.jpg" alt="Образцы тканей" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Образцы тканей</h3><p>Посмотрите, как разные виды плетения и оттенки воспринимаются рядом.</p></figcaption></figure></div>
+      <p class="example-note">Иллюстрации для портфолио.</p>
     </section>
-    <div class="wrap details information-grid">
-      <section id="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Частые вопросы</h2>
-        <div class="faq-list">
-        <details><summary>Какие фото нужны для оценки?</summary><p>Подойдут общий вид мебели и крупный план изношенного участка. В форме можно использовать готовый образец.</p></details>
-        <details><summary>Что входит в предварительный расчёт?</summary><p>Расчёт учитывает тип мебели и выбранную ткань. Ремонт каркаса, наполнитель и перевозку мастер оценивает отдельно.</p></details>
-        <details><summary>Можно ли обить мебель своей тканью?</summary><p>Укажите это в описании заявки. Мастер уточнит пригодность материала и нужный метраж.</p></details>
-        </div>
-      </section>
-      <section id="contacts" class="location" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Как нас найти</h2>
-        <address>Москва, Пенягинская, 10к1</address>
-        <p>Пн–Сб, 10:00–20:00 <span class="example-note">· часы в демо</span></p>
-        <a class="button secondary" href="https://yandex.ru/maps/org/peretyazhka/161300112243/" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
-      </section>
-    </div>
+        <section class="wrap closing">
+      <div><h2>Оценить по фото</h2><p>Посмотрите примеры обивки, сравните ткани и узнайте, что влияет на оценку.</p></div>
+      <a class="button" href="./booking/">Оценить по фото</a>
+    </section>
   </div>
 </main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
 <footer class="info-footer">
-  <div class="wrap">
-    <p>Демонстрационный проект Tercia. Данные и цены приведены для примера.</p>
-    <p>Москва, Пенягинская, 10к1</p>
+  <div class="wrap site-footer">
+    <div><strong>ПеретяжкА</strong><p>Москва, Пенягинская, 10к1</p></div>
+    <div><a href="./contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
   </div>
 </footer>
-<script type="application/json" id="project-data">{"brand":"ПеретяжкА","type":"Мебельная мастерская","tag":"Мягкая мебель • Митино","title":"Вернём любимому дивану форму","intro":"Перетягиваем диваны, кресла и стулья. Подбираем ткань и восстанавливаем наполнитель.","address":"Москва, Пенягинская, 10к1","hours":"Пн–Сб, 10:00–20:00","accent":"#594328","paper":"#f6ede0","services":[["Диваны","от 18 000 ₽"],["Кресла","от 9 000 ₽"],["Стулья","от 2 500 ₽"]],"people":[],"cta":"Оценить по фото","map":"https://yandex.ru/maps/org/peretyazhka/161300112243/"}</script>
 </body>
 </html>

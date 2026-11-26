@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Руководство по обработке входящих заявок в демонстрационном Inquiry Desk.">
+  <title>Inquiry Desk — руководство</title>
+  <link rel="icon" href="../../../../favicon.ico">
+  <link rel="stylesheet" href="../desk.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="wordmark" href="../"><span aria-hidden="true">in</span> Inquiry Desk</a>
+      <nav aria-label="Рабочее пространство">
+        <a href="../">Обзор</a><a href="../?view=form">Форма заявки</a>
+        <a href="../?view=inbox">Очередь заявок</a><a href="./" aria-current="page">Как это работает</a>
+      </nav>
+      <a class="back" href="../../../#project-demos">← Портфолио Tercia</a>
+    </aside>
+    <main>
+      <header class="page-header">
+        <div><p class="context">Руководство</p><h1>Путь заявки</h1><p>Пройдите сценарий от запроса поставщика до закрытия. Для примера в форму уже подставлен тестовый запрос на закупку.</p></div>
+        <span class="mode">Тестовые данные</span>
+      </header>
+      <div class="desk-guide">
+        <section class="panel"><h2>Приём заявки</h2><p>Добавьте тему, контакт, категорию, приоритет и описание. После отправки появится номер заявки. Повторите отправку, чтобы проверить защиту от дубля.</p><p><a href="../?view=form">Открыть форму</a></p></section>
+        <section class="panel"><h2>Работа с очередью</h2><p>Найдите заявку по номеру, теме или контакту. В карточке видны приоритет и описание. Когда сотрудник берёт заявку в работу, в очереди отображается ответственный.</p><p><a href="../?view=inbox">Открыть очередь</a></p></section>
+        <section class="panel"><h2>Внутренние заметки и закрытие</h2><p>Откройте карточку и добавьте заметку: например, что нужно запросить у поставщика. Закройте заявку, когда вопрос решён. Её можно вернуть в работу из списка закрытых.</p></section>
+        <section class="panel"><h2>Частые вопросы</h2><details><summary>Что считается дублем?</summary><p>Одинаковые тема, контакт, категория, приоритет и описание. В очереди остаётся одна запись, а счётчик повторов увеличивается.</p></details><details><summary>Куда отправляются данные?</summary><p>Данные сохраняются на открытой странице для демонстрации. Заявки и заметки не отправляются на сервер.</p></details><details><summary>Как проверить сценарий ошибки?</summary><p>В форме нажмите «Показать ошибку». Счётчик увеличится, а очередь останется без изменений.</p></details></section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

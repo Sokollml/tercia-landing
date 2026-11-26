@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Выберите услугу, чтобы перейти к записи. Цены, длительность и доступность показаны для демонстрации.">
+  <title>Лама рядом — Услуги и цены</title>
+  <link rel="icon" href="../../../../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../../project.css">
+  <link rel="stylesheet" href="../../project-pages.css">
+  <script src="../project-data.js" defer></script>
+  <script src="../../project.js" defer></script>
+</head>
+<body class="lama" data-site-home="../">
+<main>
+  <div class="demo-bar">
+    <div class="wrap demo-inner">
+      <a href="../../../../portfolio/#project-demos">← Портфолио Tercia</a>
+      <span class="demo-label">Демонстрация · тестовые данные</span>
+      <nav class="demo-nav" aria-label="Экраны проекта"></nav>
+    </div>
+  </div>
+  <header class="brand-header">
+    <div class="wrap brand-inner">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">Л</span>Лама рядом</a>
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="../">Главная</a>
+        <a href="../services/" aria-current="page">Услуги и цены</a>
+        <a href="../visit/">Первый визит</a>
+        <a href="../gallery/">Галерея</a>
+        <a href="../contacts/">Контакты</a>
+      </nav>
+      <a class="button" href="../booking/">Записаться планово</a>
+    </div>
+  </header>
+  <div id="panel" tabindex="-1">
+<section class="wrap sub-intro"><p class="eyebrow">Ветеринарная клиника</p><h1>Услуги и цены</h1><p class="sub-lead">Выберите услугу, чтобы перейти к записи. Цены, длительность и доступность показаны для демонстрации.</p></section><section class="wrap sub-content" aria-label="Прайс">
+      <div class="service-tiles service-tiles-full">        <article class="service-tile">
+          <p class="service-kicker">Плановый визит</p><h3>Первичный приём</h3><p>Выберите время осмотра и расскажите администратору о причине обращения.</p>
+          <div class="service-bottom"><strong>По записи</strong><a href="../booking/?service=0">Выбрать<span class="sr-only"> «Первичный приём»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Терапевтический приём</p><h3>Повторный приём</h3><p>Уточните у администратора, какие результаты предыдущего визита подготовить.</p>
+          <div class="service-bottom"><strong>По записи</strong><a href="../booking/?service=0">Выбрать<span class="sr-only"> «Повторный приём»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Профилактический приём</p><h3>Вакцинация</h3><p>Укажите вид питомца. Администратор уточнит организационные детали и список документов.</p>
+          <div class="service-bottom"><strong>По записи</strong><a href="../booking/?service=1">Выбрать<span class="sr-only"> «Вакцинация»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Диагностика</p><h3>УЗИ</h3><p>Для записи на диагностику уточните условия визита и доступное время.</p>
+          <div class="service-bottom"><strong>По согласованию</strong><a href="../booking/?service=2">Выбрать<span class="sr-only"> «УЗИ»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Без тестовой заявки</p><h3>Срочное обращение</h3><p>Порядок приёма и действующие контакты смотрите в карточке организации.</p>
+          <div class="service-bottom"><strong>Контакты клиники</strong><a href="../contacts/">Контакты клиники<span class="sr-only"> «Срочное обращение»</span></a></div>
+        </article></div>
+    </section>    <section class="wrap details" aria-labelledby="faq-title">
+      <h2 id="faq-title">Частые вопросы</h2>
+      <div class="faq-list">
+        <details><summary>Какие документы взять?</summary><p>Уточните у администратора. В зависимости от визита могут пригодиться ветпаспорт или результаты предыдущих обследований.</p></details>
+        <details><summary>Как записать двух питомцев?</summary><p>Оформите отдельный запрос на каждого, чтобы администратор мог выделить время.</p></details>
+        <details><summary>Как проверить график клиники?</summary><p>Откройте актуальную карточку организации в контактах.</p></details>
+        <details><summary>Как выбрать направление?</summary><p>Для первого планового обращения можно начать с первичного приёма и описать вопрос администратору.</p></details>
+      </div>
+    </section>    <section class="wrap closing">
+      <div><h2>Записаться планово</h2><p>Выберите цель визита, подготовьтесь к приёму и проверьте контакты клиники.</p></div>
+      <a class="button" href="../booking/">Записаться планово</a>
+    </section>
+  </div>
+</main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
+<footer class="info-footer">
+  <div class="wrap site-footer">
+    <div><strong>Лама рядом</strong><p>Москва, Гродненская, 10</p></div>
+    <div><a href="../contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
+  </div>
+</footer>
+</body>
+</html>

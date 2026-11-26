@@ -3,115 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Выберите плановый визит или посмотрите сценарий срочного обращения.">
+  <meta name="description" content="Запланируйте визит, выберите направление или откройте контакты клиники для срочного обращения.">
   <title>Лама рядом — проект Tercia</title>
   <link rel="icon" href="../../../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../project-pages.css">
+  <script src="project-data.js" defer></script>
   <script src="../project.js" defer></script>
 </head>
-<body class="lama">
+<body class="lama" data-site-home="./">
 <main>
   <div class="demo-bar">
     <div class="wrap demo-inner">
-      <a href="../../#project-demos">← Портфолио Tercia</a>
+      <a href="../../../portfolio/#project-demos">← Портфолио Tercia</a>
       <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
-      <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">Л</span>Лама рядом</button>
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">Л</span>Лама рядом</a>
       <nav class="site-nav" aria-label="Разделы сайта">
-        <a href="#services" data-home-link>Чем помогаем</a>
-        <a href="#about" data-home-link>Как это работает</a>
-        <a href="#contacts" data-home-link>Контакты</a>
+        <a href="./" aria-current="page">Главная</a>
+        <a href="./services/">Услуги и цены</a>
+        <a href="./visit/">Первый визит</a>
+        <a href="./gallery/">Галерея</a>
+        <a href="./contacts/">Контакты</a>
       </nav>
-      <button type="button" class="button" data-action="form">Записаться планово</button>
+      <a class="button" href="./booking/">Записаться планово</a>
     </div>
   </header>
   <div id="panel" tabindex="-1">
     <section class="wrap hero-section">
       <div class="hero-copy">
         <span class="eyebrow">Ветеринарная клиника</span>
-        <h1>Рядом, когда вы нужны питомцу</h1>
-        <p>Выберите плановый визит или посмотрите сценарий срочного обращения.</p>
-        <div class="hero-actions">
-          <button type="button" class="button" data-action="form">Записаться планово</button>
-          <button type="button" class="button secondary" data-action="call">Срочное обращение</button><span id="call-state" role="status"></span>
-        </div>
+        <h1>Рядом, когда вы нужны питомцу</h1><p>Запланируйте визит, выберите направление или откройте контакты клиники для срочного обращения.</p>
+        <div class="hero-actions"><a class="button" href="./booking/">Записаться планово</a><a class="button secondary" href="./contacts/#map">Срочное обращение</a></div>
       </div>
-      <figure class="hero-visual">
-        <img src="../../../assets/portfolio-projects/lama.jpg" alt="Золотистый ретривер крупным планом" fetchpriority="high">
-      </figure>
+      <figure class="hero-visual"><img src="../../../assets/portfolio-projects/lama.jpg" alt="Кабинет врача" fetchpriority="high"></figure>
     </section>
-    <section class="wrap details" id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Чем помогаем</h2>
-      <p class="section-intro">Для планового визита выберите причину обращения и укажите, кого хотите записать.</p>
-      <div class="services">
-        <article class="service">
-          <h3>Первичный приём</h3>
-          <p class="service-description">Осмотр и обсуждение дальнейших действий с врачом.</p>
-          <p class="service-price">По записи</p>
-          <button type="button" data-action="service" data-index="0">Записаться<span class="sr-only"> «Первичный приём»</span></button>
+    <section class="wrap details">
+      <div class="section-heading"><div><h2>Услуги</h2><p>Выберите цель визита, подготовьтесь к приёму и проверьте контакты клиники.</p></div><a class="button secondary" href="./services/">Перейти к прайсу</a></div>
+      <div class="service-tiles">        <article class="service-tile">
+          <p class="service-kicker">Плановый визит</p><h3>Первичный приём</h3><p>Выберите время осмотра и расскажите администратору о причине обращения.</p>
+          <div class="service-bottom"><strong>По записи</strong><a href="./booking/?service=0">Выбрать<span class="sr-only"> «Первичный приём»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Вакцинация</h3>
-          <p class="service-description">Плановый визит с ветпаспортом.</p>
-          <p class="service-price">По записи</p>
-          <button type="button" data-action="service" data-index="1">Записаться<span class="sr-only"> «Вакцинация»</span></button>
+        <article class="service-tile">
+          <p class="service-kicker">Терапевтический приём</p><h3>Повторный приём</h3><p>Уточните у администратора, какие результаты предыдущего визита подготовить.</p>
+          <div class="service-bottom"><strong>По записи</strong><a href="./booking/?service=0">Выбрать<span class="sr-only"> «Повторный приём»</span></a></div>
         </article>
-        <article class="service">
-          <h3>УЗИ</h3>
-          <p class="service-description">Диагностика после согласования времени.</p>
-          <p class="service-price">По записи</p>
-          <button type="button" data-action="service" data-index="2">Записаться<span class="sr-only"> «УЗИ»</span></button>
-        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Профилактический приём</p><h3>Вакцинация</h3><p>Укажите вид питомца. Администратор уточнит организационные детали и список документов.</p>
+          <div class="service-bottom"><strong>По записи</strong><a href="./booking/?service=1">Выбрать<span class="sr-only"> «Вакцинация»</span></a></div>
+        </article></div>
+    </section>
+        <section class="how-band">
+      <div class="wrap how-inner">
+        <h2>Плановый визит</h2>
+        <ol class="how-steps">
+          <li><h3>Перед записью</h3><p>Подготовьте информацию о питомце и выберите направление визита.</p></li>
+          <li><h3>Подтверждение</h3><p>Администратор сверит расписание и предложит время. Уточните, что взять с собой.</p></li>
+          <li><h3>Как добраться</h3><p>Перед выездом проверьте часы работы и нужный вход в карточке организации.</p></li>
+        </ol>
       </div>
     </section>
-    <section class="feature-band" id="about" aria-labelledby="about-heading">
-      <div class="wrap">
-        <h2 id="about-heading">Как проходит визит</h2>
-
-        <div class="features">
-        <article class="feature">
-          <p class="feature-label">Запись</p><h3>Выберите обращение</h3><p>Укажите вид питомца, причину визита и подходящее время.</p>
-
-        </article>
-        <article class="feature">
-          <p class="feature-label">Подтверждение</p><h3>Дождитесь ответа</h3><p>Администратор проверит расписание и подтвердит время.</p>
-
-        </article>
-        <article class="feature">
-          <p class="feature-label">Адрес</p><h3>Найдите вход</h3><p>Откройте карточку на карте, чтобы посмотреть маршрут до клиники.</p>
-
-        </article>
-        </div>
-      </div>
+    <section class="wrap details">
+      <div class="section-heading"><h2>Клиника в фотографиях</h2><a class="button secondary" href="./gallery/">Вся галерея</a></div>
+      <div class="project-photos"><figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/lama-1.jpg" data-gallery-photo aria-label="Увеличить фото: Кабинет врача"><img src="../../../assets/portfolio-projects/gallery/lama-1.jpg" alt="Кабинет врача" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Кабинет врача</h3><p>Зона приёма для разговора с владельцем и осмотра питомца.</p></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/lama-2.jpg" data-gallery-photo aria-label="Увеличить фото: Визит с кошкой"><img src="../../../assets/portfolio-projects/gallery/lama-2.jpg" alt="Визит с кошкой" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Визит с кошкой</h3><p>В форме можно выбрать кошку, собаку или другого питомца.</p></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/lama-3.jpg" data-gallery-photo aria-label="Увеличить фото: Кабинет диагностики"><img src="../../../assets/portfolio-projects/gallery/lama-3.jpg" alt="Кабинет диагностики" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Кабинет диагностики</h3><p>Диагностические визиты проходят по отдельной записи.</p></figcaption></figure></div>
+      <p class="example-note">Иллюстрации для портфолио.</p>
     </section>
-    <div class="wrap details information-grid">
-      <section id="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Частые вопросы</h2>
-        <div class="faq-list">
-        <details><summary>Как подготовиться к плановому визиту?</summary><p>Администратор подскажет, какие документы и результаты предыдущих визитов пригодятся.</p></details>
-        <details><summary>Можно ли записать нескольких питомцев?</summary><p>Оставьте отдельный запрос для каждого питомца, чтобы администратор выделил время на каждый визит.</p></details>
-        <details><summary>Где уточнять время и доступность врача?</summary><p>Через контакты в карточке организации. Тестовые слоты на этой странице показывают, как устроена запись.</p></details>
-        </div>
-      </section>
-      <section id="contacts" class="location" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Как нас найти</h2>
-        <address>Москва, Гродненская, 10</address>
-        <p>Круглосуточно <span class="example-note">· часы в демо</span></p>
-        <a class="button secondary" href="https://yandex.ru/maps/org/lama_ryadom/224915592681/" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
-      </section>
-    </div>
+        <section class="wrap closing">
+      <div><h2>Записаться планово</h2><p>Выберите цель визита, подготовьтесь к приёму и проверьте контакты клиники.</p></div>
+      <a class="button" href="./booking/">Записаться планово</a>
+    </section>
   </div>
 </main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
 <footer class="info-footer">
-  <div class="wrap">
-    <p>Демонстрационный проект Tercia. Данные и цены приведены для примера.</p>
-    <p>Москва, Гродненская, 10</p>
+  <div class="wrap site-footer">
+    <div><strong>Лама рядом</strong><p>Москва, Гродненская, 10</p></div>
+    <div><a href="./contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
   </div>
 </footer>
-<script type="application/json" id="project-data">{"brand":"Лама рядом","type":"Ветеринарная клиника","tag":"Ветклиника • Гродненская","title":"Срочная помощь и плановые визиты","intro":"Для срочного обращения — звонок. Для планового приёма — запрос администратору или запись из карточки клиники.","address":"Москва, Гродненская, 10","hours":"Круглосуточно","accent":"#264f39","paper":"#edf4e8","services":[["Первичный приём","Осмотр и план дальнейших действий"],["Вакцинация","Плановый визит с ветпаспортом"],["УЗИ","Диагностика по записи"]],"people":[],"cta":"Записаться планово","map":"https://yandex.ru/maps/org/lama_ryadom/224915592681/","review":["2ГИС","Адрес нашла быстро, но нужную дверь сразу не увидела.","Спасибо за обратную связь. Уточним ориентир для входа и разместим его на сайте и в карточке."]}</script>
 </body>
 </html>

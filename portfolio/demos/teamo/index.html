@@ -3,115 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Стрижки, окрашивание и маникюр. Выберите услугу и посмотрите, кто из мастеров сможет её выполнить.">
+  <meta name="description" content="Стрижки, окрашивание и маникюр. Найдите пример в галерее, сравните услуги и выберите мастера.">
   <title>Te Amo Beauty Studio — проект Tercia</title>
   <link rel="icon" href="../../../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../project-pages.css">
+  <script src="project-data.js" defer></script>
   <script src="../project.js" defer></script>
 </head>
-<body class="teamo">
+<body class="teamo" data-site-home="./">
 <main>
   <div class="demo-bar">
     <div class="wrap demo-inner">
-      <a href="../../#project-demos">← Портфолио Tercia</a>
+      <a href="../../../portfolio/#project-demos">← Портфолио Tercia</a>
       <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
-      <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">t</span>Te Amo Beauty Studio</button>
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">t</span>Te Amo Beauty Studio</a>
       <nav class="site-nav" aria-label="Разделы сайта">
-        <a href="#services" data-home-link>Меню студии</a>
-        <a href="#about" data-home-link>Команда</a>
-        <a href="#contacts" data-home-link>Контакты</a>
+        <a href="./" aria-current="page">Главная</a>
+        <a href="./services/">Услуги и цены</a>
+        <a href="./team/">Мастера</a>
+        <a href="./gallery/">Галерея</a>
+        <a href="./contacts/">Контакты</a>
       </nav>
-      <button type="button" class="button" data-action="form">Выбрать услугу</button>
+      <a class="button" href="./booking/">Выбрать услугу</a>
     </div>
   </header>
   <div id="panel" tabindex="-1">
     <section class="wrap hero-section">
       <div class="hero-copy">
         <span class="eyebrow">Студия красоты в Кузьминках</span>
-        <h1>Красота в вашем ритме</h1>
-        <p>Стрижки, окрашивание и маникюр. Выберите услугу и посмотрите, кто из мастеров сможет её выполнить.</p>
-        <div class="hero-actions">
-          <button type="button" class="button" data-action="form">Выбрать услугу</button>
-
-        </div>
+        <h1>Красота в вашем ритме</h1><p>Стрижки, окрашивание и маникюр. Найдите пример в галерее, сравните услуги и выберите мастера.</p>
+        <div class="hero-actions"><a class="button" href="./booking/">Выбрать услугу</a><a class="button secondary" href="./gallery/">Посмотреть работы</a></div>
       </div>
-      <figure class="hero-visual">
-        <img src="../../../assets/portfolio-projects/teamo.jpg" alt="Интерьер салона красоты" fetchpriority="high">
-      </figure>
+      <figure class="hero-visual"><img src="../../../assets/portfolio-projects/teamo.jpg" alt="Форма и укладка" fetchpriority="high"></figure>
     </section>
-    <section class="wrap details" id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Меню студии</h2>
-      <p class="section-intro">Выберите направление. В форме появятся подходящие мастера и примерная длительность.</p>
-      <div class="services">
-        <article class="service">
-          <h3>Стрижка</h3>
-          <p class="service-description">Консультация по форме, стрижка и укладка.</p>
-          <p class="service-price">от 3 200 ₽</p>
-          <button type="button" data-action="service" data-index="0">Выбрать услугу<span class="sr-only"> «Стрижка»</span></button>
+    <section class="wrap details">
+      <div class="section-heading"><div><h2>Услуги</h2><p>Сравните длительность услуг, познакомьтесь с мастерами и найдите свой вариант в галерее.</p></div><a class="button secondary" href="./services/">Перейти к прайсу</a></div>
+      <div class="service-tiles">        <article class="service-tile">
+          <p class="service-kicker">45–60 минут · Вера</p><h3>Стрижка и укладка</h3><p>Обсуждение формы, стрижка и укладка. Можно показать мастеру понравившийся образ.</p>
+          <div class="service-bottom"><strong>от 3 200 ₽</strong><a href="./booking/?service=0">Выбрать<span class="sr-only"> «Стрижка и укладка»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Окрашивание</h3>
-          <p class="service-description">Выбор оттенка и техники с учётом исходного цвета.</p>
-          <p class="service-price">от 5 500 ₽</p>
-          <button type="button" data-action="service" data-index="1">Выбрать услугу<span class="sr-only"> «Окрашивание»</span></button>
+        <article class="service-tile">
+          <p class="service-kicker">До 2,5 часа · Карина</p><h3>Окрашивание в один тон</h3><p>Выбор оттенка и техники с учётом исходного цвета и длины волос.</p>
+          <div class="service-bottom"><strong>от 5 500 ₽</strong><a href="./booking/?service=1">Выбрать<span class="sr-only"> «Окрашивание в один тон»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Маникюр</h3>
-          <p class="service-description">Подбор формы ногтей и покрытия.</p>
-          <p class="service-price">от 2 800 ₽</p>
-          <button type="button" data-action="service" data-index="2">Выбрать услугу<span class="sr-only"> «Маникюр»</span></button>
-        </article>
+        <article class="service-tile">
+          <p class="service-kicker">60–90 минут · Лиля</p><h3>Маникюр с покрытием</h3><p>Маникюр, подбор формы и покрытия. Снятие старого покрытия обсудите при записи.</p>
+          <div class="service-bottom"><strong>от 2 800 ₽</strong><a href="./booking/?service=2">Выбрать<span class="sr-only"> «Маникюр с покрытием»</span></a></div>
+        </article></div>
+    </section>
+        <section class="how-band">
+      <div class="wrap how-inner">
+        <h2>От выбора до визита</h2>
+        <ol class="how-steps">
+          <li><h3>Выберите услугу</h3><p>Посмотрите пример, стоимость и длительность. Для окрашивания можно начать с консультации.</p></li>
+          <li><h3>Выберите мастера</h3><p>Сопоставьте форматы работы и специализацию. В форме появится мастер по выбранной услуге.</p></li>
+          <li><h3>Согласуйте время</h3><p>Пройдите пробный сценарий или откройте карточку студии для актуальной записи.</p></li>
+        </ol>
       </div>
     </section>
-    <section class="feature-band" id="about" aria-labelledby="about-heading">
-      <div class="wrap">
-        <h2 id="about-heading">Команда студии</h2>
-        <p class="section-intro">Пример того, как клиент выбирает мастера по специализации.</p>
-        <div class="features">
-        <article class="feature">
-          <p class="feature-label">Стилист-парикмахер</p><h3>Вера</h3><p>Стрижки и укладки</p>
-          <button type="button" data-action="service" data-index="0">Выбрать стрижку</button>
-        </article>
-        <article class="feature">
-          <p class="feature-label">Колорист</p><h3>Карина</h3><p>Окрашивание и подбор оттенка</p>
-          <button type="button" data-action="service" data-index="1">Выбрать окрашивание</button>
-        </article>
-        <article class="feature">
-          <p class="feature-label">Мастер маникюра</p><h3>Лиля</h3><p>Маникюр и покрытие</p>
-          <button type="button" data-action="service" data-index="2">Выбрать маникюр</button>
-        </article>
-        </div>
-      </div>
+    <section class="wrap details">
+      <div class="section-heading"><h2>Портфолио студии</h2><a class="button secondary" href="./gallery/">Вся галерея</a></div>
+      <div class="project-photos"><figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/teamo-1.jpg" data-gallery-photo aria-label="Увеличить фото: Форма и укладка"><img src="../../../assets/portfolio-projects/gallery/teamo-1.jpg" alt="Форма и укладка" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Форма и укладка</h3><p>Мягкая линия стрижки, которую можно показать стилисту как пример.</p><a class="button secondary" href="./booking/?service=0">Выбрать услугу</a></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/teamo-2.jpg" data-gallery-photo aria-label="Увеличить фото: Тёплое окрашивание"><img src="../../../assets/portfolio-projects/gallery/teamo-2.jpg" alt="Тёплое окрашивание" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Тёплое окрашивание</h3><p>Медно-каштановый оттенок. Итоговый результат зависит от исходного цвета.</p><a class="button secondary" href="./booking/?service=1">Выбрать услугу</a></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/teamo-3.jpg" data-gallery-photo aria-label="Увеличить фото: Маникюр с покрытием"><img src="../../../assets/portfolio-projects/gallery/teamo-3.jpg" alt="Маникюр с покрытием" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Маникюр с покрытием</h3><p>Однотонное покрытие с аккуратной формой ногтей.</p><a class="button secondary" href="./booking/?service=2">Выбрать услугу</a></figcaption></figure></div>
+      <p class="example-note">Иллюстрации для портфолио.</p>
     </section>
-    <div class="wrap details information-grid">
-      <section id="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Частые вопросы</h2>
-        <div class="faq-list">
-        <details><summary>Сколько времени занимает визит?</summary><p>Ориентир по длительности появится после выбора услуги. Фактическое время уточняется при записи.</p></details>
-        <details><summary>Можно ли записаться онлайн?</summary><p>Да, выберите услугу, затем перейдите в карточку студии в Яндексе. Актуальный график смотрите там.</p></details>
-        <details><summary>От чего зависит цена окрашивания?</summary><p>Стоимость согласуется с мастером после оценки длины волос, исходного цвета и выбранной техники.</p></details>
-        </div>
-      </section>
-      <section id="contacts" class="location" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Как нас найти</h2>
-        <address>Москва, Волгоградский проспект, 70</address>
-        <p>Ежедневно, 10:00–21:00 <span class="example-note">· часы в демо</span></p>
-        <a class="button secondary" href="https://yandex.ru/medicine/clinic/te_amo_beauty_studio_18301539101" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
-      </section>
-    </div>
+        <section class="wrap closing">
+      <div><h2>Выбрать услугу</h2><p>Сравните длительность услуг, познакомьтесь с мастерами и найдите свой вариант в галерее.</p></div>
+      <a class="button" href="./booking/">Выбрать услугу</a>
+    </section>
   </div>
 </main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
 <footer class="info-footer">
-  <div class="wrap">
-    <p>Демонстрационный проект Tercia. Данные и цены приведены для примера.</p>
-    <p>Москва, Волгоградский проспект, 70</p>
+  <div class="wrap site-footer">
+    <div><strong>Te Amo Beauty Studio</strong><p>Москва, Волгоградский проспект, 70</p></div>
+    <div><a href="./contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
   </div>
 </footer>
-<script type="application/json" id="project-data">{"brand":"Te Amo Beauty Studio","type":"Салон красоты","tag":"Салон красоты • Кузьминки","title":"Выберите услугу и мастера","intro":"Посмотрите услуги, мастеров и примерные цены. Актуальное время можно выбрать в записи салона.","address":"Москва, Волгоградский проспект, 70","hours":"Ежедневно, 10:00–21:00","accent":"#813253","paper":"#f9edf0","services":[["Стрижка","от 3 200 ₽"],["Окрашивание","от 5 500 ₽"],["Маникюр","от 2 800 ₽"]],"people":[["Вера","Стилист-парикмахер"],["Карина","Колорист"],["Лиля","Мастер маникюра"]],"cta":"Выбрать услугу","map":"https://yandex.ru/medicine/clinic/te_amo_beauty_studio_18301539101","review":["Яндекс Карты","Окрашивание понравилось. Не сразу поняла, где записаться онлайн.","Спасибо за отзыв. Сделаем ссылку на запись заметнее в разделе услуг. Будем рады снова вас видеть."]}</script>
 </body>
 </html>

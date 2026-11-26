@@ -14,9 +14,10 @@
     <aside class="sidebar">
       <a class="wordmark" href="./"><span aria-hidden="true">in</span> Inquiry Desk</a>
       <nav aria-label="Рабочее пространство">
-        <a href="#workspace">Обзор</a>
-        <a href="#request">Форма заявки</a>
-        <a href="#queue-panel">Очередь заявок</a>
+        <a href="./" data-view="overview">Обзор</a>
+        <a href="?view=form" data-view="form">Форма заявки</a>
+        <a href="?view=inbox" data-view="inbox">Очередь заявок</a>
+        <a href="guide/">Как это работает</a>
       </nav>
       <a class="back" href="../../#project-demos">← Портфолио Tercia</a>
     </aside>
@@ -25,7 +26,7 @@
         <div>
           <p class="context">Рабочее пространство</p>
           <h1>Входящие заявки</h1>
-          <p>Проверьте, как заявка попадает в очередь, и повторите отправку, чтобы увидеть защиту от дублей.</p>
+          <p>Отправьте запрос, настройте приоритет и передайте заявку в работу. В карточке можно сохранить внутреннюю заметку.</p>
         </div>
         <span class="mode">Тестовые данные</span>
       </header>
@@ -34,7 +35,7 @@
         <div><span>Повторов без дубля</span><strong id="duplicates">0</strong></div>
         <div><span>Ошибок отправки</span><strong id="errors">0</strong></div>
       </div>
-      <div class="workspace-grid">
+      <div class="workspace-grid" id="workspace-panels">
         <section class="panel" id="request" aria-labelledby="request-title">
           <h2 id="request-title">Форма поставщика</h2>
           <form id="inquiry-form">
@@ -46,11 +47,16 @@
             <select id="category" name="category">
               <option>Закупки</option><option>Логистика</option><option>Поддержка</option>
             </select>
+            <label for="priority">Приоритет</label>
+            <select id="priority" name="priority"><option>Обычный</option><option>Высокий</option></select>
+            <label for="description">Что нужно сделать</label>
+            <textarea id="description" name="description" rows="3" maxlength="600">Нужна пробная партия коробок для склада. Уточните минимальный тираж и срок доставки.</textarea>
             <div class="actions">
               <button type="submit" id="submit">Отправить заявку</button>
               <button type="button" class="secondary" id="error">Показать ошибку</button>
             </div>
           </form>
+          <p><a href="?view=inbox" data-view="inbox">Перейти в очередь</a></p>
           <p class="status" id="status" role="status">Готово к тестовой отправке.</p>
         </section>
         <section class="panel" id="queue-panel" aria-labelledby="queue-title">
@@ -68,6 +74,7 @@
           </div>
           <p id="queue-summary" class="queue-summary" role="status"></p>
           <p id="empty" class="empty">Здесь появится заявка после отправки.</p>
+          <p class="queue-explainer">В карточке доступны описание, приоритет и заметки команды.</p>
           <ul id="queue" aria-label="Принятые заявки"></ul>
         </section>
       </div>

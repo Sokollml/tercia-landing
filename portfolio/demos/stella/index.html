@@ -7,111 +7,93 @@
   <title>Стелла — проект Tercia</title>
   <link rel="icon" href="../../../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../project-pages.css">
+  <script src="project-data.js" defer></script>
   <script src="../project.js" defer></script>
 </head>
-<body class="stella">
+<body class="stella" data-site-home="./">
 <main>
   <div class="demo-bar">
     <div class="wrap demo-inner">
-      <a href="../../#project-demos">← Портфолио Tercia</a>
+      <a href="../../../portfolio/#project-demos">← Портфолио Tercia</a>
       <span class="demo-label">Демонстрация · тестовые данные</span>
       <nav class="demo-nav" aria-label="Экраны проекта"></nav>
     </div>
   </div>
   <header class="brand-header">
     <div class="wrap brand-inner">
-      <button type="button" class="brand" data-action="site"><span class="brand-mark" aria-hidden="true">✧</span>Стелла</button>
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✧</span>Стелла</a>
       <nav class="site-nav" aria-label="Разделы сайта">
-        <a href="#services" data-home-link>Направления</a>
-        <a href="#about" data-home-link>Команда</a>
-        <a href="#contacts" data-home-link>Контакты</a>
+        <a href="./" aria-current="page">Главная</a>
+        <a href="./services/">Услуги и цены</a>
+        <a href="./team/">Команда</a>
+        <a href="./gallery/">Галерея</a>
+        <a href="./contacts/">Контакты</a>
       </nav>
-      <button type="button" class="button" data-action="form">Запросить запись</button>
+      <a class="button" href="./booking/">Запросить запись</a>
     </div>
   </header>
   <div id="panel" tabindex="-1">
     <section class="wrap hero-section">
       <div class="hero-copy">
         <span class="eyebrow">Стоматология на Карельском</span>
-        <h1>Улыбка начинается с заботы</h1>
-        <p>Выберите направление и удобное время. Администратор уточнит детали и подтвердит запись.</p>
-        <div class="hero-actions">
-          <button type="button" class="button" data-action="form">Запросить запись</button>
-
-        </div>
+        <h1>Улыбка начинается с заботы</h1><p>Выберите направление и удобное время. Администратор уточнит детали и подтвердит запись.</p>
+        <div class="hero-actions"><a class="button" href="./booking/">Запросить запись</a><a class="button secondary" href="./team/">Как проходит консультация</a></div>
       </div>
-      <figure class="hero-visual">
-        <img src="../../../assets/portfolio-projects/stella.jpg" alt="Стоматологический кабинет" fetchpriority="high">
-      </figure>
+      <figure class="hero-visual"><img src="../../../assets/portfolio-projects/stella.jpg" alt="Стоматологический кабинет" fetchpriority="high"></figure>
     </section>
-    <section class="wrap details" id="services" aria-labelledby="services-heading">
-      <h2 id="services-heading">Направления</h2>
-      <p class="section-intro">Выберите услугу, чтобы сразу перейти к записи. Стоимость указана для примера.</p>
-      <div class="services">
-        <article class="service">
-          <h3>Консультация</h3>
-          <p class="service-description">Первичный приём, обсуждение запроса и план следующих шагов.</p>
-          <p class="service-price">1 500 ₽</p>
-          <button type="button" data-action="service" data-index="0">Выбрать направление<span class="sr-only"> «Консультация»</span></button>
+    <section class="wrap details">
+      <div class="section-heading"><div><h2>Услуги</h2><p>Уточните стоимость, выберите врача и посмотрите, как проходит первый визит.</p></div><a class="button secondary" href="./services/">Перейти к прайсу</a></div>
+      <div class="service-tiles">        <article class="service-tile">
+          <p class="service-kicker">30–45 минут</p><h3>Консультация</h3><p>Первый визит, обсуждение запроса и план дальнейших действий.</p>
+          <div class="service-bottom"><strong>1 500 ₽</strong><a href="./booking/?service=0">Выбрать<span class="sr-only"> «Консультация»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Профессиональная гигиена</h3>
-          <p class="service-description">Отдельный визит для профессионального ухода и обсуждения домашней гигиены.</p>
-          <p class="service-price">6 500 ₽</p>
-          <button type="button" data-action="service" data-index="1">Выбрать направление<span class="sr-only"> «Профессиональная гигиена»</span></button>
+        <article class="service-tile">
+          <p class="service-kicker">Около часа</p><h3>Профессиональная гигиена</h3><p>Визит для профессионального ухода и обсуждения домашней гигиены.</p>
+          <div class="service-bottom"><strong>6 500 ₽</strong><a href="./booking/?service=1">Выбрать<span class="sr-only"> «Профессиональная гигиена»</span></a></div>
         </article>
-        <article class="service">
-          <h3>Лечение кариеса</h3>
-          <p class="service-description">Запросите консультацию терапевта. План и стоимость уточняются на приёме.</p>
-          <p class="service-price">от 4 900 ₽</p>
-          <button type="button" data-action="service" data-index="2">Выбрать направление<span class="sr-only"> «Лечение кариеса»</span></button>
-        </article>
+        <article class="service-tile">
+          <p class="service-kicker">По плану лечения</p><h3>Лечение кариеса</h3><p>Осмотр терапевта. Объём работы и итоговую стоимость согласуют перед лечением.</p>
+          <div class="service-bottom"><strong>от 4 900 ₽</strong><a href="./booking/?service=2">Выбрать<span class="sr-only"> «Лечение кариеса»</span></a></div>
+        </article></div>
+    </section>
+        <section class="how-band">
+      <div class="wrap how-inner">
+        <h2>Первый визит</h2>
+        <ol class="how-steps">
+          <li><h3>До визита</h3><p>Выберите направление, врача и удобное время. Уточните у администратора, понадобятся ли документы или результаты предыдущих обследований.</p></li>
+          <li><h3>На консультации</h3><p>Расскажите врачу, с каким вопросом пришли. Вы сможете обсудить результаты осмотра, варианты и стоимость следующих шагов.</p></li>
+          <li><h3>После осмотра</h3><p>Если нужны дополнительные процедуры или повторный визит, согласуйте их план и запишитесь на отдельное время.</p></li>
+        </ol>
       </div>
     </section>
-    <section class="feature-band" id="about" aria-labelledby="about-heading">
-      <div class="wrap">
-        <h2 id="about-heading">Врачи и специализации</h2>
-        <p class="section-intro">В карточках используются демонстрационные профили.</p>
-        <div class="features">
-        <article class="feature">
-          <p class="feature-label">Стоматолог-терапевт</p><h3>Ирина К.</h3><p>Консультации и лечение</p>
-          <button type="button" data-action="specialist" data-index="0">Выбрать врача</button>
-        </article>
-        <article class="feature">
-          <p class="feature-label">Стоматолог-хирург</p><h3>Дмитрий С.</h3><p>Консультации по хирургическим вопросам</p>
-          <button type="button" data-action="specialist" data-index="1">Выбрать врача</button>
-        </article>
-        <article class="feature">
-          <p class="feature-label">Стоматолог-ортодонт</p><h3>Анна Л.</h3><p>Консультации по прикусу</p>
-          <button type="button" data-action="specialist" data-index="2">Выбрать врача</button>
-        </article>
-        </div>
-      </div>
+    <section class="wrap details">
+      <div class="section-heading"><h2>Фотографии клиники</h2><a class="button secondary" href="./gallery/">Вся галерея</a></div>
+      <div class="project-photos"><figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/stella-1.jpg" data-gallery-photo aria-label="Увеличить фото: Стоматологический кабинет"><img src="../../../assets/portfolio-projects/gallery/stella-1.jpg" alt="Стоматологический кабинет" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Стоматологический кабинет</h3><p>Зона осмотра и первичной консультации.</p></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/stella-2.jpg" data-gallery-photo aria-label="Увеличить фото: Специалист на консультации"><img src="../../../assets/portfolio-projects/gallery/stella-2.jpg" alt="Специалист на консультации" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Специалист на консультации</h3><p>Иллюстрация работы врача, а не фотография конкретного специалиста.</p></figcaption></figure>
+<figure class="project-photo"><a href="../../../assets/portfolio-projects/gallery/stella-3.jpg" data-gallery-photo aria-label="Увеличить фото: Подготовка кабинета"><img src="../../../assets/portfolio-projects/gallery/stella-3.jpg" alt="Подготовка кабинета" width="400" height="300" loading="lazy" decoding="async"></a><figcaption><h3>Подготовка кабинета</h3><p>Инструменты и рабочее место перед приёмом.</p></figcaption></figure></div>
+      <p class="example-note">Иллюстрации для портфолио.</p>
     </section>
-    <div class="wrap details information-grid">
-      <section id="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Частые вопросы</h2>
-        <div class="faq-list">
-        <details><summary>Когда время считается подтверждённым?</summary><p>Слот считается подтверждённым после проверки администратором. В проекте этот шаг можно пройти в кабинете сотрудника.</p></details>
-        <details><summary>Можно ли выбрать врача?</summary><p>Да, выберите специалиста из списка или оставьте подбор администратору.</p></details>
-        <details><summary>Как уточнить стоимость?</summary><p>В карточках указаны примерные цены. Администратор может уточнить стоимость первичного приёма, а план дальнейших процедур обсуждается отдельно.</p></details>
-        </div>
-      </section>
-      <section id="contacts" class="location" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Как нас найти</h2>
-        <address>Москва, Карельский бульвар, 5</address>
-        <p>Ежедневно, 9:00–21:00 <span class="example-note">· часы в демо</span></p>
-        <a class="button secondary" href="https://yandex.ru/medicine/clinic/stella_1020206695" target="_blank" rel="noopener">Открыть карточку на Яндексе</a>
-      </section>
-    </div>
+        <section class="wrap closing">
+      <div><h2>Запросить запись</h2><p>Уточните стоимость, выберите врача и посмотрите, как проходит первый визит.</p></div>
+      <a class="button" href="./booking/">Запросить запись</a>
+    </section>
   </div>
 </main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
 <footer class="info-footer">
-  <div class="wrap">
-    <p>Демонстрационный проект Tercia. Данные и цены приведены для примера.</p>
-    <p>Москва, Карельский бульвар, 5</p>
+  <div class="wrap site-footer">
+    <div><strong>Стелла</strong><p>Москва, Карельский бульвар, 5</p></div>
+    <div><a href="./contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
   </div>
 </footer>
-<script type="application/json" id="project-data">{"brand":"Стелла","type":"Стоматология","tag":"Стоматология • Карельский бульвар","title":"Запросите удобное время приёма","intro":"Выберите направление и время. Администратор сверит расписание и подтвердит запись.","address":"Москва, Карельский бульвар, 5","hours":"Ежедневно, 9:00–21:00","accent":"#214d47","paper":"#eaf3ef","services":[["Консультация","1 500 ₽"],["Профессиональная гигиена","6 500 ₽"],["Лечение кариеса","от 4 900 ₽"]],"people":[["Ирина К.","Стоматолог-терапевт"],["Дмитрий С.","Стоматолог-хирург"],["Анна Л.","Стоматолог-ортодонт"]],"cta":"Запросить запись","map":"https://yandex.ru/medicine/clinic/stella_1020206695","review":["Яндекс Карты","Долго ждала приём, хотя записывалась заранее.","Спасибо, что сообщили об ожидании. Уточним, как предупредить о задержках. Для личного разговора свяжитесь с управляющей через контакты клиники."]}</script>
 </body>
 </html>

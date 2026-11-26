@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Выберите услугу, чтобы перейти к записи. Цены, длительность и доступность показаны для демонстрации.">
+  <title>Стелла — Услуги и цены</title>
+  <link rel="icon" href="../../../../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../../project.css">
+  <link rel="stylesheet" href="../../project-pages.css">
+  <script src="../project-data.js" defer></script>
+  <script src="../../project.js" defer></script>
+</head>
+<body class="stella" data-site-home="../">
+<main>
+  <div class="demo-bar">
+    <div class="wrap demo-inner">
+      <a href="../../../../portfolio/#project-demos">← Портфолио Tercia</a>
+      <span class="demo-label">Демонстрация · тестовые данные</span>
+      <nav class="demo-nav" aria-label="Экраны проекта"></nav>
+    </div>
+  </div>
+  <header class="brand-header">
+    <div class="wrap brand-inner">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">✧</span>Стелла</a>
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="../">Главная</a>
+        <a href="../services/" aria-current="page">Услуги и цены</a>
+        <a href="../team/">Команда</a>
+        <a href="../gallery/">Галерея</a>
+        <a href="../contacts/">Контакты</a>
+      </nav>
+      <a class="button" href="../booking/">Запросить запись</a>
+    </div>
+  </header>
+  <div id="panel" tabindex="-1">
+<section class="wrap sub-intro"><p class="eyebrow">Стоматология на Карельском</p><h1>Услуги и цены</h1><p class="sub-lead">Выберите услугу, чтобы перейти к записи. Цены, длительность и доступность показаны для демонстрации.</p></section><section class="wrap sub-content" aria-label="Прайс">
+      <div class="service-tiles service-tiles-full">        <article class="service-tile">
+          <p class="service-kicker">30–45 минут</p><h3>Консультация</h3><p>Первый визит, обсуждение запроса и план дальнейших действий.</p>
+          <div class="service-bottom"><strong>1 500 ₽</strong><a href="../booking/?service=0">Выбрать<span class="sr-only"> «Консультация»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Около часа</p><h3>Профессиональная гигиена</h3><p>Визит для профессионального ухода и обсуждения домашней гигиены.</p>
+          <div class="service-bottom"><strong>6 500 ₽</strong><a href="../booking/?service=1">Выбрать<span class="sr-only"> «Профессиональная гигиена»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">По плану лечения</p><h3>Лечение кариеса</h3><p>Осмотр терапевта. Объём работы и итоговую стоимость согласуют перед лечением.</p>
+          <div class="service-bottom"><strong>от 4 900 ₽</strong><a href="../booking/?service=2">Выбрать<span class="sr-only"> «Лечение кариеса»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Первичная консультация</p><h3>Консультация ортодонта</h3><p>Обсуждение вопросов о прикусе и планирование диагностики.</p>
+          <div class="service-bottom"><strong>от 2 000 ₽</strong><a href="../booking/?service=0&amp;specialist=2">Выбрать<span class="sr-only"> «Консультация ортодонта»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Повторный визит</p><h3>Контрольный осмотр</h3><p>Уточните у администратора, у какого специалиста запланировать повторный визит.</p>
+          <div class="service-bottom"><strong>По запросу</strong><a href="../booking/?service=0">Выбрать<span class="sr-only"> «Контрольный осмотр»</span></a></div>
+        </article></div>
+    </section>    <section class="wrap details" aria-labelledby="faq-title">
+      <h2 id="faq-title">Частые вопросы</h2>
+      <div class="faq-list">
+        <details><summary>Когда запись подтверждена?</summary><p>Администратор проверит доступность врача и подтвердит время. В демо этот шаг воспроизводится в кабинете сотрудника.</p></details>
+        <details><summary>Можно ли выбрать конкретного врача?</summary><p>Да. Откройте профиль специалиста и перейдите к записи. Его имя уже будет выбрано в форме.</p></details>
+        <details><summary>Где узнать итоговую стоимость?</summary><p>Цены в проекте приведены для ориентира. План и стоимость обсуждаются после осмотра.</p></details>
+        <details><summary>Подойдёт ли первичная консультация без направления?</summary><p>Да, на странице записи можно выбрать консультацию и оставить подбор специалиста администратору.</p></details>
+      </div>
+    </section>    <section class="wrap closing">
+      <div><h2>Запросить запись</h2><p>Уточните стоимость, выберите врача и посмотрите, как проходит первый визит.</p></div>
+      <a class="button" href="../booking/">Запросить запись</a>
+    </section>
+  </div>
+</main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
+<footer class="info-footer">
+  <div class="wrap site-footer">
+    <div><strong>Стелла</strong><p>Москва, Карельский бульвар, 5</p></div>
+    <div><a href="../contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,9 +1,11 @@
 (() => {
 'use strict';
-const d = JSON.parse(document.querySelector('#project-data').textContent);
+const d = window.terciaProject;
 const app = document.querySelector('main');
 const panel = document.querySelector('#panel');
 const home = panel.innerHTML;
+const siteHome = document.body.dataset.siteHome || './';
+const initialView = document.body.dataset.initialView === 'form' ? 'form' : 'site';
 const nav = document.querySelector('.demo-nav');
 const mode = d.type;
 const workshop = mode === 'Мебельная мастерская';
@@ -11,6 +13,16 @@ const dental = mode === 'Стоматология';
 const vet = mode === 'Ветеринарная клиника';
 const salon = mode === 'Салон красоты';
 const state = { source:'Прямой заход', entry:null, booked:false, draft:0, service:0, specialist:0, slot:0, material:0, photo:'', clicks:0 };
+const params = new URLSearchParams(window.location.search);
+function selection(name, count) {
+  const value = Number(params.get(name));
+  return Number.isInteger(value) && value >= 0 && value < count ? value : 0;
+}
+if (initialView === 'form') {
+  state.service = selection('service', d.services.length);
+  state.material = selection('material', 3);
+  state.specialist = params.has('specialist') && d.people.length ? selection('specialist', d.people.length) + 1 : 0;
+}
 const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const action = (label, id, extra='') => '<button type="button" data-action="'+id+'" '+extra+'>'+label+'</button>';
 const rows = pairs => pairs.map(p=>'<div class="row"><span>'+esc(p[0])+'</span><strong>'+esc(p[1])+'</strong></div>').join('');
@@ -199,6 +211,7 @@ app.onclick=e=>{
   if(a==='call'){document.querySelector('#call-state').textContent='Для реального обращения откройте карточку клиники по ссылке в разделе «Контакты». В демо звонок не совершается.';return;}
   if(a==='confirm'){state.booked=true;render('staff');return;}
   if(a==='review-action'){state.draft++;render('review');return;}
+  if(a==='site' && siteHome!=='./'){window.location.assign(siteHome);return;}
   openView(a);
 };
 
@@ -207,7 +220,42 @@ function openView(view) {
   panel.focus({preventScroll: true});
   panel.scrollIntoView({block: 'start'});
 }
-nav.innerHTML=action('Сайт','site')+action(salon?'Аналитика записи':'Кабинет сотрудника','staff')+action('Карты','maps')+(d.review?action('Отзывы','review'):'');
-render('site');
+const gallery = document.querySelector('#gallery-dialog');
+const galleryImage = document.querySelector('#gallery-image');
+const galleryCaption = document.querySelector('#gallery-caption');
+let galleryPhotos = [];
+let photoIndex = 0;
+let trigger;
+
+function showPhoto(index) {
+  photoIndex = (index + galleryPhotos.length) % galleryPhotos.length;
+  const photo = galleryPhotos[photoIndex];
+  galleryImage.src = photo.href;
+  galleryImage.alt = photo.querySelector('img').alt;
+  galleryCaption.textContent = photo.closest('figure').querySelector('h3').textContent;
+}
+if (gallery && typeof gallery.showModal === 'function') {
+  app.addEventListener('click', event => {
+    const link = event.target.closest('[data-gallery-photo]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    galleryPhotos = [...panel.querySelectorAll('[data-gallery-photo]')];
+    trigger = link;
+    showPhoto(galleryPhotos.indexOf(link));
+    gallery.showModal();
+  });
+  gallery.addEventListener('click', event => {
+    const button = event.target.closest('[data-gallery-step]');
+    if (button) showPhoto(photoIndex + Number(button.dataset.galleryStep));
+  });
+  gallery.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showPhoto(photoIndex + (event.key === 'ArrowLeft' ? -1 : 1));
+  });
+  gallery.addEventListener('close', () => trigger?.focus());
+}
+nav.innerHTML=action('Сайт','site')+action('Форма','form')+action(salon?'Аналитика записи':'Кабинет сотрудника','staff')+action('Карты','maps')+(d.review?action('Отзывы','review'):'');
+render(initialView);
 
 })();

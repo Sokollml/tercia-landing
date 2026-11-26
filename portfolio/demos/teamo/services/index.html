@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Выберите услугу, чтобы перейти к записи. Цены, длительность и доступность показаны для демонстрации.">
+  <title>Te Amo Beauty Studio — Услуги и цены</title>
+  <link rel="icon" href="../../../../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../../project.css">
+  <link rel="stylesheet" href="../../project-pages.css">
+  <script src="../project-data.js" defer></script>
+  <script src="../../project.js" defer></script>
+</head>
+<body class="teamo" data-site-home="../">
+<main>
+  <div class="demo-bar">
+    <div class="wrap demo-inner">
+      <a href="../../../../portfolio/#project-demos">← Портфолио Tercia</a>
+      <span class="demo-label">Демонстрация · тестовые данные</span>
+      <nav class="demo-nav" aria-label="Экраны проекта"></nav>
+    </div>
+  </div>
+  <header class="brand-header">
+    <div class="wrap brand-inner">
+      <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">t</span>Te Amo Beauty Studio</a>
+      <nav class="site-nav" aria-label="Разделы сайта">
+        <a href="../">Главная</a>
+        <a href="../services/" aria-current="page">Услуги и цены</a>
+        <a href="../team/">Мастера</a>
+        <a href="../gallery/">Галерея</a>
+        <a href="../contacts/">Контакты</a>
+      </nav>
+      <a class="button" href="../booking/">Выбрать услугу</a>
+    </div>
+  </header>
+  <div id="panel" tabindex="-1">
+<section class="wrap sub-intro"><p class="eyebrow">Студия красоты в Кузьминках</p><h1>Услуги и цены</h1><p class="sub-lead">Выберите услугу, чтобы перейти к записи. Цены, длительность и доступность показаны для демонстрации.</p></section><section class="wrap sub-content" aria-label="Прайс">
+      <div class="service-tiles service-tiles-full">        <article class="service-tile">
+          <p class="service-kicker">45–60 минут · Вера</p><h3>Стрижка и укладка</h3><p>Обсуждение формы, стрижка и укладка. Можно показать мастеру понравившийся образ.</p>
+          <div class="service-bottom"><strong>от 3 200 ₽</strong><a href="../booking/?service=0">Выбрать<span class="sr-only"> «Стрижка и укладка»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">До 2,5 часа · Карина</p><h3>Окрашивание в один тон</h3><p>Выбор оттенка и техники с учётом исходного цвета и длины волос.</p>
+          <div class="service-bottom"><strong>от 5 500 ₽</strong><a href="../booking/?service=1">Выбрать<span class="sr-only"> «Окрашивание в один тон»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">Колорист · Карина</p><h3>Консультация по окрашиванию</h3><p>Обсудите исходный цвет, историю предыдущих окрашиваний и желаемый результат.</p>
+          <div class="service-bottom"><strong>По запросу</strong><a href="../booking/?service=1">Выбрать<span class="sr-only"> «Консультация по окрашиванию»</span></a></div>
+        </article>
+        <article class="service-tile">
+          <p class="service-kicker">60–90 минут · Лиля</p><h3>Маникюр с покрытием</h3><p>Маникюр, подбор формы и покрытия. Снятие старого покрытия обсудите при записи.</p>
+          <div class="service-bottom"><strong>от 2 800 ₽</strong><a href="../booking/?service=2">Выбрать<span class="sr-only"> «Маникюр с покрытием»</span></a></div>
+        </article></div>
+    </section>    <section class="wrap details" aria-labelledby="faq-title">
+      <h2 id="faq-title">Частые вопросы</h2>
+      <div class="faq-list">
+        <details><summary>Сколько длится визит?</summary><p>Ориентир есть в меню услуг и в форме записи. Фактическое время уточнит мастер.</p></details>
+        <details><summary>Как выбрать окрашивание?</summary><p>Подготовьте пример оттенка и расскажите о предыдущих окрашиваниях. Колорист поможет выбрать технику.</p></details>
+        <details><summary>Можно ли записаться онлайн?</summary><p>Да, из формы можно перейти в карточку студии, где отображается актуальная запись.</p></details>
+        <details><summary>Как узнать итоговую стоимость?</summary><p>Цены на странице приведены для примера. На стоимость влияют длина волос, техника или необходимость снятия покрытия.</p></details>
+      </div>
+    </section>    <section class="wrap closing">
+      <div><h2>Выбрать услугу</h2><p>Сравните длительность услуг, познакомьтесь с мастерами и найдите свой вариант в галерее.</p></div>
+      <a class="button" href="../booking/">Выбрать услугу</a>
+    </section>
+  </div>
+</main>
+<dialog id="gallery-dialog" class="gallery-dialog" aria-labelledby="gallery-caption">
+  <div class="gallery-controls">
+    <button type="button" data-gallery-step="-1" aria-label="Предыдущее фото">←</button>
+    <button type="button" data-gallery-step="1" aria-label="Следующее фото">→</button>
+    <form method="dialog"><button type="submit">Закрыть</button></form>
+  </div>
+  <img id="gallery-image" alt="">
+  <p id="gallery-caption"></p>
+</dialog>
+<footer class="info-footer">
+  <div class="wrap site-footer">
+    <div><strong>Te Amo Beauty Studio</strong><p>Москва, Волгоградский проспект, 70</p></div>
+    <div><a href="../contacts/">Адрес и маршрут</a><p>Проект Tercia. Данные и иллюстрации демонстрационные.</p></div>
+  </div>
+</footer>
+</body>
+</html>
