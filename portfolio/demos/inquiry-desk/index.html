@@ -1,15 +1,64 @@
-<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Inquiry Desk — демо Tercia</title><style>*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui;color:#242336}main{padding:16px;border:1px solid #e0dcf0;background:#f6f3fc;border-radius:14px}h2,h3,p{margin:0 0 8px}button{padding:9px 13px;margin:6px 4px 0 0;border:1px solid #49316e;border-radius:8px;color:#261742;background:#e8dafa;font:inherit;font-weight:650;cursor:pointer}.grid{display:grid;gap:10px}@media(min-width:560px){.grid{grid-template-columns:1fr 1fr}}article{padding:14px;border-radius:12px;background:white}a{color:#3f286a}#status{margin-top:10px}[hidden]{display:none!important}.portfolio-return{margin:1.5rem auto;text-align:center}.portfolio-return a{color:inherit;text-decoration:underline}</style><main><h2>Inquiry Desk</h2><p>Внутреннее демо на тестовых данных</p><div class="grid"><article><h3>Форма поставщика</h3><p>Упаковочные материалы для склада<br>test@example.com</p><button id="submit">Посмотреть демо</button><button id="error">Показать ошибку</button><p id="status" role="status">Готово к тестовой отправке.</p></article><article><h3>Общая очередь</h3><div id="queue" hidden><p>Заявок: <strong>1</strong> · INQ-001</p><p>Ответственная: Мария<br>Тестовое уведомление создано</p></div><div id="actions" hidden><button id="reset">Начать заново</button></div></article></div></main><p class="portfolio-return"><a href="../../#project-demos">К портфолио Tercia</a></p><script>
-let sent=false;
-const root=document.querySelector('main');
-
-root.onclick=event=>{
- const button=event.target.closest('button');
- if(!button)return;
- root.querySelector('#actions').hidden=false;
- const status=root.querySelector('#status');
- const queue=root.querySelector('#queue');
- if(button.id==='reset'){sent=false;queue.hidden=true;status.textContent='Готово к тестовой отправке.';root.querySelector('#submit').textContent='Отправить тестовую заявку';return;}
- if(button.id==='error'){status.innerHTML='Не удалось подтвердить отправку. Повторите попытку или напишите на <a href="mailto:info@tercia.dev">info@tercia.dev</a>.';return;}
- status.textContent=sent?'Повтор обработан. Очередь содержит одну заявку.':'Тестовая заявка принята.';
- sent=true;queue.hidden=false;root.querySelector('#submit').textContent='Повторить отправку';
-};</script></html>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивный проект Tercia для приёма и проверки входящих заявок.">
+  <title>Inquiry Desk — проект Tercia</title>
+  <link rel="icon" href="../../../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="desk.css">
+  <script src="desk.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="wordmark" href="./"><span aria-hidden="true">in</span> Inquiry Desk</a>
+      <nav aria-label="Рабочее пространство">
+        <a href="#workspace">Обзор</a>
+        <a href="#request">Форма заявки</a>
+        <a href="#queue-panel">Очередь заявок</a>
+      </nav>
+      <a class="back" href="../../#project-demos">← Портфолио Tercia</a>
+    </aside>
+    <main id="workspace">
+      <header class="page-header">
+        <div>
+          <p class="context">Рабочее пространство</p>
+          <h1>Входящие заявки</h1>
+          <p>Проверьте, как заявка попадает в очередь, и повторите отправку, чтобы увидеть защиту от дублей.</p>
+        </div>
+        <span class="mode">Тестовые данные</span>
+      </header>
+      <div class="metrics" aria-label="Состояние очереди">
+        <div><span>Принято</span><strong id="received">0</strong></div>
+        <div><span>Повторов без дубля</span><strong id="duplicates">0</strong></div>
+        <div><span>Ошибок отправки</span><strong id="errors">0</strong></div>
+      </div>
+      <div class="workspace-grid">
+        <section class="panel" id="request" aria-labelledby="request-title">
+          <h2 id="request-title">Форма поставщика</h2>
+          <form id="inquiry-form">
+            <label for="subject">Тема заявки</label>
+            <input id="subject" name="subject" required maxlength="150" value="Упаковочные материалы для склада">
+            <label for="email">Тестовый email</label>
+            <input id="email" name="email" type="email" required maxlength="150" value="test@example.com">
+            <div class="actions">
+              <button type="submit" id="submit">Отправить заявку</button>
+              <button type="button" class="secondary" id="error">Показать ошибку</button>
+            </div>
+          </form>
+          <p class="status" id="status" role="status">Готово к тестовой отправке.</p>
+        </section>
+        <section class="panel" id="queue-panel" aria-labelledby="queue-title">
+          <div class="panel-header">
+            <h2 id="queue-title">Очередь заявок</h2>
+            <button type="button" class="secondary" id="reset">Сбросить</button>
+          </div>
+          <p id="empty" class="empty">Здесь появится заявка после отправки.</p>
+          <ul id="queue" aria-label="Принятые заявки"></ul>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

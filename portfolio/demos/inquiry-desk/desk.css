@@ -1,0 +1,44 @@
+:root { color-scheme: light; --text: #201a39; --muted: #625a76; --line: #dfdaea; --violet: #5936a5; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f1fa; color: var(--text); font: 16px/1.5 system-ui,sans-serif; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #8961e1; outline-offset: 4px; }
+.layout { min-height: 100vh; display: grid; grid-template-columns: 222px minmax(0, 1fr); }
+.sidebar { display: flex; flex-direction: column; align-items: stretch; gap: 38px; background: #1d1630; color: #f9f5ff; padding: 28px 18px; }
+.wordmark { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 750; }
+.wordmark span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: #c9afff; color: #281c40; }
+.sidebar nav { display: grid; gap: 4px; }
+.sidebar nav a { padding: 9px 12px; text-decoration: none; border-radius: 8px; }
+.sidebar nav a:hover, .sidebar nav a:first-child { background: #35284d; }
+.back { margin-top: auto; color: #e0d4f2; font-size: .9rem; text-underline-offset: 4px; }
+main { width: min(100%, 1480px); margin-inline: auto; padding: clamp(24px,5vw,72px); }
+.page-header, .panel-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; }
+.context { margin: 0; color: var(--violet); font-weight: 750; font-size: .85rem; }
+h1, h2 { letter-spacing: -.045em; }
+h1 { margin: 3px 0 8px; font-size: clamp(2rem,5vw,4.3rem); line-height: 1; }
+h2 { margin: 0 0 18px; font-size: 1.35rem; }
+.page-header p:not(.context) { color: var(--muted); margin: 0; max-width: 56ch; }
+.mode { flex-shrink: 0; border: 1px solid #d5c5f4; color: #4b2a93; background: #eae0ff; border-radius: 99px; padding: 6px 11px; font-size: .82rem; font-weight: 700; }
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin: 30px 0 18px; }
+.metrics > div, .panel { background: white; border: 1px solid var(--line); border-radius: 14px; }
+.metrics > div { display: grid; gap: 12px; padding: 16px; align-content: space-between; }
+.metrics span { color: var(--muted); font-weight: 650; font-size: .86rem; }
+.metrics strong { font-size: 2rem; line-height: 1; }
+.workspace-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 16px; align-items: start; }
+.panel { min-width: 0; padding: clamp(17px,2.5vw,30px); scroll-margin-top: 24px; }
+form { display: grid; gap: 7px; }
+label { font-size: .88rem; font-weight: 700; }
+input { margin-bottom: 9px; min-width: 0; width: 100%; padding: 10px 11px; border: 1px solid var(--line); border-radius: 8px; background: #faf9fd; color: var(--text); font: inherit; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+button { cursor: pointer; min-height: 42px; border: 1px solid transparent; border-radius: 8px; padding: .55rem .85rem; background: var(--violet); color: white; font: 700 .875rem/1.2 system-ui,sans-serif; }
+button:hover { filter: brightness(.9); }
+button.secondary { border-color: var(--line); background: white; color: var(--text); }
+.status, .empty { margin: 16px 0 0; border-radius: 8px; background: #f4f0fa; color: var(--muted); padding: 10px 12px; font-size: .9rem; }
+.status[data-state=error] { background: #fcecef; color: #8b2842; }
+.status[data-state=success] { background: #e9f7ef; color: #255b3d; }
+#queue { padding: 0; list-style: none; margin: 0; }
+#queue li { display: grid; gap: 4px; padding: 12px 0; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
+#queue li span { color: var(--muted); font-size: .86rem; }
+@media(max-width: 920px) { .layout { grid-template-columns: 1fr; } .sidebar { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px 20px; } .sidebar nav { display: flex; flex-wrap: wrap; } .back { margin: 0 0 0 auto; } }
+@media(max-width: 620px) { .workspace-grid { grid-template-columns: 1fr; } .page-header { flex-direction: column; } .metrics { gap: 6px; } .metrics > div { padding: 10px; } main { padding: 20px 14px 40px; } .sidebar nav a { padding: 5px; } }

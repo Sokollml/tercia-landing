@@ -83,8 +83,22 @@ h1 em{font-style:normal;background:linear-gradient(104deg,var(--acid) 20%,var(--
 .work:hover .cover img{transform:scale(1.04)}
 .project-demos{scroll-margin-top:96px;margin-bottom:clamp(44px,7vw,90px)}
 .project-demos h2{margin-bottom:clamp(20px,3vw,32px)}
-.project-cover img{object-fit:contain;object-position:center}
-.project-demos .cover.has-chat{min-height:230px}
+.project-cover{background:#141a1a}
+.project-cover img{object-fit:cover;object-position:center}
+#stella .project-cover img{object-position:50% 54%}
+#peretyazhka .project-cover img{object-position:50% 65%}
+#teamo .project-cover img{object-position:50% 60%}
+.project-demos .work .body{gap:9px}
+.project-demos .work .pitch{border:0;padding-left:0;color:var(--muted)}
+.project-demos .acts .btn{border-color:var(--line-3);min-height:44px}
+.desk-cover{display:grid;place-items:center;min-height:230px;padding:21px;background:#ddd0f8;color:#271942}
+.desk-mini{display:grid;grid-template-columns:minmax(60px,1fr) 3.1fr;width:min(100%,350px);min-height:140px;border-radius:12px;background:#f6f2ff;overflow:hidden}
+.desk-mini-head{background:#211735;color:#fff;font-weight:700;padding:14px 10px;font-size:clamp(10px,1.3vw,12px)}
+.desk-mini-body{padding:12px;display:grid;gap:8px;align-content:center;font-size:clamp(11px,1.5vw,13px)}
+.desk-mini-body b{font-size:1.15em}
+.desk-mini-row{display:flex;gap:5px;flex-wrap:wrap}
+.desk-mini-row span{padding:4px 6px;border-radius:4px;background:#e8dcfb;color:#352054}
+.desk-mini-note{padding:5px 7px;background:#fff;border:1px solid #e3d9f2;border-radius:5px}
 .badge{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg);background:rgba(7,7,11,.72);border:1px solid var(--line-3);backdrop-filter:blur(8px);border-radius:99px;padding:6px 11px}
 .body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
 .num{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted-2)}
@@ -203,7 +217,7 @@ html.mm-lock{overflow:hidden}
     <h2 id="project-demos-title">Интерактивные проекты</h2>
     <div class="works">
     <article class="work" id="stella">
-      <div class="cover project-cover"><img src="../assets/cases/project-stella.png" alt="Экран записи в стоматологию «Стелла»" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="cover project-cover"><img src="../assets/portfolio-projects/stella.jpg" alt="Интерьер стоматологии" width="1440" height="963" loading="lazy" decoding="async"></div>
       <div class="body">
         <div class="for">Стоматология</div>
         <h3 class="w-title">Стелла</h3>
@@ -213,7 +227,7 @@ html.mm-lock{overflow:hidden}
     </article>
 
     <article class="work" id="peretyazhka">
-      <div class="cover project-cover"><img src="../assets/cases/project-peretyazhka.png" alt="Экран заявки на оценку мебели" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="cover project-cover"><img src="../assets/portfolio-projects/peretyazhka.jpg" alt="Диван с зелёной обивкой" width="1440" height="960" loading="lazy" decoding="async"></div>
       <div class="body">
         <div class="for">Мебельная мастерская</div>
         <h3 class="w-title">ПеретяжкА</h3>
@@ -223,7 +237,7 @@ html.mm-lock{overflow:hidden}
     </article>
 
     <article class="work" id="lama">
-      <div class="cover project-cover"><img src="../assets/cases/project-lama.png" alt="Экран выбора срочного звонка или плановой записи" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="cover project-cover"><img src="../assets/portfolio-projects/lama.jpg" alt="Золотистый ретривер" width="1440" height="960" loading="lazy" decoding="async"></div>
       <div class="body">
         <div class="for">Ветеринарная клиника</div>
         <h3 class="w-title">Лама рядом</h3>
@@ -233,7 +247,7 @@ html.mm-lock{overflow:hidden}
     </article>
 
     <article class="work" id="teamo">
-      <div class="cover project-cover"><img src="../assets/cases/project-teamo.png" alt="Экран выбора услуги в Te Amo Beauty Studio" width="472" height="900" loading="lazy" decoding="async"></div>
+      <div class="cover project-cover"><img src="../assets/portfolio-projects/teamo.jpg" alt="Интерьер салона красоты" width="1440" height="960" loading="lazy" decoding="async"></div>
       <div class="body">
         <div class="for">Салон красоты</div>
         <h3 class="w-title">Te Amo Beauty Studio</h3>
@@ -243,12 +257,14 @@ html.mm-lock{overflow:hidden}
     </article>
 
     <article class="work" id="inquiry-desk">
-      <div class="cover has-chat" aria-hidden="true">
-        <div class="chat" data-head="Inquiry Desk">
-          <div class="msg me">Отправить тестовую заявку</div>
-          <div class="msg">Тестовая заявка принята.</div>
-          <div class="msg me">Повторить отправку</div>
-          <div class="msg">В очереди одна заявка.</div>
+      <div class="cover desk-cover" aria-hidden="true">
+        <div class="desk-mini">
+          <span class="desk-mini-head">Inquiry Desk</span>
+          <div class="desk-mini-body">
+            <b>Входящие заявки</b>
+            <div class="desk-mini-row"><span>1 принята</span><span>0 дублей</span></div>
+            <div class="desk-mini-note">INQ-001 · Упаковочные материалы</div>
+          </div>
         </div>
       </div>
       <div class="body">
