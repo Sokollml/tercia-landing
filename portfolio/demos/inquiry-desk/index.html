@@ -61,8 +61,8 @@
         </section>
         <section class="panel" id="queue-panel" aria-labelledby="queue-title">
           <div class="panel-header">
-            <h2 id="queue-title">Очередь заявок</h2>
-            <button type="button" class="secondary" id="reset">Сбросить</button>
+            <div><h2 id="queue-title">Очередь заявок</h2><p class="queue-explainer">Проверьте назначение, приоритет и историю обработки.</p></div>
+            <button type="button" class="secondary" id="reset">Сбросить фильтры</button>
           </div>
           <div class="queue-tools" aria-label="Фильтры очереди">
             <label for="queue-search">Поиск
@@ -72,9 +72,18 @@
               <select id="queue-filter"><option value="">Все заявки</option><option value="new">Новые</option><option value="active">В работе</option><option value="done">Закрытые</option></select>
             </label>
           </div>
+          <div class="queue-tools extra-filters" aria-label="Фильтры по приоритету и сотруднику">
+            <label for="queue-priority">Приоритет
+              <select id="queue-priority"><option value="">Все приоритеты</option><option>Обычный</option><option>Высокий</option></select>
+            </label>
+            <label for="queue-owner">Ответственный
+              <select id="queue-owner"><option value="">Вся команда</option><option value="none">Не назначен</option><option>Мария</option><option>Алексей</option><option>Ирина</option></select>
+            </label>
+          </div>
           <p id="queue-summary" class="queue-summary" role="status"></p>
           <p id="empty" class="empty">Здесь появится заявка после отправки.</p>
           <p class="queue-explainer">В карточке доступны описание, приоритет и заметки команды.</p>
+          <button type="button" class="secondary" id="seed-inbox">Добавить 3 тестовые заявки</button>
           <ul id="queue" aria-label="Принятые заявки"></ul>
         </section>
       </div>

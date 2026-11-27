@@ -1,0 +1,94 @@
+/* Shared booking and staff layout, with the project's brand colors */
+#panel.workflow:has(.ws-head) { width:min(100% - 54px,1220px); min-height:66vh; margin:34px auto 64px; padding:0; border:0; border-radius:0; background:transparent; }
+#panel .ws-head { padding:clamp(18px,4.4vw,57px) 0 24px; border-bottom:1px solid var(--line); margin-bottom:22px; }
+.ws-head > span { color:var(--accent); font-size:.87rem; font-weight:750; }
+.ws-head h1 { margin:5px 0 8px; font:650 clamp(2.05rem,5.5vw,4.45rem)/1.04 var(--display); letter-spacing:-.055em; }
+#panel .ws-head p { color:var(--muted); max-width:68ch; margin:0; }
+.ws-progress { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; padding:0; margin:0 0 19px; list-style:none; }
+.ws-progress li { display:flex; align-items:center; gap:7px; color:var(--muted); min-width:0; font-size:.9rem; }
+.ws-progress span { display:grid; flex:none; place-items:center; width:30px; height:30px; border:1px solid var(--line); border-radius:50%; background:#fff; font-weight:750; }
+.ws-progress [data-step=current] { color:var(--ink); font-weight:750; }
+.ws-progress [data-step=current] span { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+.ws-progress [data-step=done] span { background:var(--tint); }
+.ws-form-grid { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(245px,1fr); gap:17px; align-items:start; }
+.ws-surface,.ws-side { min-width:0; border:1px solid var(--line); border-radius:16px; background:#fff; padding:clamp(16px,2.8vw,34px); }
+
+.ws-side { background:color-mix(in srgb,var(--tint) 48%,white); }
+#panel .ws-surface h2,#panel .ws-side h2 { font:700 clamp(1.28rem,2.6vw,1.8rem)/1.15 var(--display); letter-spacing:-.035em; margin:0 0 14px; }
+#panel .ws-surface h3 { font-size:1.08rem; margin:13px 0 7px; }
+#panel.workflow .ws-surface fieldset { padding:0; border:0; margin:7px 0 16px; min-width:0; }
+.ws-surface legend { margin-bottom:8px; }
+.ws-field { display:grid; align-content:start; gap:5px; margin:0 0 10px; min-width:0; }
+.ws-field > span { font-size:.91rem; font-weight:700; }
+.ws-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 12px; }
+#panel .ws-field :is(input,textarea,select) { background:color-mix(in srgb,var(--page) 60%,white); border-radius:8px; min-height:44px; }
+#panel .ws-field textarea { resize:vertical; }
+.ws-services { display:grid; gap:8px; }
+.ws-choice { display:flex; align-items:center; gap:10px; min-height:56px; padding:10px 13px; border:1px solid var(--line); border-radius:9px; cursor:pointer; }
+.ws-choice:has(input:checked) { border-color:var(--accent); background:var(--tint); }
+#panel .ws-choice input,#panel .ws-slots input { width:auto; margin:0; padding:0; accent-color:var(--accent); }
+.ws-choice small { display:block; color:var(--muted); font-size:.82rem; font-weight:450; }
+.ws-slots > div { display:flex; flex-wrap:wrap; gap:6px; }
+.ws-slots label { min-height:43px; display:flex; align-items:center; gap:4px; padding:4px 8px; border:1px solid var(--line); border-radius:7px; cursor:pointer; }
+.ws-slots label:has(input:checked) { background:var(--tint); border-color:var(--accent); }
+#panel .ws-note,#panel .ws-feedback { color:var(--muted); font-size:.89rem; }
+.ws-feedback:empty { display:none; }
+.ws-amount { font-size:clamp(1.65rem,4vw,2.45rem); font-weight:760; letter-spacing:-.06em; }
+.ws-actions,.ws-edit,.ws-side-links { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:13px; }
+.ws-data { margin:0; }
+.ws-data > div { display:grid; grid-template-columns:minmax(90px,.73fr) minmax(0,1fr); gap:7px; padding:8px 0; border-bottom:1px solid var(--line); }
+.ws-data dt { color:var(--muted); font-size:.9rem; }
+.ws-data dd { margin:0; font-weight:650; overflow-wrap:anywhere; }
+.ws-photos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-block:10px; }
+.ws-photos figure { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:8px; }
+.ws-photos img { width:100%; height:100px; object-fit:cover; display:block; }
+.ws-photos figcaption { display:grid; gap:4px; padding:7px; font-size:.82rem; overflow-wrap:anywhere; }
+.ws-badge { display:inline-flex; align-items:center; color:var(--ink); background:var(--tint); border-radius:6px; padding:4px 7px; font-size:.77rem; font-weight:740; line-height:1.2; }
+.ws-badge[data-status=active] { background:#f6ebc1; color:#624809; }
+.ws-badge[data-status=done] { background:#ddf2e4; color:#235940; }
+.ws-badge[data-status=cancelled] { background:#f7e5e8; color:#783341; }
+.ws-receipt,.ws-ticket-head,.ws-inbox > header { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:7px; }
+.ws-ticket-head > div > span,.ws-inbox > header > span { font-size:.82rem; color:var(--muted); font-weight:720; }
+.ws-comment { margin:7px 0; padding:10px 12px; border-left:3px solid var(--accent); background:var(--page); white-space:pre-wrap; overflow-wrap:anywhere; }
+.ws-client-row { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px 12px; border-bottom:1px solid var(--line); padding:13px 0; align-items:start; }
+.ws-client-row > :nth-child(3) { grid-column:1 / -1; }
+.ws-client-row > button { justify-self:start; }
+#panel .ws-client-row p { margin:4px 0; color:var(--muted); }
+.ws-dashboard-top { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:14px; align-items:start; margin-bottom:17px; }
+.ws-dashboard-top .ws-actions { margin-top:0; }
+.ws-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:9px; }
+#panel .ws-metrics button { display:grid; justify-items:start; align-content:space-between; gap:10px; padding:10px; min-height:81px; background:#fff; color:var(--ink); border:1px solid var(--line); text-align:left; overflow-wrap:anywhere; }
+#panel .ws-metrics button[aria-pressed=true] { border-color:var(--accent); background:var(--tint); }
+.ws-metrics span { font-size:.8rem; }
+.ws-metrics strong { font-size:1.65rem; line-height:1; }
+.ws-dashboard { display:grid; grid-template-columns:minmax(280px,.79fr) minmax(0,1.21fr); gap:16px; align-items:start; }
+.ws-inbox .ws-fields { gap:6px; }
+#panel .ws-queue-item { display:flex; width:100%; justify-content:space-between; align-items:flex-start; gap:8px; margin:5px 0; padding:10px 9px; text-align:left; background:#fff; color:var(--ink); border:1px solid var(--line); }
+#panel .ws-queue-item[aria-pressed=true] { background:var(--tint); border-color:var(--accent); }
+.ws-queue-item small { display:block; color:var(--muted); margin-top:3px; font-weight:500; }
+.ws-queue-item .ws-badge { max-width:48%; }
+.ws-empty-list,.ws-empty p { color:var(--muted); }
+.ws-inline { display:flex; align-items:end; gap:7px; flex-wrap:wrap; margin:15px 0; }
+.ws-inline .ws-field { margin:0; }
+.ws-reschedule { margin:13px 0; }
+.ws-reschedule summary { cursor:pointer; font-weight:700; text-decoration:underline; text-underline-offset:4px; margin-bottom:5px; }
+.ws-history { list-style:none; padding:0; margin:0 0 10px; }
+.ws-history li { display:grid; grid-template-columns:minmax(96px,.46fr) minmax(0,1fr); gap:8px; border-bottom:1px solid var(--line); padding:7px 0; overflow-wrap:anywhere; }
+.ws-history time { font-size:.82rem; color:var(--muted); }
+.ws-map-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+@media(max-width:880px) { .ws-dashboard-top { grid-template-columns:1fr; } }
+@media(max-width:680px) {
+  #panel.workflow:has(.ws-head) { width:min(100% - 28px,1220px); margin:17px auto 42px; }
+  .ws-form-grid,.ws-dashboard,.ws-map-grid { grid-template-columns:1fr; }
+  .ws-progress li { align-items:flex-start; flex-direction:column; font-size:.77rem; }
+  .ws-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ws-fields { grid-template-columns:1fr; gap:0; }
+  .ws-photos { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+.ws-calendar { margin-bottom:16px; }
+#panel .ws-calendar h2 { margin-bottom:5px; }
+.ws-day-list { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; }
+#panel .ws-day-list button { display:grid; justify-items:start; gap:4px; padding:6px 8px; border-color:var(--line); text-align:left; }
+#panel .ws-day-list button[aria-pressed=true] { background:var(--tint); border-color:var(--accent); }
+.ws-day-list span { font-size:.76rem; }
+@media(max-width:680px) { .ws-day-list { grid-template-columns:repeat(3,minmax(0,1fr)); } }
