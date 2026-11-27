@@ -67,6 +67,7 @@
       else button.removeAttribute('aria-current');
     }
     if (!workspaceViews.includes(view)) workspace.leave();
+    panel.dataset.workspaceView=view;
     panel.classList.toggle('workflow', view!=='site');
     if (view==='site') {
       if (panel.innerHTML!==home) panel.innerHTML=home;

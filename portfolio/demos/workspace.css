@@ -92,3 +92,18 @@
 #panel .ws-day-list button[aria-pressed=true] { background:var(--tint); border-color:var(--accent); }
 .ws-day-list span { font-size:.76rem; }
 @media(max-width:680px) { .ws-day-list { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+/* Keep the work area in view before the first scroll. */
+#panel.workflow:has(.ws-head) { margin-top:15px; }
+#panel .ws-head { padding:clamp(14px,2vw,23px) 0 17px; margin-bottom:17px; }
+.ws-head h1 { font-size:clamp(2rem,4.1vw,3.45rem); }
+#panel[data-workspace-view=staff] .ws-head { padding-block:11px 13px; }
+#panel[data-workspace-view=staff] .ws-head h1 { font-size:clamp(1.75rem,3.5vw,2.9rem); }
+#panel[data-workspace-view=staff] .ws-calendar { padding:12px 15px; }
+#panel[data-workspace-view=staff] .ws-calendar h2 { font-size:1.12rem; }
+#panel[data-workspace-view=staff] .ws-calendar p { margin-bottom:7px; font-size:.86rem; }
+#panel .ws-metrics button { min-height:66px; padding:8px 10px; gap:5px; }
+@media(max-width:680px) {
+  #panel.workflow:has(.ws-head) { margin-top:9px; scroll-margin-top:127px; }
+  #panel .ws-head { padding-block:12px; }
+  .ws-progress { margin-bottom:11px; }
+}
